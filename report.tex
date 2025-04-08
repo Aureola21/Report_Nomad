@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\title{Training and Perception for Nomad Navigation}
+\author{Authors \ Mathematics and Computing \\ Indian Institute of Technology}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report presents our work on implementing the training and perception components of a visual navigation system using diffusion policies, as adapted in the NOMAD framework. We focus on pre-processing, model architecture, and training strategies, leaving out the deployment aspects. We also analyze training performance and evaluate key perception-based metrics.
+\end{abstract}
+
+\section{Introduction}
+Visual navigation in robotics aims to enable agents to traverse environments using visual input. NOMAD (Navigation with Optimal Memory and Action Decoding) is a transformer-based diffusion policy designed for long-horizon, memory-based navigation. Our project involves implementing and training NOMAD while analyzing the perception backbone and its influence on training dynamics.
+
+\section{Overview of NOMAD Architecture}
+The NOMAD architecture comprises three main modules:
+\begin{itemize}
+\item \textbf{Perception Backbone}: A ResNet18 feature extractor followed by an attention-based temporal encoder.
+\item \textbf{Trajectory Diffusion Decoder}: A 1D UNet architecture that learns to predict future waypoint trajectories.
+\item \textbf{Action Decoder}: Maps generated waypoints to low-level control commands.
+\end{itemize}
+
+\section{Implementation Details}
+\subsection{Environment Setup}
+% The codebase was adapted from an open-source repository. 
+% Major libraries used include PyTorch, Hydra for configuration, and torchvision. 
+% The PYTHONPATH had to be correctly exported due to a nested diffusion_policy folder structure.
+
+\subsection{Data Pipeline}
+We used a pre-collected dataset of trajectories containing RGB observations, actions, and ground-truth waypoints. Data augmentations were not used in our initial experiments.
+
+\subsection{Training Procedure}
+Training was done on a single NVIDIA GPU using a batch size of 64. The training loop involved:
+\begin{itemize}
+\item Calculating diffusion loss from predicted vs ground-truth waypoints.
+\item Waypoint cosine similarity.
+\item Auxiliary action prediction losses.
+\end{itemize}
+Training checkpoints were saved every epoch. EMA models were also stored.
+
+\section{Perception Module}
+The ResNet18 backbone encodes RGB frames, while a transformer-based encoder maintains temporal context. This allows the policy to act based on history, crucial for long-horizon navigation.
+
+\subsection{Cosine Similarity Metrics}
+We track waypoint cosine similarity to evaluate how well the predicted and ground-truth waypoints align. Early training epochs show increasing cosine similarity, indicating improved waypoint alignment.
+
+\section{Results}
+\subsection{Training Metrics}
+\begin{itemize}
+\item Final training loss: \textasciitilde1.11
+\item Cosine similarity: \textasciitilde0.47 (multi-action waypoints)
+\item Distance loss: \textasciitilde128
+\end{itemize}
+
+\subsection{Observations}
+Loss plateaued after around 5,000 batches. Training logs show improvement in cosine similarity and reduction in loss. Action losses remained stable across UC and GC branches.
+
+\section{Challenges and Debugging}
+
+
+\section{Conclusion and Future Work}
+We successfully trained the NOMAD policy and analyzed the perception module. Future work could involve domain randomization, hyperparameter tuning, and evaluating transfer to real-world or simulated environments.
+
+\section*{References}
+\begin{enumerate}
+\item H. Janner et al., "NOMAD: Planning with Diffusion for Visual Navigation," 2022.
+\item Diffusion Policy GitHub Repository: \url{https://github.com/wayveai/diffusion-policy}
+\end{enumerate}
+
+\end{document}
