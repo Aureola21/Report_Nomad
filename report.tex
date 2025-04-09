@@ -10,26 +10,35 @@
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
 \title{Training and Perception for Nomad Navigation}
-\author{Authors \ Mathematics and Computing \\ Indian Institute of Technology}
+\author{Authors \ Mathematics and Computing \\ Indian Institute of Science}
 \date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This report presents our work on implementing the training and perception components of a visual navigation system using diffusion policies, as adapted in the NOMAD framework. We focus on pre-processing, model architecture, and training strategies, leaving out the deployment aspects. We also analyze training performance and evaluate key perception-based metrics.
+This report presents our work on implementing and analyzing the training and perception components of a visual navigation system based on diffusion policies, as adapted from the NOMAD (Navigation with Goal Masked Diffusion) framework. 
+Our approach combines a visual perception backbone with a trajectory diffusion model to support both goal-directed and exploratory navigation. We trained our model on the SACSoN dataset, which features diverse real-world trajectories across various environments and robot platforms. 
+We leverage a conditional diffusion model to generate multimodal waypoint predictions, enabling the agent to reason about complex, uncertain navigation scenarios. Our contributions include a detailed breakdown of the model architecture, training methodology, and evaluation metrics—particularly focusing on waypoint alignment through cosine similarity. 
+We have left out the deployment aspects.
 \end{abstract}
 
 \section{Introduction}
-Visual navigation in robotics aims to enable agents to traverse environments using visual input. NOMAD (Navigation with Optimal Memory and Action Decoding) is a transformer-based diffusion policy designed for long-horizon, memory-based navigation. Our project involves implementing and training NOMAD while analyzing the perception backbone and its influence on training dynamics.
+Robotic learning for navigation in unfamiliar environments requires the ability to perform both task-oriented navigation (i.e., reaching a known goal) and task-agnostic exploration (i.e., searching for a goal in a novel environment). Traditionally, these functionalities are tackled by separate systems — for example, using subgoal proposals, explicit planning modules, or distinct navigation strategies for exploration and goal-reaching.
 
-\section{Overview of NOMAD Architecture}
-The NOMAD architecture comprises three main modules:
+\subsection*{What is NoMaD?}
+NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-based navigation, that can:
 \begin{itemize}
-\item \textbf{Perception Backbone}: A ResNet18 feature extractor followed by an attention-based temporal encoder.
-\item \textbf{Trajectory Diffusion Decoder}: A 1D UNet architecture that learns to predict future waypoint trajectories.
-\item \textbf{Action Decoder}: Maps generated waypoints to low-level control commands.
+    \item Explore unknown places on its own (goal-agnostic behavior).
+    \item Go to a specific place or object when given a goal image (goal-directed behavior).
 \end{itemize}
+Our project involves implementing the NoMaD Policy adapting its Transformer-based architecture and conditional diffusion decoder
+to learn from a rich, multimodal dataset (SACSoN) composed of real-world trajectories.
+Unlike traditional latent-variable models or methods that rely on separate generative components for subgoal planning, the unified diffusion policy exhibits superior generalization and robustness in unseen environments, while maintaining a compact model size.
+In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model’s ability to generalize across diverse scenarios.
+
+\subsection*{Overview of NoMaD Architecture}
+Refer to the Appendix A for preliminaries.
 
 \section{Implementation Details}
 \subsection{Environment Setup}
@@ -77,5 +86,4 @@ We successfully trained the NOMAD policy and analyzed the perception module. Fut
 \item H. Janner et al., "NOMAD: Planning with Diffusion for Visual Navigation," 2022.
 \item Diffusion Policy GitHub Repository: \url{https://github.com/wayveai/diffusion-policy}
 \end{enumerate}
-
 \end{document}
