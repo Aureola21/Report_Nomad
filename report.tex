@@ -159,5 +159,27 @@ These outputs are learned via supervised training, where the model is shown expe
 \begin{quote}
     \textit{However, ViNT is inherently goal-conditioned—it cannot operate in the absence of a goal image, limiting its ability to explore autonomously.} 
 \end{quote}
+\subsection*{Extending to Long-Horizon Planning with Topological Memory}
+To overcome this limitation, NoMaD incorporates a topological memory $\mathcal{M}$: 
+\begin{itemize} 
+    \item Nodes represent previously encountered visual observations. 
+    \item Edges represent traversable paths, established using ViNT's predicted distances. 
+\end{itemize}
+This memory graph enables both: 
+\begin{itemize} 
+    \item \textbf{Subgoal Planning:} If a goal cannot be reached directly, the planner identifies a sequence of reachable subgoals via $\mathcal{M}$. 
+    \item \textbf{Structured Exploration:} Even without a goal, $\mathcal{M}$ helps guide exploration toward promising, yet-unvisited areas. 
+\end{itemize}
+\subsection*{Frontier-Based Exploration with NoMaD}
+To evaluate NoMaD's ability to generalize to new environments, the authors implement a frontier-based exploration strategy:
+\begin{itemize} 
+    \item \textbf{Frontier:} The boundary between explored and unexplored areas in the environment. 
+    \item The high-level planner selects frontiers as subgoals, encouraging the robot to expand coverage. 
+\end{itemize}
+This builds on the ViKiNG framework, but replaces its prior policy with NoMaD, which supports both: 
+\begin{itemize} 
+    \item \textbf{Goal-seeking} behavior (when a goal image is provided), and 
+    \item \textbf{Autonomous exploration} (when no goal is available). 
+\end{itemize}
 \end{appendices}
 \end{document}
