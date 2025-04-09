@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{titlesec}
 \usepackage[margin=1in]{geometry}
+\usepackage[toc,page]{appendix}
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
@@ -86,4 +87,77 @@ We successfully trained the NOMAD policy and analyzed the perception module. Fut
 \item H. Janner et al., "NOMAD: Planning with Diffusion for Visual Navigation," 2022.
 \item Diffusion Policy GitHub Repository: \url{https://github.com/wayveai/diffusion-policy}
 \end{enumerate}
+
+\newpage
+\begin{appendices}
+\section{Related Work and \\ Contextual Foundations of NoMaD}
+Exploration in unfamiliar enviroments is approached as the problem of efficient mapping, typically formulated around information maximization to guide the robot toward unexplored regions.\\
+We factorize the classical exploration problem into two categories:\\
+\begin{itemize}
+    \item Local exploration strategies that rely on current observations. Objective is to learn control policies that can take diverse,short-horizon actions
+    \item Global exploration strategies that utilize a map of the environment. Basically a high-level planner based on a topological graph that uses the policy for long-horizon goal-seeking
+\end{itemize}
+Robots exploring a new area are essentially trying to map it efficiently—this means covering as much area as possible, ideally without wasting time.\\
+However, building detailed geometric maps, can be difficult without accurate depth perception. \\
+Several prior approaches have investigated learning-based exploration policies. Some approaches use simulation data (training in virtual environments).\\
+Others learn from real-world data directly. These models may use:\\
+\begin{itemize}
+    \item Intrinsic rewards: Encouraging the robot to explore new things.
+    \item Semantic prediction: Going to interesting or informative places.
+    \item Latent variable models: Abstract models of how actions affect the world.
+\end{itemize}
+Yet, policies trained in simulation frequently struggle to transfer to real-world environments. Even real-world-trained models can underperform in complex indoor and outdoor settings.\\
+\bigskip
+\noindent \textbf{Enter NoMaD : A New Method}\\ 
+The work most closely related to NoMaD is ViNT (refer Appendix X for more details), which combines a goal-conditioned policy with a separate subgoal proposal module. The subgoal proposals are generated using an image diffusion model, condiitioned on robot's current view.\\
+NoMaD improves on this by:
+\begin{itemize}
+    \item Not generating images.
+    \item Directly predicting actions using diffusion models, which are typically used in image generation tasks but can model complex probabilities really well.
+    \item This makes NoMaD more accurate and much lighter (needs 15x fewer parameters).
+\end{itemize}
+One of the core challenges in modeling robot exploration policies is the inherently multimodal nature of action sequences.\\
+Observation-conditioned diffusion models  have emerged as powerful tools because they can learn complex action distributions without needing without needing explicit state prediction.\\
+Nomad builds upon this adding \textbf{goal conditioning} to diffusion-based action generation, meaning it is capable of both:
+\begin{itemize}
+    \item Goal-directed exploration
+    \item Undirected exploration 
+\end{itemize}
+
+\section{Technical Preliminaries}
+The primary objective is to develop a visual navigation policy, denoted by $\pi$, that enables a robot to navigate using only RGB images from its onboard camera. \\
+The policy devised should operates as follows:
+\begin{itemize} 
+    \item It receives a sequence of past and current observations: $o_t := o_{t-P : t}$. 
+    \item It predicts a distribution over future actions: $a_t := a_{t : t+H}$. 
+    \item Optionally, it can also condition on a goal image $o_g$, representing the desired destination. 
+\end{itemize}
+Depending on whether a goal is provided, the policy behaves differently: 
+\begin{itemize} 
+    \item \textbf{Goal-directed navigation:} When a goal image $o_g$ is available, $\pi$ generates actions that guide the robot toward the goal. 
+    \item \textbf{Exploratory behavior:} When no goal is given (as in pure exploration settings), $\pi$ must still generate safe and purposeful actions—avoiding obstacles and staying on traversable paths—while efficiently covering the environment. 
+\end{itemize}
+To handle long-horizon planning and complex environments, the system is further augmented with: 
+\begin{itemize} 
+    \item A topological memory graph $\mathcal{M}$, which maintains a structured map of past visual observations. 
+    \item A high-level planner that leverages this memory to decide on intermediate goals and broader exploration strategies. 
+\end{itemize}
+\subsection*{Visual Goal-Conditioned Policies: ViNT as the Backbone}
+NoMaD builds on the ViNT (Visual Navigation Transformer) architecture, a Transformer-based model tailored for goal-conditioned navigation.\\
+\paragraph{Key Components of ViNT:} 
+\begin{itemize} 
+    \item \textbf{Visual Encoding:} Each observation is processed using an EfficientNet-B0 encoder to extract feature embeddings. 
+    \item \textbf{Goal Fusion:} The current and goal image features are combined using a goal fusion encoder. 
+    \item \textbf{Transformer Attention:} These fused features (tokens) are passed through a Transformer model to generate a context vector $c_t$. 
+    \item \textbf{Predictions:} The context vector is used to predict: 
+    \begin{itemize} 
+        \item A distribution over future actions: $a_t = f_a(c_t)$. 
+        \item An estimate of temporal distance to the goal: $d(o_t, o_g) = f_d(c_t)$. 
+    \end{itemize} 
+\end{itemize}
+These outputs are learned via supervised training, where the model is shown expert trajectories and learns to imitate them.
+\begin{quote}
+    \textit{However, ViNT is inherently goal-conditioned—it cannot operate in the absence of a goal image, limiting its ability to explore autonomously.} 
+\end{quote}
+\end{appendices}
 \end{document}
