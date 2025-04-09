@@ -38,26 +38,118 @@ to learn from a rich, multimodal dataset (SACSoN) composed of real-world traject
 Unlike traditional latent-variable models or methods that rely on separate generative components for subgoal planning, the unified diffusion policy exhibits superior generalization and robustness in unseen environments, while maintaining a compact model size.
 In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model’s ability to generalize across diverse scenarios.
 
-\subsection*{Overview of NoMaD Architecture}
-Refer to the Appendix A for preliminaries.
+\section{Methodology}
+The NoMaD (Navigation with Goal-Masked Diffusion) framework introduces a unified visual navigation policy capable of both goal-conditioned navigation and open-ended exploration within a single architecture. Building on the Visual Navigation Transformer (ViNT) \cite{vint_paper} and diffusion-based policy learning (see Appendix \ref{app:preliminaries}), NoMaD extends these approaches with two key innovations: (1) attention-based goal masking for flexible behavior switching, and (2) a diffusion decoder for multimodal waypoint prediction.
 
-\section{Implementation Details}
+\subsection*{Architecture Overview}
+\label{subsec:architecture}
+Figure \ref{fig:nomad_architecture} illustrates the NoMaD architecture, which consists of three main components:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{nomad_diagram.png}
+    \caption{NoMaD architecture. The visual encoder processes RGB observations, the transformer maintains temporal context, and the diffusion decoder generates waypoint predictions. Goal masking occurs in the attention layers of the context encoder.}
+    \label{fig:nomad_architecture}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Visual Encoder}: Processes RGB observations $o_t$ using a ResNet backbone
+    \item \textbf{Context Encoder}: Transformer-based module that maintains temporal context and handles goal conditioning
+    \item \textbf{Diffusion Decoder}: Generates multimodal waypoint predictions through iterative denoising
+\end{itemize}
+
+\subsection*{A. Attention based Goal Masking}
+\label{subsec:goal_masking}
+To seamlessly switch between goal-directed behavior and exploration, we set a binary goal mask m in NoMaD.
+The model builds on the ViNT (Visual Navigation Transformer) framework, by modifying the the computation of the observation context vector $c_t$ as follows:\\
+\[
+c_t = f(\psi(o_i), \phi(o_t, o_g), m)
+\]
+where:
+\begin{itemize}
+    \item $\psi(o_i)$: Encodes the current observation.
+    \item $\phi(o_t, o_g)$: Encodes the time-step and goal image.
+    \item $m$: A binary mask that determines whether to attend to the goal image or not.
+\end{itemize}
+\begin{itemize}
+    \item When $m = 0$, the policy \textbf{attends to the goal image} $o_g$ to perform goal-conditioned navigation.
+    \item When $m = 1$, the goal pathway is \textbf{masked out}, resulting in undirected exploration. Masking is applied in the attention layers, so goal embeddings are ignored if m=1.
+\end{itemize}
+During training, the goal mask $m$ is sampled from a Bernoulli distribution with probability $p_m = 0.5$, ensuring equal exposure to both behaviors. \\
+At test time, $m$ is explicitly set based on the task: $m = 0$ for goal-reaching, and $m = 1$ for exploration.
+
+\subsection*{B. Diffusion Policy}
+Refer to Appendix for more on Diffusion policies.\\
+In general, diffusion models are generative models that work by gradually adding noise to data (a forward process), and then learning to remove that noise (a reverse denoising process) to generate realistic samples.\\
+To model complex, multimodal action distributions, especially in unstructured or ambiguous environments, NoMaD employs a \textbf{diffusion model} to approximate the conditional distribution of the next action as $p(a_t | c_t)$. \\
+The denoising process is as follows:\\
+1. \textbf{Forward Process:} Start with a real action $a^{0}_t$ from the dataset and add gaussian noise over multiple steps (K). 
+\begin{center}
+    $a^{k}_t = \sqrt{\alpha_k} a^{k-1}_t + (\sqrt{1 - \alpha_k}) \epsilon$
+\end{center}
+where:\\
+\begin{itemize}
+    \item $\epsilon$ $\sim$ $\mathcal{N}$(0,I) is a random noise
+    \item $\alpha_k$ is a noise scheduler (eg square cosine)
+    \item By step K, the action is almost pure noise.
+\end{itemize}
+2. \textbf{Reverse Denoising(Learned Model):} starting from pure noise $a^{k}_t$ $\sim$ $\mathcal{N}(0,I)$, it denoises step by step to recover the final clean action $a^{0}_t$.\\
+Each denoising step is :
+\begin{center}
+    \[a^{k-1}_t = \alpha(\alpha^{k}_t-\gamma_k.\epsilon_{\theta}(c_t, a^{k}_t,k)) + \mathcal{N}(0,\sigma^2.I)\]
+\end{center}
+Where:
+\begin{itemize}
+    \item Here, $\epsilon_\theta$ is the noise prediction network conditioned on the context $c_t$, which may or may not include the goal depending on $m$.
+    \begin{itemize}
+        \item It is a 1D conditional U-Net with 15 CNN layers.
+        \item Input:the noisy action $a^{k}_t$, the context vector $c_t$, and the diffusion step k.
+        \item the predicted noise vector $\hat{\epsilon}_k$,During training, it is compared to the true noise added earlier.
+    \end{itemize}
+    \item $\gamma, \alpha ,\sigma$ are scheduler constants.
+\end{itemize}
+
+\subsection*{C. Implementation Details}
 \subsection{Environment Setup}
-% The codebase was adapted from an open-source repository. 
-% Major libraries used include PyTorch, Hydra for configuration, and torchvision. 
-% The PYTHONPATH had to be correctly exported due to a nested diffusion_policy folder structure.
-
+All experiments were conducted on a system equipped with an NVIDIA GeForce GTX 1660 SUPER GPU and a 12\textsuperscript{th} Gen Intel\textregistered~Core\texttrademark~i9-12900K (24-core) processor. \\
+The code was implemented in Python 3.12.9 in a conda environment. All the packages and libraries used are listed in the requirements.txt file.\\
+The codebase was adapted from an open-source repository, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and hyperparameter sweeps.
 \subsection{Data Pipeline}
+We trained the NoMaD model using the \textbf{SACSoN, RECON} dataset, which contains diverse real-world trajectories across various environments and robot platforms.
+The SACSoN dataset was already processed and we it split into training and validation sets. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
 We used a pre-collected dataset of trajectories containing RGB observations, actions, and ground-truth waypoints. Data augmentations were not used in our initial experiments.
 
 \subsection{Training Procedure}
-Training was done on a single NVIDIA GPU using a batch size of 64. The training loop involved:
-\begin{itemize}
-\item Calculating diffusion loss from predicted vs ground-truth waypoints.
-\item Waypoint cosine similarity.
-\item Auxiliary action prediction losses.
+Training was done on a single NVIDIA GPU using a batch size of 32. 
+\textbf{Training Objective:}\\
+We calculate the Mean Squares Error(MSE) between  the predicted and the actual noise.
+For overall loss function, we add the MSE temporal distance loss to the objective function.
+\begin{center}
+    \[ 
+    \mathcal{L}_{NoMaD}(\phi,\psi,f,\theta,f_d) = MSE(\epsilon^{k}, \epsilon_{\theta}(c_t, a^{0}_t + \epsilon^{k},k)) + \lambda .MSE(d(o_t, o_g), f_{d}(c_t))
+    \]
+ \end{center}
+ where:\\
+ \begin{itemize}
+     \item $\psi$,\ $\phi$ correspond to the visual encoders for the observation and goal images.
+     \item $f$ corresponds to the transformer layers,
+     \item $\theta$ corresponds to diffusion process parameters,
+     \item $f_d$ corresponds to the temporal distance predictor.
+ \end{itemize}
+
+ \textbf{Training Configuration:}
+ \begin{itemize}
+     \item The weighting factor $\lambda$ for the auxiliary distance loss was set to $10^{-4}$.
+     \item The model was trained using the \textbf{AdamW} optimizer with a learning rate of $1\text{e}^{-4}$ and a weight decay of $1\text{e}^{-2}$.
+     \item We applied \textbf{cosine annealing} to decay the learning rate over time.
+     \item We used \textbf{goal masking} with probability $p_m = 0.5$, encouraging the model to generalize across goal-visible and goal-agnostic contexts.
+     \item The diffusion process used a \textbf{square cosine schedule} with $K = 10$ denoising steps.
+     \item The ViNT observation encoder was an EfficientNet-B0, mapping $96 \times 96$ RGB images into a 256-dimensional latent embedding.
+     \item The transformer used for context encoding had 4 layers and 4 attention heads.
+     \item Training checkpoints and EMA snapshots were saved at the end of each epoch for model tracking and potential evaluation.
+     \item Training and validation loss curves were logged using \texttt{Wandb} for detailed inspection.
 \end{itemize}
-Training checkpoints were saved every epoch. EMA models were also stored.
+\subsection{Evaluation}
 
 \section{Perception Module}
 The ResNet18 backbone encodes RGB frames, while a transformer-based encoder maintains temporal context. This allows the policy to act based on history, crucial for long-horizon navigation.
@@ -181,5 +273,6 @@ This builds on the ViKiNG framework, but replaces its prior policy with NoMaD, w
     \item \textbf{Goal-seeking} behavior (when a goal image is provided), and 
     \item \textbf{Autonomous exploration} (when no goal is available). 
 \end{itemize}
+
 \end{appendices}
 \end{document}

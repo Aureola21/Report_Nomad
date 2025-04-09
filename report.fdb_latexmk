@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744200376.95609 "/home/sehajganjoo/Report_Nomad/report.tex" "report.pdf" "report" 1744200377.29308 0
+["pdflatex"] 1744217535.23491 "/home/sehajganjoo/Report_Nomad/report.tex" "report.pdf" "report" 1744217535.64036 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/report.tex" 1744200377.08095 12555 af39d28506baab2a884d27ae62028706 ""
+  "/home/sehajganjoo/Report_Nomad/report.tex" 1744217535.56239 19443 21a0cedb54313dc1b21cdf28692d91b3 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -93,9 +93,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1733207108.46717 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1733207121 8213759 d8d8a65f83db2f052d38fd0f3d567e46 ""
-  "report.aux" 1744200377.26196 2072 7c78b45479903927a262c5b5c1fe6215 "pdflatex"
-  "report.out" 1744200377.26196 2260 11a6b44074cb1c8c85fc4f20c469fbf2 "pdflatex"
-  "report.tex" 1744200377.08095 12555 af39d28506baab2a884d27ae62028706 ""
+  "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
+  "report.aux" 1744217535.60639 3033 926fd85b907e33d565a1d10e7a695668 "pdflatex"
+  "report.out" 1744217535.60639 2310 0b4a844ba91ee37d913e5bacbe0fcf72 "pdflatex"
+  "report.tex" 1744217535.56239 19443 21a0cedb54313dc1b21cdf28692d91b3 ""
   (generated)
   "report.aux"
   "report.log"

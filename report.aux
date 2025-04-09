@@ -3,19 +3,26 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Implementation Details}{2}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Environment Setup}{2}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Pipeline}{2}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Training Procedure}{2}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Perception Module}{2}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Cosine Similarity Metrics}{2}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{3}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Training Metrics}{3}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Observations}{3}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Challenges and Debugging}{3}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and Future Work}{3}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Appendices}{4}{section*.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Related Work and \\ Contextual Foundations of NoMaD}{4}{appendix.1.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Technical Preliminaries}{5}{appendix.1.B}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Key Components of ViNT:}{6}{appendix.1.B}\protected@file@percent }
-\gdef \@abspage@last{6}
+\citation{vint_paper}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{2}{section.2}\protected@file@percent }
+\newlabel{subsec:architecture}{{2}{2}{}{section.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces NoMaD architecture. The visual encoder processes RGB observations, the transformer maintains temporal context, and the diffusion decoder generates waypoint predictions. Goal masking occurs in the attention layers of the context encoder.}}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:nomad_architecture}{{1}{2}{NoMaD architecture. The visual encoder processes RGB observations, the transformer maintains temporal context, and the diffusion decoder generates waypoint predictions. Goal masking occurs in the attention layers of the context encoder}{figure.caption.1}{}}
+\newlabel{subsec:goal_masking}{{2}{2}{}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Environment Setup}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Pipeline}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Training Procedure}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Evaluation}{5}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Perception Module}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Cosine Similarity Metrics}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Training Metrics}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Observations}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Challenges and Debugging}{6}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and Future Work}{6}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendices}{7}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Related Work and \\ Contextual Foundations of NoMaD}{7}{appendix.1.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Technical Preliminaries}{8}{appendix.1.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Key Components of ViNT:}{9}{appendix.1.B}\protected@file@percent }
+\gdef \@abspage@last{9}
