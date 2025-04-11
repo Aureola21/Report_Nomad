@@ -239,6 +239,27 @@
     \label{fig:lrdecay}
 \end{figure}
 \end{frame}
+\begin{frame}{Training Details and Experiments}
+    \begin{itemize}
+        \item Goal Masking Probability: $p_m$ = 0.5
+        \item Diffusion Steps: 10
+        \item Noise Scheduler: Square Cosine
+    \end{itemize}
+    \begin{block}{Training Objective}
+        \begin{itemize}
+            \item \textbf{Diffusion Loss:} Measures the difference between the predicted and true noise.
+            \item \textbf{Distance Loss:} Measures the difference between the predicted and true distance to the goal.
+        \end{itemize}
+    \end{block}
+    \[ \mathcal{L}_{NoMaD}(\phi,\psi,f,\theta,f_d) = MSE(\epsilon^{k}, \epsilon_{\theta}(c_t, a^{0}_t + \epsilon^{k},k)) + \lambda .MSE(d(o_t, o_g), f_{d}(c_t))\]
+    where:\\
+    \begin{itemize}
+        \item We set $\lambda$ to $10^{-4}$
+        \item $\psi$,\ $\phi$ correspond to the visual encoders for the observation and goal images.
+        \item $f$ corresponds to the transformer layers, $\theta$ to diffusion parameters,
+        \item $f_d$ corresponds to the temporal distance predictor.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{Experiments and Results}
 \textbf{Metrics:}
