@@ -1,0 +1,126 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title[NoMaD]{NoMaD: \textbf{N}avigati\textbf{o}n with Goal-\textbf{Ma}sked \textbf{D}iffusion}
+\author{Sehaj Ganjoo, Shobhnik Kriplani, \\ Abhishek Kumar Jha, Namashivayaa V}
+\institute{IISc Bengaluru \newline BTech. Mathematics and Computing}
+\date{April 2025}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Motivation and Goal}
+Robotic learning for navigation in unfamiliar environments requires:\\
+\begin{itemize}
+    \item The ability to perform task-oriented navigation
+    \item Task-agnostic exploration 
+\end{itemize}
+\begin{block}{Issue}
+    Traditionally, these functionalities are tackled by separate systems.
+    Exploration problem can be factorized into:\\
+    \begin{itemize}
+        \item \textbf{Local Exploration strategies} Objective: Learn control policies that can take diverse, short-horizon actions.
+        \item \textbf{Global Exploration strategies} Objective: A high level planner that uses the policies for long-horizon goal-seeking. (Efficient Mapping?)
+    \end{itemize}
+\end{block}
+\begin{block}{Solution}
+    Maybe, use a single model to perform both tasks?
+\end{block}
+\end{frame}
+\begin{frame}{What is NoMaD?}
+    NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-based
+    navigation, that is capable of both \textbf{goal-conditioned navigation} and \textbf{open-ended exploration}.
+
+    \texttt{NoMaD = EfficientNet + Vision Transformer + Diffusion Policies}
+\begin{itemize}
+    \item Can we improve trajectory prediction in robot navigation using denoising diffusion models?
+    \item How can transformer-based memory and temporal context improve performance?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Literature Survey}
+\begin{itemize}
+    \item \textbf{ViNT (Janner et al., 2022):} Vision Transformer for long-horizon visual navigation.
+    \item \textbf{Diffusion Policies:} Denoising Diffusion Probabilistic Models (DDPM) for behavior cloning.
+    \item \textbf{NOMAD:} Combines ViNT perception with diffusion-based trajectory decoding.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Architecture Overview}
+\begin{itemize}
+    \item \textbf{Perception:} EfficientNet-B0 backbone $\rightarrow$ Transformer-based temporal encoder.
+    \item \textbf{Diffusion Decoder:} Conditional UNet1D for generating waypoint sequences.
+    \item \textbf{Action Decoder:} Maps waypoints to low-level actions.
+\end{itemize}
+% \includegraphics[width=0.8\linewidth]{architecture.png}
+\end{frame}
+
+\begin{frame}{Training Procedure}
+\begin{itemize}
+    \item Dataset: SACSoN / RECON / GoStanford
+    \item Batch size: 32, Epochs: 100
+    \item Optimizer: AdamW, LR: $10^{-4}$
+    \item Scheduler: Cosine annealing
+    \item Loss: MSE on predicted noise + temporal distance
+\end{itemize}
+\[ \mathcal{L}_{NoMaD} = MSE(\epsilon, \hat{\epsilon}) + \lambda \cdot MSE(d(o_t, o_g), f_d(c_t)) \]
+\end{frame}
+
+\begin{frame}{Experiments and Results}
+\textbf{Metrics:}
+\begin{itemize}
+    \item Diffusion Loss $\approx 1.11$
+    \item Distance Loss $\approx 128$
+    \item Cosine Similarity $\approx 0.47$
+\end{itemize}
+\textbf{Comparison with ViNT:}
+\begin{itemize}
+    \item Similar performance in goal-conditioned tasks
+    \item No performance degradation when adding diffusion
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Challenges Faced}
+\begin{itemize}
+    \item CUDA Out Of Memory errors on limited GPU
+    \item Module import issues with nested folder structures
+    \item Gradients not propagating due to detached variables
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Team Contributions}
+\textbf{Sehaj Ganjoo:}
+\begin{itemize}
+    \item Set up training pipeline and environment
+    \item Integrated and debugged diffusion model
+    \item Wrote training script and logging tools
+    \item Conducted experiments and generated plots
+    \item Created report and presentation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion and Future Work}
+\begin{itemize}
+    \item Successfully trained NOMAD using diffusion for visual navigation
+    \item Showed compatibility with ViNT-based perception
+    \item Future work:
+    \begin{itemize}
+        \item Evaluate in simulation / real-world
+        \item Improve runtime performance
+        \item Try larger ViTs and alternate decoders
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Q\&A}
+Thank you! \newline
+\textit{Questions are welcome.}
+\end{frame}
+
+\end{document}

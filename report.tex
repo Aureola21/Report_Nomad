@@ -10,8 +10,8 @@
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
-\title{Training and Perception for Nomad Navigation}
-\author{Authors \ Mathematics and Computing \\ Indian Institute of Science}
+\title{NoMaD: \textbf{N}avigati\textbf{o}n with Goal-\textbf{Ma}sked \textbf{D}iffusion}
+\author{Sehaj Ganjoo, Shobhnik Kriplani, \\ Abhishek Kumar Jha, Namashivayaa V \\ \texttt{Btech Mathematics and Computing} \\ Indian Institute of Science}
 \date{\today}
 
 \begin{document}
@@ -19,7 +19,7 @@
 
 \begin{abstract}
 This report presents our work on implementing and analyzing the training and perception components of a visual navigation system based on diffusion policies, as adapted from the NOMAD (Navigation with Goal Masked Diffusion) framework. 
-Our approach combines a visual perception backbone with a trajectory diffusion model to support both goal-directed and exploratory navigation. We trained our model on the SACSoN dataset, which features diverse real-world trajectories across various environments and robot platforms. 
+Our approach combines a visual perception backbone based on EfficientNet and Transformer, with a trajectory diffusion model for motion planning to support both goal-directed and exploratory navigation. We trained our model on the SACSon,RECON and go\_stanford dataset, which features diverse real-world trajectories across various environments and robot platforms. 
 We leverage a conditional diffusion model to generate multimodal waypoint predictions, enabling the agent to reason about complex, uncertain navigation scenarios. Our contributions include a detailed breakdown of the model architecture, training methodology, and evaluation metrics—particularly focusing on waypoint alignment through cosine similarity. 
 We have left out the deployment aspects.
 \end{abstract}
@@ -34,13 +34,12 @@ NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-
     \item Go to a specific place or object when given a goal image (goal-directed behavior).
 \end{itemize}
 Our project involves implementing the NoMaD Policy adapting its Transformer-based architecture and conditional diffusion decoder
-to learn from a rich, multimodal dataset (SACSoN) composed of real-world trajectories.
+to learn from a rich, multimodal dataset (SACSoN,SCAND,go\_stanford,RECON) composed of real-world trajectories.
 Unlike traditional latent-variable models or methods that rely on separate generative components for subgoal planning, the unified diffusion policy exhibits superior generalization and robustness in unseen environments, while maintaining a compact model size.
-In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model’s ability to generalize across diverse scenarios.
+In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model's ability to generalize across diverse scenarios.
 
 \section{Methodology}
 The NoMaD (Navigation with Goal-Masked Diffusion) framework introduces a unified visual navigation policy capable of both goal-conditioned navigation and open-ended exploration within a single architecture. Building on the Visual Navigation Transformer (ViNT) \cite{vint_paper} and diffusion-based policy learning (see Appendix \ref{app:preliminaries}), NoMaD extends these approaches with two key innovations: (1) attention-based goal masking for flexible behavior switching, and (2) a diffusion decoder for multimodal waypoint prediction.
-
 \subsection*{Architecture Overview}
 \label{subsec:architecture}
 Figure \ref{fig:nomad_architecture} illustrates the NoMaD architecture, which consists of three main components:
@@ -53,7 +52,7 @@ Figure \ref{fig:nomad_architecture} illustrates the NoMaD architecture, which co
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Visual Encoder}: Processes RGB observations $o_t$ using a ResNet backbone
+    \item \textbf{Visual Encoder}: Processes RGB observations $o_t$ using an EfficientNet-B0 backbone to extract feature embeddings.
     \item \textbf{Context Encoder}: Transformer-based module that maintains temporal context and handles goal conditioning
     \item \textbf{Diffusion Decoder}: Generates multimodal waypoint predictions through iterative denoising
 \end{itemize}
@@ -116,11 +115,9 @@ The code was implemented in Python 3.12.9 in a conda environment. All the packag
 The codebase was adapted from an open-source repository, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and hyperparameter sweeps.
 \subsection{Data Pipeline}
 We trained the NoMaD model using the \textbf{SACSoN, RECON} dataset, which contains diverse real-world trajectories across various environments and robot platforms.
-The SACSoN dataset was already processed and we it split into training and validation sets. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
-We used a pre-collected dataset of trajectories containing RGB observations, actions, and ground-truth waypoints. Data augmentations were not used in our initial experiments.
-
+The SACSoN dataset was already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
 \subsection{Training Procedure}
-Training was done on a single NVIDIA GPU using a batch size of 32. 
+Training was done on a single NVIDIA GPU using a batch size of 32 for 10 epochs.\\
 \textbf{Training Objective:}\\
 We calculate the Mean Squares Error(MSE) between  the predicted and the actual noise.
 For overall loss function, we add the MSE temporal distance loss to the objective function.
@@ -150,14 +147,28 @@ For overall loss function, we add the MSE temporal distance loss to the objectiv
      \item Training and validation loss curves were logged using \texttt{Wandb} for detailed inspection.
 \end{itemize}
 \subsection{Evaluation}
+We evaluate the model in two modes:\\ 
+(i) \textbf{Unconditional (UC)}, where the policy predicts future waypoints based only on the observation history; and \\
+(ii) \textbf{Goal-Conditioned (GC)}, where it also receives a goal image to guide planning. This distinction allows us to measure both general scene understanding and goal-directed behavior.
 
-\section{Perception Module}
-The ResNet18 backbone encodes RGB frames, while a transformer-based encoder maintains temporal context. This allows the policy to act based on history, crucial for long-horizon navigation.
+Evaluation was performed on the validation set using the following metrics:
+\begin{itemize}
+    \item distance loss
+    \item diffusion loss
+    \item cosine similarity
+    \item action loss
+\end{itemize}
+\section{Experiments}
+\subsection*{Training Loss Curves}
+\subsection*{Comparison with ViNT}
+To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD.\\
+We used the same EfficientNet-B0 encoder and transformer architecture, but without the diffusion decoder.\\
+We evaluated both models under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints.\\
+Interestingly, we observed that in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD achieved comparable performance across key metrics. This suggests that the introduction of a diffusion-based decoder in NoMaD does not degrade performance in goal-directed planning tasks. Instead, it provides a more expressive generative mechanism while maintaining task performance.\\
+This supports the hypothesis that \textbf{diffusion-based modeling can match deterministic approaches in accuracy while offering better generative flexibility}, particularly for multi-modal or long-horizon planning scenarios.\\
 
-\subsection{Cosine Similarity Metrics}
-We track waypoint cosine similarity to evaluate how well the predicted and ground-truth waypoints align. Early training epochs show increasing cosine similarity, indicating improved waypoint alignment.
 
-\section{Results}
+
 \subsection{Training Metrics}
 \begin{itemize}
 \item Final training loss: \textasciitilde1.11

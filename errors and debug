@@ -1,0 +1,266 @@
+#The model wasnt learning earlier. Even after 100 epoch, the loss fluctuated around 1.
+
+
+
+
+Traceback (most recent call last):                                                                                                                                                
+  File "/home/sehajganjoo/visualnav-transformer/train/train.py", line 402, in <module>
+    main(config)
+  File "/home/sehajganjoo/visualnav-transformer/train/train.py", line 326, in main
+    train_eval_loop_nomad(
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/training/train_eval_loop.py", line 204, in train_eval_loop_nomad
+    train_nomad(
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/training/train_utils.py", line 668, in train_nomad
+    loss.backward()
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn
+
+debugging:--->
+Start ViNT DP Training Epoch 0/4
+noise_pred_net - mid_modules.0.blocks.0.block.0.weight: False
+noise_pred_net - mid_modules.0.blocks.0.block.0.bias: False
+noise_pred_net - mid_modules.0.blocks.0.block.1.weight: False
+noise_pred_net - mid_modules.0.blocks.0.block.1.bias: False
+noise_pred_net - mid_modules.0.blocks.1.block.0.weight: False
+noise_pred_net - mid_modules.0.blocks.1.block.0.bias: False
+noise_pred_net - mid_modules.0.blocks.1.block.1.weight: False
+noise_pred_net - mid_modules.0.blocks.1.block.1.bias: False
+noise_pred_net - mid_modules.0.cond_encoder.1.weight: False
+noise_pred_net - mid_modules.0.cond_encoder.1.bias: False
+noise_pred_net - mid_modules.1.blocks.0.block.0.weight: False
+noise_pred_net - mid_modules.1.blocks.0.block.0.bias: False
+noise_pred_net - mid_modules.1.blocks.0.block.1.weight: False
+noise_pred_net - mid_modules.1.blocks.0.block.1.bias: False
+noise_pred_net - mid_modules.1.blocks.1.block.0.weight: False
+noise_pred_net - mid_modules.1.blocks.1.block.0.bias: False
+noise_pred_net - mid_modules.1.blocks.1.block.1.weight: False
+noise_pred_net - mid_modules.1.blocks.1.block.1.bias: False
+noise_pred_net - mid_modules.1.cond_encoder.1.weight: False
+noise_pred_net - mid_modules.1.cond_encoder.1.bias: False
+noise_pred_net - diffusion_step_encoder.1.weight: False
+noise_pred_net - diffusion_step_encoder.1.bias: False
+noise_pred_net - diffusion_step_encoder.3.weight: False
+noise_pred_net - diffusion_step_encoder.3.bias: False
+noise_pred_net - up_modules.0.0.blocks.0.block.0.weight: False
+noise_pred_net - up_modules.0.0.blocks.0.block.0.bias: False
+noise_pred_net - up_modules.0.0.blocks.0.block.1.weight: False
+noise_pred_net - up_modules.0.0.blocks.0.block.1.bias: False
+noise_pred_net - up_modules.0.0.blocks.1.block.0.weight: False
+noise_pred_net - up_modules.0.0.blocks.1.block.0.bias: False
+noise_pred_net - up_modules.0.0.blocks.1.block.1.weight: False
+noise_pred_net - up_modules.0.0.blocks.1.block.1.bias: False
+noise_pred_net - up_modules.0.0.cond_encoder.1.weight: False
+noise_pred_net - up_modules.0.0.cond_encoder.1.bias: False
+noise_pred_net - up_modules.0.0.residual_conv.weight: False
+noise_pred_net - up_modules.0.0.residual_conv.bias: False
+noise_pred_net - up_modules.0.1.blocks.0.block.0.weight: False
+noise_pred_net - up_modules.0.1.blocks.0.block.0.bias: False
+noise_pred_net - up_modules.0.1.blocks.0.block.1.weight: False
+noise_pred_net - up_modules.0.1.blocks.0.block.1.bias: False
+noise_pred_net - up_modules.0.1.blocks.1.block.0.weight: False
+noise_pred_net - up_modules.0.1.blocks.1.block.0.bias: False
+noise_pred_net - up_modules.0.1.blocks.1.block.1.weight: False
+noise_pred_net - up_modules.0.1.blocks.1.block.1.bias: False
+noise_pred_net - up_modules.0.1.cond_encoder.1.weight: False
+noise_pred_net - up_modules.0.1.cond_encoder.1.bias: False
+noise_pred_net - up_modules.0.2.conv.weight: False
+noise_pred_net - up_modules.0.2.conv.bias: False
+noise_pred_net - up_modules.1.0.blocks.0.block.0.weight: False
+noise_pred_net - up_modules.1.0.blocks.0.block.0.bias: False
+noise_pred_net - up_modules.1.0.blocks.0.block.1.weight: False
+noise_pred_net - up_modules.1.0.blocks.0.block.1.bias: False
+noise_pred_net - up_modules.1.0.blocks.1.block.0.weight: False
+noise_pred_net - up_modules.1.0.blocks.1.block.0.bias: False
+noise_pred_net - up_modules.1.0.blocks.1.block.1.weight: False
+noise_pred_net - up_modules.1.0.blocks.1.block.1.bias: False
+noise_pred_net - up_modules.1.0.cond_encoder.1.weight: False
+noise_pred_net - up_modules.1.0.cond_encoder.1.bias: False
+noise_pred_net - up_modules.1.0.residual_conv.weight: False
+noise_pred_net - up_modules.1.0.residual_conv.bias: False
+noise_pred_net - up_modules.1.1.blocks.0.block.0.weight: False
+noise_pred_net - up_modules.1.1.blocks.0.block.0.bias: False
+noise_pred_net - up_modules.1.1.blocks.0.block.1.weight: False
+noise_pred_net - up_modules.1.1.blocks.0.block.1.bias: False
+noise_pred_net - up_modules.1.1.blocks.1.block.0.weight: False
+noise_pred_net - up_modules.1.1.blocks.1.block.0.bias: False
+noise_pred_net - up_modules.1.1.blocks.1.block.1.weight: False
+noise_pred_net - up_modules.1.1.blocks.1.block.1.bias: False
+noise_pred_net - up_modules.1.1.cond_encoder.1.weight: False
+noise_pred_net - up_modules.1.1.cond_encoder.1.bias: False
+noise_pred_net - up_modules.1.2.conv.weight: False
+noise_pred_net - up_modules.1.2.conv.bias: False
+noise_pred_net - down_modules.0.0.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.0.0.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.0.0.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.0.0.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.0.0.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.0.0.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.0.0.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.0.0.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.0.0.cond_encoder.1.weight: False
+noise_pred_net - down_modules.0.0.cond_encoder.1.bias: False
+noise_pred_net - down_modules.0.0.residual_conv.weight: False
+noise_pred_net - down_modules.0.0.residual_conv.bias: False
+noise_pred_net - down_modules.0.1.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.0.1.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.0.1.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.0.1.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.0.1.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.0.1.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.0.1.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.0.1.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.0.1.cond_encoder.1.weight: False
+noise_pred_net - down_modules.0.1.cond_encoder.1.bias: False
+noise_pred_net - down_modules.0.2.conv.weight: False
+noise_pred_net - down_modules.0.2.conv.bias: False
+noise_pred_net - down_modules.1.0.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.1.0.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.1.0.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.1.0.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.1.0.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.1.0.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.1.0.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.1.0.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.1.0.cond_encoder.1.weight: False
+noise_pred_net - down_modules.1.0.cond_encoder.1.bias: False
+noise_pred_net - down_modules.1.0.residual_conv.weight: False
+noise_pred_net - down_modules.1.0.residual_conv.bias: False
+noise_pred_net - down_modules.1.1.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.1.1.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.1.1.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.1.1.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.1.1.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.1.1.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.1.1.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.1.1.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.1.1.cond_encoder.1.weight: False
+noise_pred_net - down_modules.1.1.cond_encoder.1.bias: False
+noise_pred_net - down_modules.1.2.conv.weight: False
+noise_pred_net - down_modules.1.2.conv.bias: False
+noise_pred_net - down_modules.2.0.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.2.0.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.2.0.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.2.0.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.2.0.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.2.0.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.2.0.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.2.0.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.2.0.cond_encoder.1.weight: False
+noise_pred_net - down_modules.2.0.cond_encoder.1.bias: False
+noise_pred_net - down_modules.2.0.residual_conv.weight: False
+noise_pred_net - down_modules.2.0.residual_conv.bias: False
+noise_pred_net - down_modules.2.1.blocks.0.block.0.weight: False
+noise_pred_net - down_modules.2.1.blocks.0.block.0.bias: False
+noise_pred_net - down_modules.2.1.blocks.0.block.1.weight: False
+noise_pred_net - down_modules.2.1.blocks.0.block.1.bias: False
+noise_pred_net - down_modules.2.1.blocks.1.block.0.weight: False
+noise_pred_net - down_modules.2.1.blocks.1.block.0.bias: False
+noise_pred_net - down_modules.2.1.blocks.1.block.1.weight: False
+noise_pred_net - down_modules.2.1.blocks.1.block.1.bias: False
+noise_pred_net - down_modules.2.1.cond_encoder.1.weight: False
+noise_pred_net - down_modules.2.1.cond_encoder.1.bias: False
+noise_pred_net - final_conv.0.block.0.weight: False
+noise_pred_net - final_conv.0.block.0.bias: False
+noise_pred_net - final_conv.0.block.1.weight: False
+noise_pred_net - final_conv.0.block.1.bias: False
+noise_pred_net - final_conv.1.weight: False
+noise_pred_net - final_conv.1.bias: False
+
+
+
+code :
+for name, param in model.noise_pred_net.named_parameters():
+    print(f"noise_pred_net - {name}: {param.requires_grad}")
+
+
+correction: (in train_nomad)
+for param in model.noise_pred_net.parameters():
+    param.requires_grad = True
+
+#"This piece of code made the system shutdown"
+
+#then i set:
+attn_unet: True
+cond_predict_scale: True
+
+#and the errors got resolved
+possible reason:
+When attn_unet was set to False, the model probably defaulted to a pretrained UNet with frozen weights — 
+or just skipped initializing its trainable version. So even though you tried to unfreeze it later,
+it either didn't exist as expected, or had some parts that were set up in a way incompatible with backprop.
+
+setting atten_unet to True 
+likely switched to a custom Attention-UNet implementation, which is properly wired for training (with gradients allowed), 
+and probably has the correct architecture your loss.backward() expects.
+
+#then came another error:
+Start sacson_test ViNT DP Testing Epoch 0/4
+Evaluating sacson_test for epoch 0:   0%|                                                                                                          | 0/25 [00:06<?, ?it/s, loss=1](epoch 0) (batch 0/24) uc_action_loss (sacson_test): 48.2499 (100pt moving_avg: 48.2499) (avg: 48.2499)
+(epoch 0) (batch 0/24) uc_action_waypts_cos_sim (sacson_test): 0.4346 (100pt moving_avg: 0.4346) (avg: 0.4346)
+(epoch 0) (batch 0/24) uc_multi_action_waypts_cos_sim (sacson_test): 0.4773 (100pt moving_avg: 0.4773) (avg: 0.4773)
+(epoch 0) (batch 0/24) gc_dist_loss (sacson_test): 159.5503 (100pt moving_avg: 159.5503) (avg: 159.5503)
+(epoch 0) (batch 0/24) gc_action_loss (sacson_test): 48.565 (100pt moving_avg: 48.565) (avg: 48.565)
+(epoch 0) (batch 0/24) gc_action_waypts_cos_sim (sacson_test): 0.4207 (100pt moving_avg: 0.4207) (avg: 0.4207)
+(epoch 0) (batch 0/24) gc_multi_action_waypts_cos_sim (sacson_test): 0.4777 (100pt moving_avg: 0.4777) (avg: 0.4777)
+Traceback (most recent call last):                                                                                                                                                
+  File "/home/sehajganjoo/visualnav-transformer/train/train.py", line 402, in <module>
+    main(config)
+  File "/home/sehajganjoo/visualnav-transformer/train/train.py", line 326, in main
+    train_eval_loop_nomad(
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/training/train_eval_loop.py", line 251, in train_eval_loop_nomad
+    evaluate_nomad(
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/training/train_utils.py", line 835, in evaluate_nomad
+    goal_mask_cond = ema_model("vision_encoder", obs_img=batch_obs_images, goal_img=batch_goal_images, input_goal_mask=goal_mask)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/models/nomad/nomad.py", line 24, in forward
+    output = self.vision_encoder(kwargs["obs_img"], kwargs["goal_img"], input_goal_mask=kwargs["input_goal_mask"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/visualnav-transformer/train/vint_train/models/nomad/nomad_vint.py", line 102, in forward
+    obs_encoding = self.obs_encoder.extract_features(obs_img)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/efficientnet_pytorch/model.py", line 296, in extract_features
+    x = block(x, drop_connect_rate=drop_connect_rate)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/efficientnet_pytorch/model.py", line 107, in forward
+    x = self._swish(x)
+        ^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/efficientnet_pytorch/utils.py", line 80, in forward
+    return SwishImplementation.apply(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sehajganjoo/miniconda3/lib/python3.12/site-packages/efficientnet_pytorch/utils.py", line 67, in forward
+    result = i * torch.sigmoid(i)
+             ~~^~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.32 GiB. GPU 0 has a total capacity of 5.79 GiB of which 582.94 MiB is free. Including non-PyTorch memory, this process has 5.21 GiB memory in use. Of the allocated memory 3.69 GiB is allocated by PyTorch, and 1.42 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
