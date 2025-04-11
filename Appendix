@@ -1,0 +1,227 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\title{Detailed Appendix: Vision Transformer (ViT) and EfficientNet}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{A.1 Vision Transformer (ViT) – Detailed Breakdown}
+
+\subsection*{1. Core Architecture}
+ViT adapts the \textbf{Transformer} architecture, originally designed for NLP, to \textbf{image recognition} by treating images as sequences of patches.
+
+\subsubsection*{(a) Patch Embedding}
+An input image $\mathbf{X} \in \mathbb{R}^{H \times W \times C}$ is split into $N$ non-overlapping patches of size $P \times P$. Each patch is flattened into a 1D vector and linearly projected:
+
+\[
+\mathbf{z}_i = \mathbf{E} \mathbf{x}_i + \mathbf{b}
+\]
+
+where:
+\begin{itemize}
+    \item $\mathbf{x}_i \in \mathbb{R}^{P^2 \times C}$ is the flattened patch
+    \item $\mathbf{E} \in \mathbb{R}^{D \times P^2 C}$ is the embedding matrix
+    \item $D$ is the embedding dimension (e.g., 768)
+\end{itemize}
+
+For an image of size 224$\times$224 and patch size 16$\times$16:
+
+\[
+N = \left( \frac{224}{16} \right)^2 = 196 \text{ patches}
+\]
+
+\subsubsection*{(b) Class Token (CLS)}
+A learnable classification token $\mathbf{z}_{cls} \in \mathbb{R}^D$ is prepended:
+
+\[
+\mathbf{Z} = [\mathbf{z}_{cls}; \mathbf{z}_1; \mathbf{z}_2; \dots; \mathbf{z}_N]
+\]
+
+\subsubsection*{(c) Positional Embeddings}
+Learned positional embeddings are added to retain spatial information:
+
+\[
+\mathbf{Z} = \mathbf{Z} + \mathbf{E}_{pos}, \quad \mathbf{E}_{pos} \in \mathbb{R}^{(N+1) \times D}
+\]
+
+\subsection*{2. Transformer Encoder}
+The ViT encoder consists of \textbf{L identical layers}, each containing:
+
+\begin{itemize}
+    \item Multi-Head Self-Attention (MHSA)
+    \item Layer Normalization (LN)
+    \item Feed-Forward Network (FFN)
+    \item Residual Connections
+\end{itemize}
+
+\subsubsection*{(a) Multi-Head Self-Attention (MHSA)}
+Input embeddings are split into $h$ heads (e.g., 12 heads for ViT-Base). For each head:
+
+\[
+\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left( \frac{\mathbf{Q} \mathbf{K}^T}{\sqrt{d_k}} \right) \mathbf{V}
+\]
+
+where $d_k = D / h$.
+
+\subsubsection*{(b) Feed-Forward Network (FFN)}
+A 2-layer MLP with GELU activation:
+
+\[
+\text{FFN}(\mathbf{x}) = \mathbf{W}_2 \text{GELU}(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2
+\]
+
+where:
+\begin{itemize}
+    \item $\mathbf{W}_1 \in \mathbb{R}^{4D \times D}$
+    \item $\mathbf{W}_2 \in \mathbb{R}^{D \times 4D}$
+\end{itemize}
+
+\subsubsection*{(c) Layer Normalization \& Residual Connections}
+Each sub-layer is wrapped with:
+
+\[
+\mathbf{x}_{\text{out}} = \text{LayerNorm}(\mathbf{x} + \text{SubLayer}(\mathbf{x}))
+\]
+
+\subsection*{3. Training \& Fine-Tuning}
+\begin{itemize}
+    \item \textbf{Pre-training}: On large datasets (e.g., JFT-300M)
+    \item \textbf{Fine-tuning}: Adapt to downstream tasks by replacing classification head
+\end{itemize}
+
+\section*{A.2 EfficientNet – Detailed Breakdown}
+
+\subsection*{1. Compound Scaling}
+EfficientNet introduces \textbf{compound scaling}:
+
+\[
+d = \alpha^\phi, \quad w = \beta^\phi, \quad r = \gamma^\phi
+\]
+
+where:
+\begin{itemize}
+    \item $\phi$ is a scaling coefficient
+    \item $\alpha, \beta, \gamma$ are constants ($\alpha = 1.2, \beta = 1.1, \gamma = 1.15$)
+\end{itemize}
+
+\textbf{Constraint}:
+\[
+\alpha \cdot \beta^2 \cdot \gamma^2 \approx 2
+\]
+
+\subsection*{2. MBConv Block}
+The core building block consists of:
+\begin{itemize}
+    \item 1×1 Expansion Conv (expansion factor $t=6$)
+    \item Depthwise Conv
+    \item Squeeze-and-Excitation (SE) Block
+    \item 1×1 Projection Conv
+\end{itemize}
+
+\subsubsection*{(a) Depthwise Separable Convolution}
+\begin{itemize}
+    \item \textbf{Depthwise Conv}:
+    \[
+    \mathbf{y}_{i,j,k} = \sum_{m,n} \mathbf{K}_{m,n,k} \mathbf{x}_{i+m, j+n, k}
+    \]
+    \item \textbf{Pointwise Conv}:
+    \[
+    \mathbf{z}_{i,j,l} = \sum_k \mathbf{W}_{k,l} \mathbf{y}_{i,j,k}
+    \]
+\end{itemize}
+
+\subsubsection*{(b) Squeeze-and-Excitation (SE)}
+\begin{itemize}
+    \item \textbf{Squeeze}: Global average pooling $\rightarrow \mathbf{s} \in \mathbb{R}^C$
+    \item \textbf{Excitation}:
+    \[
+    \mathbf{s}_{excite} = \sigma(\mathbf{W}_2 \text{ReLU}(\mathbf{W}_1 \mathbf{s}))
+    \]
+    \item \textbf{Rescale}:
+    \[
+    \mathbf{x}_{out} = \mathbf{s}_{excite} \odot \mathbf{x}
+    \]
+\end{itemize}
+
+\subsection*{3. Neural Architecture Search (NAS)}
+EfficientNet-B0 was discovered using:
+
+\[
+\text{maximize } \text{ACC}(m) \times \left[ \frac{\text{FLOPS}(m)}{T} \right]^w
+\]
+
+where:
+\begin{itemize}
+    \item $w = -0.07$
+    \item $T = 400M$ (target FLOPS for B0)
+\end{itemize}
+
+\section*{A.3 Comparative Analysis}
+
+\begin{table}[h]
+\centering
+\caption{Comparison between ViT and EfficientNet}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Feature} & \textbf{ViT} & \textbf{EfficientNet} \\
+\midrule
+\textbf{Architecture} & Transformer-based & CNN-based \\
+\textbf{Key Innovation} & Image patches as tokens & Compound scaling \\
+\textbf{Position Encoding} & Learned embeddings & Implicit in convolutions \\
+\textbf{Scaling Method} & Increase model dimensions & $\phi$ for depth, width, resolution \\
+\textbf{Computational Focus} & Self-attention (global context) & Depthwise separable convolutions \\
+\textbf{Training Data} & Requires large datasets (JFT-300M) & Works well on moderate datasets \\
+\textbf{Inference Speed} & Slower (quadratic attention) & Faster (linear scaling) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section*{A.4 Mathematical Summary}
+
+\subsection*{ViT Equations}
+\begin{align*}
+\text{Patch Embedding: } & \mathbf{z}_i = \mathbf{E} \mathbf{x}_i + \mathbf{b} \\
+\text{Attention: } & \text{softmax}\left( \frac{\mathbf{Q} \mathbf{K}^T}{\sqrt{d_k}} \right) \mathbf{V} \\
+\text{FFN: } & \mathbf{W}_2 \text{GELU}(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2
+\end{align*}
+
+\subsection*{EfficientNet Equations}
+\begin{align*}
+\text{Scaling: } & d = \alpha^\phi, \quad w = \beta^\phi, \quad r = \gamma^\phi \\
+\text{SE Block: } & \mathbf{s}_{excite} = \sigma(\mathbf{W}_2 \text{ReLU}(\mathbf{W}_1 \mathbf{s})) \\
+\text{NAS: } & \text{ACC}(m) \times \left[ \frac{\text{FLOPS}(m)}{T} \right]^w
+\end{align*}
+
+\section*{Conclusion}
+\begin{itemize}
+    \item \textbf{ViT} excels in large-scale vision tasks with global attention
+    \item \textbf{EfficientNet} provides efficient scaling for resource-constrained applications
+    \item \textbf{Hybrid models} (e.g., MobileViT) are emerging to combine strengths
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{vit} 
+Dosovitskiy et al. 
+\textit{An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale}. 
+2021. 
+\href{https://arxiv.org/abs/2010.11929}{arXiv:2010.11929}
+
+\bibitem{effnet} 
+Tan \& Le. 
+\textit{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}. 
+2019. 
+\href{https://arxiv.org/abs/1905.11946}{arXiv:1905.11946}
+\end{thebibliography}
+
+\end{document}
