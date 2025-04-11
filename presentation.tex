@@ -16,40 +16,57 @@
 \end{frame}
 
 \begin{frame}{Motivation and Goal}
-Robotic learning for navigation in unfamiliar environments requires:\\
-\begin{itemize}
-    \item The ability to perform task-oriented navigation
-    \item Task-agnostic exploration 
-\end{itemize}
-\begin{block}{Issue}
-    Traditionally, these functionalities are tackled by separate systems.
-    Exploration problem can be factorized into:\\
+    \textbf{Robotic navigation in unfamiliar environments requires:}
     \begin{itemize}
-        \item \textbf{Local Exploration strategies} Objective: Learn control policies that can take diverse, short-horizon actions.
-        \item \textbf{Global Exploration strategies} Objective: A high level planner that uses the policies for long-horizon goal-seeking. (Efficient Mapping?)
+        \item Task-oriented navigation — reaching specified goals
+        \item Task-agnostic exploration — discovering and mapping new areas
     \end{itemize}
-\end{block}
-\begin{block}{Solution}
-    Maybe, use a single model to perform both tasks?
-\end{block}
-\end{frame}
-\begin{frame}{What is NoMaD?}
-    NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-based
-    navigation, that is capable of both \textbf{goal-conditioned navigation} and \textbf{open-ended exploration}.
+    
+    \begin{block}{The Challenge}
+        These two objectives are typically handled by \textit{separate systems}.\\[1ex]
+        Exploration can be decomposed into:
+        \begin{itemize}
+            \item \textbf{Local Exploration:} Learning short-horizon control policies for diverse actions
+            \item \textbf{Global Planning:} Using those policies to achieve long-horizon, goal-directed behavior
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Key Question}
+        Can a \textit{single model} unify both tasks — exploration and navigation?
+    \end{block}
+    \end{frame}
+    \begin{frame}{What is NoMaD?}
+        \textbf{NoMaD} is a transformer-based diffusion policy designed for long-horizon, memory-efficient navigation.\\[0.5em]
+        It supports both:
+        \begin{itemize}
+            \item \textbf{Goal-conditioned navigation} — moving towards a specified visual goal
+            \item \textbf{Open-ended exploration} — learning diverse behaviors without explicit goals
+        \end{itemize}
+        
+        \bigskip
+        \texttt{NoMaD = \{EfficientNet + Vision Transformer\} $\leftarrow$ \textbf{ViNT} \\+ Diffusion Policies}
+        
+        \bigskip
+        \begin{block}{}
+            It combines a transformer backbone to encode the high-dimensional visual stream, with diffusion models that predict a sequence of future actions in a generative manner.
+        \end{block}
+        \end{frame}
 
-    \texttt{NoMaD = EfficientNet + Vision Transformer + Diffusion Policies}
-\begin{itemize}
-    \item Can we improve trajectory prediction in robot navigation using denoising diffusion models?
-    \item How can transformer-based memory and temporal context improve performance?
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Literature Survey}
-\begin{itemize}
-    \item \textbf{ViNT (Janner et al., 2022):} Vision Transformer for long-horizon visual navigation.
-    \item \textbf{Diffusion Policies:} Denoising Diffusion Probabilistic Models (DDPM) for behavior cloning.
-    \item \textbf{NOMAD:} Combines ViNT perception with diffusion-based trajectory decoding.
-\end{itemize}
+\begin{frame}{Overview of NoMaD Architecture}
+    \begin{block}{Visual Goal-Conditioned Navigation}
+        Backbone: ViNT (Visual Navigation Transformer)\\
+        How does ViNT work?
+        \begin{itemize}
+            \item Recieves: A sequence of past and current observations $o_t$=$o_{t-P:t}$
+            \item \textbf{Visual Encoder:} Each observation is processed using an EfficientNet-B0 encoder to extract feature embeddings.
+        \end{itemize}
+        \pause
+        \texttt{EfficientNet?}
+        \begin{itemize}
+            \item A new method of Scaling CNNs to improve accuracy and efficiency
+            \item It uses a compound scaling method to uniformly scale all dimensions of depth, width, and resolution.
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}{Architecture Overview}
