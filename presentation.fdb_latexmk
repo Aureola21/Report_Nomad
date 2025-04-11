@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744397959.35052 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744397960.6442 0
+["pdflatex"] 1744399412.56224 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744399413.87927 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744397958.11892 12511 56909d0ce0ec611a4b18c8a0a187c439 ""
+  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744399412.67928 12142 ed6cdb7afa4657ac49cbcfcf6534b0c9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -236,11 +236,12 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1733207121 8213759 d8d8a65f83db2f052d38fd0f3d567e46 ""
   "effnet_imagenet.png" 1744365055.69208 256602 7c56aa9a043673181a4a4e376152746c ""
   "effnet_scaling.png" 1744367690.58696 74887 5eb9c6ddb3bf00a42ae23891f9ba0517 ""
+  "lrdecay.png" 1744399195.827 70827 2417149e52fff6ea9b89d81d2f706e22 ""
   "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "presentation.aux" 1744397960.58702 3355 a93c13aa4e235824dbc38a1a83bd0bd0 "pdflatex"
-  "presentation.nav" 1744397960.58702 2136 1dac27a03ce63b0ea048ddd0283dd619 "pdflatex"
-  "presentation.out" 1744397959.79998 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1744397958.11892 12511 56909d0ce0ec611a4b18c8a0a187c439 ""
+  "presentation.aux" 1744399413.82329 3323 3f894970be83de83e8f97c0c14c1ef7d "pdflatex"
+  "presentation.nav" 1744399413.82329 2043 cb8023b86bc141b5343ef445ea351f09 "pdflatex"
+  "presentation.out" 1744399413.00428 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1744399412.67928 12142 ed6cdb7afa4657ac49cbcfcf6534b0c9 ""
   (generated)
   "presentation.aux"
   "presentation.log"

@@ -224,24 +224,20 @@
         \includegraphics[width=1.01\linewidth]{nomad_diagram.png}
     \end{figure}
 \end{frame}
-\begin{frame}{Architecture Overview}
-\begin{itemize}
-    \item \textbf{Perception:} EfficientNet-B0 backbone $\rightarrow$ Transformer-based temporal encoder.
-    \item \textbf{Diffusion Decoder:} Conditional UNet1D for generating waypoint sequences.
-    \item \textbf{Action Decoder:} Maps waypoints to low-level actions.
-\end{itemize}
-% \includegraphics[width=0.8\linewidth]{architecture.png}
-\end{frame}
 
-\begin{frame}{Training Procedure}
+\begin{frame}{Training Details and Experiments}
 \begin{itemize}
-    \item Dataset: SACSoN / RECON / GoStanford
-    \item Batch size: 32, Epochs: 100
-    \item Optimizer: AdamW, LR: $10^{-4}$
+    \item Datasets used: SACSoN , RECON , GoStanford and SCAND
+    \item Batch size: 32, Epochs: 10
+    \item Optimizer: AdamW, Lr: $10^{-4}$ 
     \item Scheduler: Cosine annealing
-    \item Loss: MSE on predicted noise + temporal distance
 \end{itemize}
-\[ \mathcal{L}_{NoMaD} = MSE(\epsilon, \hat{\epsilon}) + \lambda \cdot MSE(d(o_t, o_g), f_d(c_t)) \]
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{lrdecay.png}
+    \caption{Lr decay using cosine annealing}
+    \label{fig:lrdecay}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Experiments and Results}

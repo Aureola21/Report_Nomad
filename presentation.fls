@@ -459,6 +459,11 @@ INPUT ./nomad_diagram.png
 INPUT ./nomad_diagram.png
 INPUT ./nomad_diagram.png
 INPUT ./nomad_diagram.png
+INPUT ./lrdecay.png
+INPUT ./lrdecay.png
+INPUT ./lrdecay.png
+INPUT ./lrdecay.png
+INPUT ./lrdecay.png
 OUTPUT presentation.nav
 OUTPUT presentation.toc
 OUTPUT presentation.snm
