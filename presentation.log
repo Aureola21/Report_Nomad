@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  11 APR 2025 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  12 APR 2025 00:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,36 +534,142 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen292
 \beamer@dimb=\dimen293
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box76
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen294
+\pgf@nodesepend=\dimen295
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen296
+\pgffor@skip=\dimen297
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count336
+\pgfplotmarksize=\dimen298
+)
+\tikz@lastx=\dimen299
+\tikz@lasty=\dimen300
+\tikz@lastxsaved=\dimen301
+\tikz@lastysaved=\dimen302
+\tikz@lastmovetox=\dimen303
+\tikz@lastmovetoy=\dimen304
+\tikzleveldistance=\dimen305
+\tikzsiblingdistance=\dimen306
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
+\tikztreelevel=\count337
+\tikznumberofchildren=\count338
+\tikznumberofcurrentchild=\count339
+\tikz@fig@count=\count340
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count341
+\pgfmatrixcurrentcolumn=\count342
+\pgf@matrix@numberofcolumns=\count343
+)
+\tikz@expandcount=\count344
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box81
+\pgfnodeparttwobox=\box82
+\pgfnodepartthreebox=\box83
+\pgfnodepartfourbox=\box84
+\pgfnodeparttwentybox=\box85
+\pgfnodepartnineteenbox=\box86
+\pgfnodeparteighteenbox=\box87
+\pgfnodepartseventeenbox=\box88
+\pgfnodepartsixteenbox=\box89
+\pgfnodepartfifteenbox=\box90
+\pgfnodepartfourteenbox=\box91
+\pgfnodepartthirteenbox=\box92
+\pgfnodeparttwelvebox=\box93
+\pgfnodepartelevenbox=\box94
+\pgfnodeparttenbox=\box95
+\pgfnodepartninebox=\box96
+\pgfnodeparteightbox=\box97
+\pgfnodepartsevenbox=\box98
+\pgfnodepartsixbox=\box99
+\pgfnodepartfivebox=\box100
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen307
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 8.
+(hyperref)                removing `\\' on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count336
-\l__pdf_internal_box=\box76
-) (./presentation.aux)
+\l__color_backend_stack_int=\count345
+\l__pdf_internal_box=\box101
+) (./presentation.aux
+
+LaTeX Warning: Label `fig:efficientnet' multiply defined.
+
+)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -601,77 +707,77 @@ LaTeX Font Info:    ... okay on input line 12.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
-\scratchdimen=\dimen294
-\scratchbox=\box77
-\nofMPsegments=\count338
-\nofMParguments=\count339
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count340
-\MPscratchDim=\dimen295
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count346
+\scratchdimen=\dimen308
+\scratchbox=\box102
+\nofMPsegments=\count347
+\nofMParguments=\count348
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count349
+\MPscratchDim=\dimen309
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
+\everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 12.
+Package hyperref Info: Link coloring OFF on input line 18.
  (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 12.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 18.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 12.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 12.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 12.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 12.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 12.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 12.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 12.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 12.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 12.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 12.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 12.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 12.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 12.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 12.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 12.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 12.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 12.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 12.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 18.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 12.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 12.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 12.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -685,12 +791,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./presentation.nav)
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 12--12
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 18--18
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 16--16
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 22--22
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -702,7 +808,7 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 37--37
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 43--43
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -714,31 +820,31 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [2
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 53--53
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 59--59
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 53.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 53.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 59.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 59.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 53.
+(Font)              for symbol `textbraceleft' on input line 59.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 53.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 53.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 59.
 
 Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -747,7 +853,7 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [3
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 70--70
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 76--76
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -766,10 +872,15 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [5
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 79--79
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 84--84
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
+<effnet_scaling.png, id=238, 867.24pt x 600.2425pt>
+File: effnet_scaling.png Graphic file (type png)
+<use effnet_scaling.png>
+Package pdftex.def Info: effnet_scaling.png  used on input line 84.
+(pdftex.def)             Requested size: 273.83728pt x 189.52617pt.
 
 Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -777,8 +888,8 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 
 [6
 
-]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 90--90
+ <./effnet_scaling.png>]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 100--100
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -790,7 +901,7 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [7
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 104--104
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 124--124
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -802,19 +913,29 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 112--112
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 132--132
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
+<effnet_imagenet.png, id=354, 1164.35pt x 890.32625pt>
+File: effnet_imagenet.png Graphic file (type png)
+<use effnet_imagenet.png>
+Package pdftex.def Info: effnet_imagenet.png  used on input line 132.
+(pdftex.def)             Requested size: 273.83728pt x 209.38972pt.
 
+pdfTeX warning (ext4): destination with the same identifier (name{fig:efficientnet}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.132 \end{frame}
+                 
 Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [9
 
-]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 123--123
+ <./effnet_imagenet.png>]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 150--150
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -826,11 +947,6 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 136--136
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
 Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -838,7 +954,7 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [11
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 141--141
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 166--166
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -848,6 +964,161 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  []
 
 [12
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 177--177
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+<nomad_diagram.png, id=497, 1583.9175pt x 467.7475pt>
+File: nomad_diagram.png Graphic file (type png)
+<use nomad_diagram.png>
+Package pdftex.def Info: nomad_diagram.png  used on input line 177.
+(pdftex.def)             Requested size: 345.71637pt x 102.09111pt.
+
+Overfull \hbox (3.42107pt too wide) in paragraph at lines 177--177
+ [] 
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[13
+
+ <./nomad_diagram.png>]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 194--194
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[14
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 213--213
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[15
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 226--226
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+File: nomad_diagram.png Graphic file (type png)
+<use nomad_diagram.png>
+Package pdftex.def Info: nomad_diagram.png  used on input line 226.
+(pdftex.def)             Requested size: 345.71637pt x 102.09111pt.
+
+Overfull \hbox (3.42107pt too wide) in paragraph at lines 226--226
+ [] 
+ []
+
+
+Overfull \vbox (4.42058pt too high) detected at line 226
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[16
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 234--234
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[17
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 245--245
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[18
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 259--259
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[19
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 267--267
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[20
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 278--278
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[21
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 291--291
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[22
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 296--296
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[23
 
 ]
 \tf@nav=\write6
@@ -868,22 +1139,25 @@ L3 programming layer <2024-01-22>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21723 strings out of 474222
- 422068 string characters out of 5748733
- 1937975 words of memory out of 5000000
- 43502 multiletter control sequences out of 15000+600000
- 566543 words of font info for 66 fonts, out of 8000000 for 9000
+ 27350 strings out of 474222
+ 567932 string characters out of 5748733
+ 1938975 words of memory out of 5000000
+ 49011 multiletter control sequences out of 15000+600000
+ 570326 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,435b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (12 pages, 155164 bytes).
+ 128i,15n,123p,435b,823s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on presentation.pdf (23 pages, 623903 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
- 25 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 705 compressed objects within 8 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 472 words of extra memory for PDF output out of 10000 (max. 10000000)
 
