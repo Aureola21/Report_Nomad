@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744400487.89853 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744400489.2376 0
+["pdflatex"] 1744400831.92183 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744400833.28063 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744400487.98151 13213 89be68ba4a319bdac478969021709a74 ""
+  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744400830.60819 13399 1fec50b959422e16fc3857e0341754aa ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -238,10 +238,10 @@
   "effnet_scaling.png" 1744367690.58696 74887 5eb9c6ddb3bf00a42ae23891f9ba0517 ""
   "lrdecay.png" 1744399195.827 70827 2417149e52fff6ea9b89d81d2f706e22 ""
   "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "presentation.aux" 1744400489.18059 3452 9add79afa54f9a377b8f1543675ad1f0 "pdflatex"
-  "presentation.nav" 1744400489.18059 2136 1dac27a03ce63b0ea048ddd0283dd619 "pdflatex"
-  "presentation.out" 1744400488.33653 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1744400487.98151 13213 89be68ba4a319bdac478969021709a74 ""
+  "presentation.aux" 1744400833.22431 3581 befca9640dcf8b206b9b6e8f7a73a94a "pdflatex"
+  "presentation.nav" 1744400833.22431 2229 160432f9d958772ec46b8420afdd9da6 "pdflatex"
+  "presentation.out" 1744400832.36227 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1744400830.60819 13399 1fec50b959422e16fc3857e0341754aa ""
   (generated)
   "presentation.aux"
   "presentation.log"
