@@ -27,7 +27,7 @@
         \item Task-oriented navigation — reaching specified goals
         \item Task-agnostic exploration — discovering and mapping new areas
     \end{itemize}
-    
+    \pause
     \begin{block}{The Challenge}
         These two objectives are typically handled by \textit{separate systems}.\\[1ex]
         Exploration can be decomposed into:
@@ -36,7 +36,7 @@
             \item \textbf{Global Planning:} Using those policies to achieve long-horizon, goal-directed behavior
         \end{itemize}
     \end{block}
-    
+    \pause
     \begin{block}{Key Question}
         Can a \textit{single model} unify both tasks — exploration and navigation?
     \end{block}
@@ -48,10 +48,10 @@
             \item \textbf{Goal-conditioned navigation} — moving towards a specified visual goal
             \item \textbf{Open-ended exploration} — learning diverse behaviors without explicit goals
         \end{itemize}
-        
+        \pause
         \bigskip
         \texttt{NoMaD = \{EfficientNet + Vision Transformer\} $\leftarrow$ \textbf{ViNT} \\+ Diffusion Policies}
-        
+        \pause
         \bigskip
         \begin{block}{}
             It combines a transformer backbone to encode the high-dimensional visual stream, with diffusion models that predict a sequence of future actions in a generative manner.
@@ -151,6 +151,7 @@
 \begin{frame}{Extending to Long-Horizon Planning with Topological Memory}
     \alert{However, ViNT is inherently goal-conditioned—it cannot operate in the absence
     of a goal image, limiting its ability to explore autonomously.}
+    \pause
     \begin{block}{Solution}
         To enable open-ended exploration, NoMaD incorporates a Topological Memory $\mathcal{M}$:
         \begin{enumerate}
@@ -227,8 +228,8 @@
 
 \begin{frame}{Training Details and Experiments}
 \begin{itemize}
-    \item Datasets used: SACSoN , RECON , GoStanford and SCAND
-    \item Batch size: 32, Epochs: 10
+    \item Datasets used: Sacson/HuRoN, RECON and SCAND
+    \item Batch size: 47, Epochs: 10
     \item Optimizer: AdamW, Lr: $10^{-4}$ 
     \item Scheduler: Cosine annealing
 \end{itemize}
@@ -245,6 +246,7 @@
         \item Diffusion Steps: 10
         \item Noise Scheduler: Square Cosine
     \end{itemize}
+    \pause
     \begin{block}{Training Objective}
         \begin{itemize}
             \item \textbf{Diffusion Loss:} Measures the difference between the predicted and true noise.
@@ -287,24 +289,53 @@
 \end{frame}
 
 \begin{frame}{Team Contributions}
+    \textbf{Sehaj Ganjoo:} \\
+    \begin{itemize}
+        \item Implemented the ViNT architecture
+        \item Developed the goal fusion encoder
+        \item Conducted experiments and analysis for comapring NoMaD and ViNT
+        \item Made the Presentation and Report
+    \end{itemize}
+    \textbf{Shobhnik Kriplani:} \\
+    \begin{itemize}
+        \item Implemented the Tockenizer, embeddings and positional encodings from scratch
+        \item Implemented the NoMaD architecture
+        \item Developed the training pipeline
+        \item Conducted experiments and analysis
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Team Contributions}
+    \textbf{Abhishek Kumar Jha:} \\
+    \begin{itemize}
+        \item Helped in Understanding the diffusion model
+        \item Helped in solving the errors while training the NoMaD model
+    \end{itemize}
+    \textbf{Namashivayaa V:} \\
+    \begin{itemize}
+        \item Helped in Understanding the theory for the entire project
+        \item Made the Appendices section of the Report
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Conclusion and Future Work}
 \begin{itemize}
-    \item Successfully trained NOMAD using diffusion for visual navigation
+    \item Successfully trained NoMaD using diffusion for visual navigation
     \item Showed compatibility with ViNT-based perception
     \item Future work:
     \begin{itemize}
-        \item Evaluate in simulation / real-world
-        \item Improve runtime performance
+        \item Deploy NoMaD on real robots and check performance on real world environments
+        \item Explore the use of NoMaD for other tasks like object detection and tracking
+        \item Explore how we can improve the current architecture.
         \item Try larger ViTs and alternate decoders
     \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Q\&A}
-Thank you! \newline
-\textit{Questions are welcome.}
+    \begin{center}
+        \Huge{\textbf{Thank You!}}\\
+    \end{center}
 \end{frame}
 
 \end{document}
