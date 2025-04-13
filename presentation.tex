@@ -511,11 +511,13 @@
 %     \textit{Takeaway:} \textbf{NoMaD demonstrates improved learning dynamics and generalization.}
 % \end{frame}
 \begin{frame}{Challenges Faced}
-\begin{itemize}
-    \item CUDA Out Of Memory errors on limited GPU
-    \item Module import issues with nested folder structures
-    \item Gradients not propagating due to detached variables
-\end{itemize}
+    \begin{itemize}
+        \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
+        \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
+        \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
+        \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
+        \item The initial implementation caused several system crashes due to heavy computational load.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Team Contributions}

@@ -19,7 +19,7 @@
 % Package for listings
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage[toc]{appendix}
 % Define custom colors for code
 \definecolor{codegray}{gray}{0.95}
 \definecolor{commentgreen}{rgb}{0,0.6,0}
@@ -59,10 +59,11 @@
 
 \begin{abstract}
 This report presents our work on implementing and analyzing the training and perception components of a visual navigation system based on diffusion policies, as adapted from the NOMAD (Navigation with Goal Masked Diffusion) framework. 
-Our approach combines a visual perception backbone based on EfficientNet and Transformer, with a trajectory diffusion model for motion planning to support both goal-directed and exploratory navigation. We trained our model on the SACSon,RECON and go\_stanford dataset, which features diverse real-world trajectories across various environments and robot platforms. 
-We leverage a conditional diffusion model to generate multimodal waypoint predictions, enabling the agent to reason about complex, uncertain navigation scenarios. Our contributions include a detailed breakdown of the model architecture, training methodology, and evaluation metrics—particularly focusing on waypoint alignment through cosine similarity. 
+Our approach combines a visual perception backbone based on EfficientNet and Transformer, with a trajectory diffusion model for motion planning to support both goal-directed and exploratory navigation. We trained our model on the SACSON,and parts of RECON and go\_stanford dataset, which features diverse real-world trajectories across various environments and robot platforms. 
+We leverage a conditional diffusion model to generate multimodal waypoint predictions, enabling the agent to reason about complex, uncertain navigation scenarios. Our contributions include a detailed breakdown of the model architecture, a github repository implementing the model, training methodology, and evaluation metrics—logged using wandb for tracking and visualization. 
 We have left out the deployment aspects.
 \end{abstract}
+
 
 \section{Introduction}
 Robotic learning for navigation in unfamiliar environments requires the ability to perform both task-oriented navigation (i.e., reaching a known goal) and task-agnostic exploration (i.e., searching for a goal in a novel environment). Traditionally, these functionalities are tackled by separate systems — for example, using subgoal proposals, explicit planning modules, or distinct navigation strategies for exploration and goal-reaching.
@@ -149,15 +150,17 @@ Where:
 \end{itemize}
 
 \subsection*{C. Implementation Details}
+The github repository implementing NOMaD is as follows: \href{https://github.com/ishobhnik/RobotNavigation}{RobotNavigation}\\
+The website hosting the project and the results is: \href{}{Website}
 \subsection{Environment Setup}
 All experiments were conducted on a system equipped with an NVIDIA GeForce GTX 1660 SUPER GPU and a 12\textsuperscript{th} Gen Intel\textregistered~Core\texttrademark~i9-12900K (24-core) processor. \\
-The code was implemented in Python 3.12.9 in a conda environment. All the packages and libraries used are listed in the requirements.txt file.\\
-The codebase was adapted from an open-source repository, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and hyperparameter sweeps.
+The code was implemented in Python 3.12.9 in a conda environment. All the packages and libraries used are listed in the requirements.txt file in the github repo.\\
+The codebase was adapted from an open-source repository\cite{gitnomad}, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and debugging errors.
 \subsection{Data Pipeline}
-We trained the NoMaD model using the \textbf{SACSoN} and parts of \textbf{RECON} dataset, which contains diverse real-world trajectories across various environments and robot platforms.
-The SACSoN dataset was already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
+We trained the NoMaD model using the \textbf{SACSON} and parts of \textbf{RECON} dataset along with \textbf{go\_stanford}, which contains diverse real-world trajectories across various environments and robot platforms.
+The SACSON and go\_stanford dataset were already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
 \subsection{Training Procedure}
-Training was done on a single NVIDIA GPU using a batch size of 32 for 10 epochs.\\
+Training was done on a single NVIDIA GPU using a batch size of 47 for 10 epochs.\\
 \textbf{Training Objective:}\\
 We calculate the Mean Squares Error(MSE) between  the predicted and the actual noise.
 For overall loss function, we add the MSE temporal distance loss to the objective function.
@@ -205,10 +208,10 @@ Evaluation was performed on the validation set using the following metrics:
     \item action loss
 \end{itemize}
 \subsection{Using WandB}
-We used wandb to log training progress, visualize losses, and monitor bothmodel behavior and system resources (e.g., GPU/CPU utilization)
+We used wandb to log training progress, visualize losses, and monitor both model behavior and system resources (e.g., GPU/CPU utilization)
 throughout experimentation. \\
 Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
-Refer to Appendix X for more details about how we used wandb.
+Refer to \hyperref[app:wandb]{Appendix G} for other resulting plots and visualizations.\\
 \section{Experiments and Results}
 \subsection*{Train action samples:}
 \begin{figure}[H]
@@ -497,29 +500,30 @@ Here are some plots from WandB comparing the two models:\\
     \end{subfigure}
     \caption{Action loss comparison between ViNT and NoMaD on training and validation sets.}
 \end{figure}
-Refer to appendix for Comparision of their Cosine Similarity.\\
+Refer to \hyperref[app:wandb]{Appendix G} for Comparision of their Cosine Similarity.\\
 
 \section{Challenges and Debugging}
-
-\section{Team Contributions}
-
-\section{Conclusion and Future Work}
-We successfully trained the NOMAD policy and analyzed the perception module. Future work could involve domain randomization, hyperparameter tuning, and evaluating transfer to real-world or simulated environments.
-
-\section*{References}
-\begin{enumerate}
-\item H. Janner et al., "NOMAD: Planning with Diffusion for Visual Navigation," 2022.
-\item Diffusion Policy GitHub Repository: \url{https://github.com/wayveai/diffusion-policy}
-\end{enumerate}
-
-
-
-
-
-
+\begin{itemize}
+    \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
+    \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
+    \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
+    \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
+    \item The initial implementation caused several system crashes due to heavy computational load. We had to reduce evalutation batchsize and reduce the number of epochs to avoid this.
+\end{itemize}
 \newpage
 \begin{appendices}
+\begin{itemize}
+    \item \hyperref[app:related_work]{\textbf{Appendix A:}} Related Work and Contextual Foundations of NoMaD
+    \item \hyperref[app:preliminaries]{\textbf{Appendix B:}} Technical Preliminaries
+    \item \hyperref[app:vit]{\textbf{Appendix C:}} Vision Transformer
+    \item \hyperref[app:efficientnet]{\textbf{Appendix D:}} EfficientNet
+    \item \textbf{Appendix E:} Diffusion
+    \item \textbf{Appendix F:} Weights and Biases
+    \item \textbf{Appendix G:} Team Contributions
+    \item \textbf{References}
+\end{itemize}
 \section{Related Work and \\ Contextual Foundations of NoMaD}
+\label{app:related_work}
 Exploration in unfamiliar enviroments is approached as the problem of efficient mapping, typically formulated around information maximization to guide the robot toward unexplored regions.\\
 We factorize the classical exploration problem into two categories:\\
 \begin{itemize}
@@ -554,6 +558,7 @@ Nomad builds upon this adding \textbf{goal conditioning} to diffusion-based acti
 \end{itemize}
 
 \section{Technical Preliminaries}
+\label{app:preliminaries}
 The primary objective is to develop a visual navigation policy, denoted by $\pi$, that enables a robot to navigate using only RGB images from its onboard camera. \\
 The policy devised should operates as follows:
 \begin{itemize} 
@@ -610,7 +615,10 @@ This builds on the ViKiNG framework, but replaces its prior policy with NoMaD, w
     \item \textbf{Goal-seeking} behavior (when a goal image is provided), and 
     \item \textbf{Autonomous exploration} (when no goal is available). 
 \end{itemize}
+
+
 \section{Vision Transformer (ViT)}
+\label{app:vit}
 
 \subsection*{1. Core Architecture}
 ViT adapts the \textbf{Transformer} architecture, originally designed for NLP, to \textbf{image recognition} by treating images as sequences of patches.
@@ -695,7 +703,7 @@ Each sub-layer is wrapped with:
 \end{itemize}
 
 \section{EfficientNet}
-
+\label{app:efficientnet}
 \subsection*{1. Compound Scaling}
 EfficientNet introduces \textbf{compound scaling}:
 
@@ -761,7 +769,43 @@ where:
     \item $T = 400M$ (target FLOPS for B0)
 \end{itemize}
 
+\section{WandB}
+\label{app:wandb}
+\section{Team Contributions}
+\label{app:team_contributions}
+\textbf{Abhishek Kumar Jha:} \\
+    \begin{itemize}
+        \item Helped in Understanding the diffusion model
+        \item Helped in solving the errors while training the NoMaD model
+    \end{itemize}
+    \textbf{Namashivayaa V:} \\
+    \begin{itemize}
+        \item Helped in Understanding the theory for the entire project
+        \item Helped Extrating the data from the datasets
+        \item Made the Appendices section of the Report
+    \end{itemize}
+    \textbf{Sehaj Ganjoo:} \\
+    \begin{itemize}
+        \item Implemented the ViNT architecture and trained it
+        \item Helped in debuggeding the errors while training the NoMaD model
+        \item Conducted experiments and analysis for comapring NoMaD and ViNT
+        \item Made the Presentation and Report
+    \end{itemize}
+    \textbf{Shobhnik Kriplani:} \\
+    \begin{itemize}
+        \item Implemented the Tockenizer, embeddings and positional encodings from scratch
+        \item Implemented the NoMaD architecture
+        \item Developed the training pipeline
+        \item Conducted experiments and analysis
+    \end{itemize}
 \begin{thebibliography}{9}
+\bibitem{nomad}
+H. Janner et al.,\textit{NOMAD: Planning with Diffusion for Visual Navigation} 2022.
+\bibitem{diff}
+\href{https://github.com/wayveai/diffusion-policy}{Diffusion Policy GitHub Repository:}
+\bibitem{gitnomad}
+\href{https://github.com/robodhruv/visualnav-transformer}{NoMaD GitHub Repository}
+
 \bibitem{vit} 
 Dosovitskiy et al. 
 \textit{An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale}. 
