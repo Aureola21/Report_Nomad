@@ -190,6 +190,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
 We see that the loss has plateaued after the first epoch, both in test and training sets, indicating the model has learned to predict the distance to the goal.\\
+\newpage
 \noindent \textbf{action loss:}\\
 \begin{figure}[H]
     \centering
@@ -208,9 +209,107 @@ We see that the loss has plateaued after the first epoch, both in test and train
     \end{subfigure}
     \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
+\noindent \textbf{gc\_action\_waypts\_cos\_sim (train):}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:gc_action_waypts_cos_sim_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:gc_action_waypts_cos_sim_val}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
 
+\noindent \textbf{gc\_action\_multi\_waypts\_cos\_sim (train):}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:gc_multi_action_waypts_cos_sim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:gc_action_multi_waypts_cos_sim_test}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+\noindent \textbf{Distance Loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/dist_loss.png}
+        \caption{Distance Loss on Training Set}
+        \label{fig:dist_loss}
+    \end{subfigure}
+    \end{figure}
 
+\noindent \textbf{Learning Rate:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/lr.png}
+        \caption{Learning Rate on Training Set}
+        \label{fig:lr}
+    \end{subfigure}
+    \end{figure}
 
+\newpage
+\noindent \textbf{Diffusion Loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/diffusion_loss.png}
+        \caption{Diffusion Loss on Training Set}
+        \label{fig:diffusion_loss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/diffusion_eval_loss_random_masking.png}
+        \caption{Diffusion evaluation loss with random masking}
+        \label{fig:diffusion_eval_loss_random_masking}
+    \end{subfigure}
+    \begin{subfigure}[H]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/diffusion_eval_loss_no_masking.png}
+        \caption{Diffusion evaluation loss without masking}
+        \label{fig:diffusion_eval_loss_no_masking}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[H]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/diffusion_eval_loss_goal_masking.png}
+        \caption{Diffusion evaluation loss with goal masking}
+        \label{fig:diffusion_eval_loss_goal_masking}
+    \end{subfigure}
+    \caption{Diffusion loss on training set and evaluation loss with different masking strategies}
+    \end{figure}
+\noindent \textbf{Total Loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/total_loss.png}
+        \caption{Total Loss on Training Set}
+        \label{fig:total_loss}
+    \end{subfigure}
+    \end{figure}
 
 
 \subsection*{Comparison with ViNT}
@@ -224,9 +323,9 @@ This supports the hypothesis that \textbf{diffusion-based modeling can match det
 
 \subsection{Training Metrics}
 \begin{itemize}
-\item Final training loss: \textasciitilde1.11
-\item Cosine similarity: \textasciitilde0.47 (multi-action waypoints)
-\item Distance loss: \textasciitilde128
+\item Final training loss: \text 0.003
+\item Cosine similarity: \text 0.47 (multi-action waypoints)
+\item Distance loss: \text 10.2
 \end{itemize}
 
 \subsection{Observations}
