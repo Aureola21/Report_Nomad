@@ -440,9 +440,10 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
         \label{fig:total_loss}
     \end{subfigure}
     \end{figure}
+
 \noindent \textbf{Remarks:}\\
-It is somewhat surprising that the total distance and diffusion losses do not show the expected downward trend. However, other loss curves clearly demonstrate a consistent decrease, indicating that the model was indeed able to learn and generalize effectively.\\
-Upon investigation, we discovered that the overall loss trend was skewed due to a specific run that encountered bugs in gradient propagation. As a result, the model in that particular run failed to learn properly. This anomaly in the plot was crucial in helping us identify the need for debugging within the training pipeline.
+It is somewhat surprising that the total distance and diffusion losses do not show the expected downward trend. However, other loss curves clearly demonstrate a consistent decrease, indicating that the model was indeed able to learn and generalize effectively.
+Upon investigation, we discovered that the overall loss trend was skewed due to a specific run that encountered bugs in gradient propagation. As a result, the model in that particular run failed to learn properly. This anomaly in the plot was crucial in helping us identify the need for debugging within the training pipeline.  
 While the total loss for the correctly functioning runs was not separately plotted on Weights & Biases (wandb), the behavior of individual loss components—such as distance and action losses—provides strong evidence that the model was learning as expected in those runs.
 \subsection*{Comparison with ViNT}
 To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD.\\
