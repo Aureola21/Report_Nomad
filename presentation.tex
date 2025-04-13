@@ -8,7 +8,8 @@
 \usepackage{amsfonts}
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows, positioning, calc}
-
+\usepackage{multirow}
+\usepackage{subcaption}
 
 \title[NoMaD]{NoMaD: \textbf{N}avigati\textbf{o}n with Goal-\textbf{Ma}sked \textbf{D}iffusion}
 \author{Sehaj Ganjoo, Shobhnik Kriplani, \\ Abhishek Kumar Jha, Namashivayaa V}
@@ -264,22 +265,296 @@
 \end{frame}
 
 \begin{frame}{Experiments and Results}
-\textbf{Metrics:}
-\begin{itemize}
-    \item Diffusion Loss $\approx 1.11$
-    \item Distance Loss $\approx 128$
-    \item Cosine Similarity $\approx 0.47$
-\end{itemize}
+\begin{block}{Distance Loss (Goal Conditioned)}
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
+            \caption{Distance Loss on Training Set}
+            \label{fig:gc_dist_loss_train}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
+            \caption{Distance Loss on Validation Set}
+            \label{fig:gc_dist_loss_val}
+        \end{subfigure}
+        \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
+    \end{figure}
+\end{block}
+\end{frame}
+\begin{frame}{Experiments and Results}
+    \begin{block}{Action Loss (Goal Conditioned)}
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+                \caption{Action Loss on Training Set}
+                \label{fig:gc_action_loss_train}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[b]{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
+                \caption{Action Loss on Validation Set}
+                \label{fig:gc_action_loss_val}
+            \end{subfigure}
+            \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
+        \end{figure}
+    \end{block}
+    \end{frame}
+    \begin{frame}{Experiments and Results: Cosine Similarity}
+        \begin{block}{Goal-Conditioned Action Waypoints Cosine Similarity}
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/gc_action_sim_nomad.png}
+    
+            
+                \textbf{Training Set}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/gc_action_cos_sim_test.png}
+    
+                \textbf{Validation Set}
+            \end{minipage}
+            
+            \vspace{0.5em}
+            \bigskip
+            Cosine similarity evaluates directional alignment between predicted and ground-truth action waypoints. 
+            Higher values ($\sim1.0$) indicate better trajectory alignment under goal-conditioned settings.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Experiments and Results: Multi-Action Cosine Similarity}
+        \begin{block}{Goal-Conditioned Multi-Action Waypoints Cosine Similarity}
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/multi_action_sim_train.png}
+                
+                
+                \textbf{Training Set}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/multi_action_sim.png}
+            
+                
+                \textbf{Validation Set}
+            \end{minipage}
+            
+            \vspace{0.5em}
+            \bigskip
+            Multi-action cosine similarity compares the overall alignment of full predicted trajectory vectors with ground truth, rather than frame-by-frame. This provides a more holistic measure of long-horizon trajectory quality.
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Experiments and Results: Unconditioned Setting}
+        \begin{block}{Unconditioned Action Loss Evaluation}
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/uc_action_train.png}
+                
+                \textbf{Training Set}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/uc_action_test.png}
+                
+                \textbf{Validation Set}
+            \end{minipage}
+            
+            \vspace{0.5em}
+            \bigskip
+            The unconditioned action loss measures model accuracy in open-loop, goal-agnostic settings. Lower loss indicates better generalization in exploratory behavior.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Experiments and Results: UC Multi-Action Cosine Similarity}
+        \begin{block}{Unconditioned Multi-Action Waypoints Cosine Similarity}
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/cs_multi_action_cos_train.png}
+                
+                \textbf{Training Set}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/uc_multi_action_sim_test.png}
+                
+                \textbf{Validation Set}
+            \end{minipage}
+            
+            \vspace{0.5em}
+            \bigskip
+            Cosine similarity across the full predicted trajectory in unconditioned setting. Higher similarity indicates better alignment with ground-truth behavior.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Experiments and Results: Diffusion Loss}
+        \begin{block}{Training Performance}
+            \centering
+            \includegraphics[width=0.7\textwidth]{images/diffloss.png}
+        
+            \vspace{0.5em}
+            \small
+            \textbf{Figure:} Diffusion loss over training batches. This loss reflects how well the model learns to denoise the trajectory samples using the learned conditional distribution.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Experiments and Results: Diffusion Loss on Validation Set}
+        \begin{columns}
+            % Goal-Conditioned (m = 0)
+            \begin{column}{0.48\textwidth}
+                \begin{block}{\centering Goal-Conditioned ($m = 0$)}
+                    \centering
+                    \includegraphics[width=\textwidth]{images/diff_eval_no_masking.png}
+                    
+                    \vspace{0.5em}
+                    \tiny \textbf{All tokens receive goal signal.} \\
+                    Evaluates the robot’s ability to follow a target.
+                \end{block}
+            \end{column}
+            
+            % Unconditioned (m = 1)
+            \begin{column}{0.48\textwidth}
+                \begin{block}{\centering Unconditioned ($m = 1$)}
+                    \centering
+                    \includegraphics[width=\textwidth]{images/diff_eval_random.png}
+                    
+                    \vspace{0.5em}
+                    \tiny \textbf{No goal information.} \\
+                    Evaluates purely exploratory navigation behavior.
+                \end{block}
+            \end{column}
+        \end{columns}
+        
+        \vspace{0.7em}
+        \centering
+        \small \textit{We see that loss goes downstream in both cases.}
+    \end{frame}
+
+    \begin{frame}{Evaluation: Mixed Masking ( $m \sim \mathcal{B}(0.5)$ )}
+        \begin{block}{Stochastic Goal Conditioning}
+            \centering
+            \includegraphics[width=0.75\textwidth]{images/diff_eval_goal_masking.png}
+            
+            \vspace{0.5em}
+            \small
+            \textbf{Description:} 
+            Each token is randomly masked with probability 0.5. This encourages the model to balance between exploring and exploiting goal cues.
+        \end{block}
+    \end{frame}
+
+\begin{frame}{Experiments and Results :Total Distance Loss}
+    \begin{block}{Total Distance Loss}
+        \centering
+        \includegraphics[width=0.75\textwidth]{images/distloss_vint.png}
+        
+        \vspace{0.5em}
+        \small
+        \textbf{Description:} 
+        The total distance loss measures the overall distance between predicted and actual trajectories, providing a comprehensive evaluation of model performance.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Experiments and Results :Total Loss}
+    \begin{block}{Total Loss}
+        \centering
+        \includegraphics[width=0.75\textwidth]{images/totalloss_nomad.png}
+        
+        \vspace{0.5em}
+        \small
+        \textbf{Description:} 
+        The total loss combines both the diffusion and distance losses, providing a holistic measure of model performance.
+    \end{block}
 \end{frame}
 
 
-\begin{frame}{Comparision with ViNT}
-    \textbf{Comparison with ViNT:}
-\begin{itemize}
-    \item Similar performance in goal-conditioned tasks
-    \item No performance degradation when adding diffusion
-\end{itemize}
+\begin{frame}{Comparision with ViNT: Temporal Distance Loss}
+        \begin{block}{Motivation}
+            ViNT serves as a strong baseline for visual navigation with transformer-based context encoding. We compare its distance prediction ability against NoMaD.
+        \end{block}
+    
+        \begin{columns}
+            \begin{column}{0.48\textwidth}
+                \begin{block}{\centering \small \textbf{NoMaD Distance Loss}}
+                    \centering
+                    \includegraphics[width=\textwidth]{images/distloss_vint.png}
+                    \tiny NoMaD achieves lower and more stable distance loss due to diffusion-based modeling and goal conditioning.
+                \end{block}
+            \end{column}
+    
+            \begin{column}{0.48\textwidth}
+                \begin{block}{\centering \small \textbf{ViNT Distance Loss}}
+                    \centering
+                    \includegraphics[width=\textwidth]{images/distloss_vint.png}
+                    \tiny ViNT performs comparably in early epochs but struggles with long-horizon distance regression.
+                \end{block}
+            \end{column}
+        \end{columns}
+    
+        \vspace{0.5em}
+        \centering
+        \textit{Observation:} \textbf{NoMaD’s diffusion-based decoder improves distance supervision} without sacrificing ViNT’s transformer strengths.
 \end{frame}
+
+\begin{frame}{ViNT vs NoMaD: Action Loss}
+    \begin{block}{Objective}
+        We compare the quality of predicted waypoints by measuring the Mean Squared Error (MSE) between predicted and ground-truth actions.
+    \end{block}
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{\centering \small \textbf{NoMaD Action Loss}}
+                \centering
+                \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+                \tiny NoMaD consistently achieves lower action loss, aided by the stochastic denoising process and goal-conditioned context.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \begin{block}{\centering \small \textbf{ViNT Action Loss}}
+                \centering
+                \includegraphics[width=\textwidth]{images/action_train_vint.png}
+                \tiny ViNT shows slightly higher variance, and loss plateaus earlier due to MLP-based decoding.
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+    \centering
+    \textit{Observation:} \textbf{NoMaD benefits from the expressiveness of diffusion decoding} in predicting fine-grained waypoint actions.
+\end{frame}
+
+% \begin{frame}{Comparison with ViNT: Total Loss}
+%     \begin{block}{Motivation}
+%         To assess the overall effectiveness of NoMaD vs. ViNT, we compare the combined loss: action prediction loss + temporal distance prediction loss.
+%     \end{block}
+
+%     \begin{columns}
+%         \begin{column}{0.48\textwidth}
+%             \begin{block}{\centering \small \textbf{NoMaD Total Loss}}
+%                 \centering
+%                 \includegraphics[width=\textwidth]{images/total_loss_nomad.png}
+%                 \tiny NoMaD achieves better convergence, with lower final loss due to richer diffusion-based decoding.
+%             \end{block}
+%         \end{column}
+
+%         \begin{column}{0.48\textwidth}
+%             \begin{block}{\centering \small \textbf{ViNT Total Loss}}
+%                 \centering
+%                 \includegraphics[width=\textwidth]{images/total_loss_vint.png}
+%                 \tiny ViNT exhibits slower learning and higher loss, limited by direct MLP-based action prediction.
+%             \end{block}
+%         \end{column}
+%     \end{columns}
+
+%     \vspace{0.5em}
+%     \centering
+%     \textit{Takeaway:} \textbf{NoMaD demonstrates improved learning dynamics and generalization.}
+% \end{frame}
 \begin{frame}{Challenges Faced}
 \begin{itemize}
     \item CUDA Out Of Memory errors on limited GPU
@@ -337,5 +612,22 @@
         \Huge{\textbf{Thank You!}}\\
     \end{center}
 \end{frame}
-//
+
+\section{Appendices}
+\begin{frame}{Appendices}
+    \begin{block}{Appendices}
+        \begin{itemize}
+            \item Appendix A: Additional Results
+            \item Appendix B: Implementation Details
+            \item Appendix C: References
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}{Appendix A: Additional Results}
+    \begin{block}{Additional Results}
+        \begin{itemize}
+            \item Additional results and analysis of NoMaD's performance
+        \end{itemize}
+    \end{block}
+\end{frame}
 \end{document}

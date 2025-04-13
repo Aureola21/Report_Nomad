@@ -1,3 +1,11 @@
 \beamer@slide {fig:efficientnet}{10}
 \beamer@slide {fig:efficientnet}{13}
 \beamer@slide {fig:lrdecay}{22}
+\beamer@slide {fig:gc_dist_loss_train}{25}
+\beamer@slide {sub@fig:gc_dist_loss_train}{25}
+\beamer@slide {fig:gc_dist_loss_val}{25}
+\beamer@slide {sub@fig:gc_dist_loss_val}{25}
+\beamer@slide {fig:gc_action_loss_train}{26}
+\beamer@slide {sub@fig:gc_action_loss_train}{26}
+\beamer@slide {fig:gc_action_loss_val}{26}
+\beamer@slide {sub@fig:gc_action_loss_val}{26}
