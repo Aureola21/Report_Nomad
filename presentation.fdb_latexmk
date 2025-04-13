@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744495224.85191 "/home/ishobhnik/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744495226.69449 0
+["pdflatex"] 1744509255.40091 "/home/ishobhnik/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744509257.54509 0
   "/etc/texmf/web2c/texmf.cnf" 1735446591.24186 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ishobhnik/Report_Nomad/presentation.tex" 1744495222.82803 13447 d863dedca925aee4214cf6ba2b9aef39 ""
+  "/home/ishobhnik/Report_Nomad/presentation.tex" 1744509255.18489 14232 6f3f5fbe40a7dacf223d170a98bef774 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -18,6 +18,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss17.tfm" 1136768653 1320 ed93d62c5f2c16343826001f03341dbc ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm" 1136768653 1272 e2d13f0df30bf3ad990bb9d028e37f34 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm" 1136768653 1520 ca2bb4b78ac9800bd686e30c6d19ef95 ""
@@ -232,10 +233,10 @@
   "effnet_scaling.png" 1744492967.39482 74887 5eb9c6ddb3bf00a42ae23891f9ba0517 ""
   "lrdecay.png" 1744492967.39582 70827 2417149e52fff6ea9b89d81d2f706e22 ""
   "nomad_diagram.png" 1744492967.39882 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "presentation.aux" 1744495226.61097 3601 dae1360061b23c8c5cb008aa031b182a "pdflatex"
-  "presentation.nav" 1744495226.61197 2245 9482520d5b9f1d466851faa6cee02860 "pdflatex"
-  "presentation.out" 1744495225.32399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1744495222.82803 13447 d863dedca925aee4214cf6ba2b9aef39 ""
+  "presentation.aux" 1744509257.45284 3730 7833a9316bfe78b76446c6066bbaff64 "pdflatex"
+  "presentation.nav" 1744509257.45384 2338 804bf60a644a469d85aabbeabcdc3a62 "pdflatex"
+  "presentation.out" 1744509255.95087 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1744509255.18489 14232 6f3f5fbe40a7dacf223d170a98bef774 ""
   (generated)
   "presentation.aux"
   "presentation.log"

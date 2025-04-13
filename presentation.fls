@@ -450,6 +450,8 @@ INPUT ./lrdecay.png
 INPUT ./lrdecay.png
 INPUT ./lrdecay.png
 INPUT ./lrdecay.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT presentation.nav
 OUTPUT presentation.toc
 OUTPUT presentation.snm

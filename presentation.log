@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 03:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 07:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1171,7 +1171,7 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
 [29
 
 ]
-Overfull \hbox (220.75122pt too wide) in paragraph at lines 324--324
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 333--333
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1181,6 +1181,18 @@ Overfull \hbox (220.75122pt too wide) has occurred while \output is active
  []
 
 [30
+
+]
+Overfull \hbox (220.75122pt too wide) in paragraph at lines 339--339
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (220.75122pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[31
 
 ]
 \tf@nav=\write6
@@ -1208,18 +1220,18 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27169 strings out of 476182
- 562635 string characters out of 5795595
+ 27176 strings out of 476182
+ 562713 string characters out of 5795595
  1945975 words of memory out of 5000000
- 48580 multiletter control sequences out of 15000+600000
- 569706 words of font info for 79 fonts, out of 8000000 for 9000
+ 48584 multiletter control sequences out of 15000+600000
+ 570306 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,15n,107p,433b,823s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (30 pages, 702737 bytes).
+Output written on presentation.pdf (31 pages, 704870 bytes).
 PDF statistics:
- 1139 PDF objects out of 1200 (max. 8388607)
- 921 compressed objects within 10 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 1167 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 65 named destinations out of 1000 (max. 500000)
  753 words of extra memory for PDF output out of 10000 (max. 10000000)
 
