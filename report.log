@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 11:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  13 APR 2025 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/ishobhnik/Report_Nomad/report.tex
-(/home/ishobhnik/Report_Nomad/report.tex
+**/home/sehajganjoo/Report_Nomad/report.tex
+(/home/sehajganjoo/Report_Nomad/report.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -336,57 +336,134 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count300
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count301
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count302
+\lst@gtempboxa=\box58
+\lst@token=\toks29
+\lst@length=\count303
+\lst@currlwidth=\dimen198
+\lst@column=\count304
+\lst@pos=\count305
+\lst@lostspace=\dimen199
+\lst@width=\dimen256
+\lst@newlines=\count306
+\lst@lineno=\count307
+\lst@maxwidth=\dimen257
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count308
+\lst@skipnumbers=\count309
+\lst@framebox=\box59
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
-\l__pdf_internal_box=\box58
-) (./report.aux)
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box60
+) (./report.aux
+
+LaTeX Warning: Label `fig:train_action_samples_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:train_action_samples_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:train_action_samples_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sacon_test_action_samples_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sacon_test_action_samples_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:gc_action_loss_train' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:gc_action_loss_train' multiply defined.
+
+
+LaTeX Warning: Label `fig:gc_action_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:gc_action_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `fig:gc_dist_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:gc_dist_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `fig:vint_action_loss_train' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:vint_action_loss_train' multiply defined.
+
+
+LaTeX Warning: Label `fig:vint_action_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:vint_action_loss_val' multiply defined.
+
+
+LaTeX Warning: Label `fig:gc_action_loss_val_vint' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:gc_action_loss_val_vint' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
-\scratchdimen=\dimen198
-\scratchbox=\box59
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count306
-\MPscratchDim=\dimen199
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count311
+\scratchdimen=\dimen258
+\scratchbox=\box61
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen259
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 57.
  (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
@@ -423,226 +500,307 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@lstlisting=\count317
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-LaTeX Warning: Citation `vint_paper' on page 2 undefined on input line 52.
+LaTeX Warning: Citation `vint_paper' on page 2 undefined on input line 82.
 
 
-LaTeX Warning: Reference `app:preliminaries' on page 2 undefined on input line 52.
+LaTeX Warning: Reference `app:preliminaries' on page 2 undefined on input line 82.
 
-<nomad_diagram.png, id=89, 1583.9175pt x 467.7475pt>
+<nomad_diagram.png, id=81, 1583.9175pt x 467.7475pt>
 File: nomad_diagram.png Graphic file (type png)
 <use nomad_diagram.png>
-Package pdftex.def Info: nomad_diagram.png  used on input line 59.
+Package pdftex.def Info: nomad_diagram.png  used on input line 89.
 (pdftex.def)             Requested size: 399.29463pt x 117.91438pt.
 [2 <./nomad_diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 72--74
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-[5]
-<images/gc_distloss_nomad.png, id=114, 3044.37375pt x 1598.97375pt>
-File: images/gc_distloss_nomad.png Graphic file (type png)
-<use images/gc_distloss_nomad.png>
-Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 179.
-(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
-<images/gc_dist_loss_test.png, id=115, 3044.37375pt x 1598.97375pt>
-File: images/gc_dist_loss_test.png Graphic file (type png)
-<use images/gc_dist_loss_test.png>
-Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 186.
-(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
-
- []
-
-[6 <./images/gc_distloss_nomad.png> <./images/gc_dist_loss_test.png>]
-<images/gc_actionloss_nomad.png, id=123, 3044.37375pt x 1598.97375pt>
-File: images/gc_actionloss_nomad.png Graphic file (type png)
-<use images/gc_actionloss_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 199.
-(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
-<images/gc_actionloss_test_nomad.png, id=124, 3044.37375pt x 1598.97375pt>
-File: images/gc_actionloss_test_nomad.png Graphic file (type png)
-<use images/gc_actionloss_test_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 206.
-(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
-
- []
-
-<images/gc_action_waypts_cos_sim_train.png, id=125, 2537.48pt x 1332.98pt>
-File: images/gc_action_waypts_cos_sim_train.png Graphic file (type png)
-<use images/gc_action_waypts_cos_sim_train.png>
-Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 217.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-<images/gc_action_waypts_cos_sim_test.png, id=126, 2537.48pt x 1332.98pt>
-File: images/gc_action_waypts_cos_sim_test.png Graphic file (type png)
-<use images/gc_action_waypts_cos_sim_test.png>
-Package pdftex.def Info: images/gc_action_waypts_cos_sim_test.png  used on input line 224.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 212--229
-
- []
-
-[7 <./images/gc_actionloss_nomad.png> <./images/gc_actionloss_test_nomad.png> <./images/gc_action_waypts_cos_sim_train.png> <./images/gc_action_waypts_cos_sim_test.png>]
-<images/gc_multi_action_waypts_cos_sim.png, id=138, 2537.48pt x 1332.98pt>
-File: images/gc_multi_action_waypts_cos_sim.png Graphic file (type png)
-<use images/gc_multi_action_waypts_cos_sim.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 236.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-<images/gc_multi_action_waypts_cos_sim_test.png, id=139, 2537.48pt x 1332.98pt>
-File: images/gc_multi_action_waypts_cos_sim_test.png Graphic file (type png)
-<use images/gc_multi_action_waypts_cos_sim_test.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 243.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--248
-
- []
-
-<images/dist_loss.png, id=140, 2537.48pt x 1332.98pt>
-File: images/dist_loss.png Graphic file (type png)
-<use images/dist_loss.png>
-Package pdftex.def Info: images/dist_loss.png  used on input line 254.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--258
-
- []
-
-<images/lr.png, id=141, 2537.48pt x 1332.98pt>
+<images/lr.png, id=102, 2537.48pt x 1332.98pt>
 File: images/lr.png Graphic file (type png)
 <use images/lr.png>
-Package pdftex.def Info: images/lr.png  used on input line 265.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--269
-
- []
-
-[8 <./images/gc_multi_action_waypts_cos_sim.png> <./images/gc_multi_action_waypts_cos_sim_test.png> <./images/dist_loss.png> <./images/lr.png>]
-<images/diffusion_loss.png, id=153, 2537.48pt x 1332.98pt>
-File: images/diffusion_loss.png Graphic file (type png)
-<use images/diffusion_loss.png>
-Package pdftex.def Info: images/diffusion_loss.png  used on input line 277.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-<images/diffusion_eval_loss_random_masking.png, id=154, 2537.48pt x 1332.98pt>
-File: images/diffusion_eval_loss_random_masking.png Graphic file (type png)
-<use images/diffusion_eval_loss_random_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_random_masking.png  used on input line 284.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-<images/diffusion_eval_loss_no_masking.png, id=155, 2537.48pt x 1332.98pt>
-File: images/diffusion_eval_loss_no_masking.png Graphic file (type png)
-<use images/diffusion_eval_loss_no_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_no_masking.png  used on input line 290.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-<images/diffusion_eval_loss_goal_masking.png, id=156, 2537.48pt x 1332.98pt>
-File: images/diffusion_eval_loss_goal_masking.png Graphic file (type png)
-<use images/diffusion_eval_loss_goal_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_goal_masking.png  used on input line 297.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--302
-
- []
-
-<images/total_loss.png, id=157, 2537.48pt x 1332.98pt>
-File: images/total_loss.png Graphic file (type png)
-<use images/total_loss.png>
-Package pdftex.def Info: images/total_loss.png  used on input line 308.
-(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--312
-
- []
-
-<images/train_action_samples_1.png, id=158, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/lr.png  used on input line 183.
+(pdftex.def)             Requested size: 469.75502pt x 246.76015pt.
+[5 <./images/lr.png>]
+<images/train_action_samples_1.png, id=109, 1715.40875pt x 594.22pt>
 File: images/train_action_samples_1.png Graphic file (type png)
 <use images/train_action_samples_1.png>
-Package pdftex.def Info: images/train_action_samples_1.png  used on input line 320.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-<images/train_action_samples_2.png, id=159, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/train_action_samples_1.png  used on input line 215.
+(pdftex.def)             Requested size: 469.75502pt x 162.72644pt.
+<images/train_action_samples_2.png, id=110, 1583.9175pt x 505.89pt>
 File: images/train_action_samples_2.png Graphic file (type png)
 <use images/train_action_samples_2.png>
-Package pdftex.def Info: images/train_action_samples_2.png  used on input line 327.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-<images/train_action_samples_3.png, id=160, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/train_action_samples_2.png  used on input line 219.
+(pdftex.def)             Requested size: 469.75502pt x 150.03133pt.
+ [6]
+<images/train_action_samples_3.png, id=115, 1619.04875pt x 506.89375pt>
 File: images/train_action_samples_3.png Graphic file (type png)
 <use images/train_action_samples_3.png>
-Package pdftex.def Info: images/train_action_samples_3.png  used on input line 334.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-<images/train_action_samples_4.png, id=161, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/train_action_samples_3.png  used on input line 223.
+(pdftex.def)             Requested size: 469.75502pt x 147.06503pt.
+<images/train_action_samples_4.png, id=116, 1594.95876pt x 464.73625pt>
 File: images/train_action_samples_4.png Graphic file (type png)
 <use images/train_action_samples_4.png>
-Package pdftex.def Info: images/train_action_samples_4.png  used on input line 341.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-[9 <./images/diffusion_loss.png> <./images/diffusion_eval_loss_random_masking.png> <./images/diffusion_eval_loss_no_masking.png> <./images/diffusion_eval_loss_goal_masking.png> <./images/total_loss.png>]
-<images/sacson_test_action_samples_1.png, id=173, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/train_action_samples_4.png  used on input line 227.
+(pdftex.def)             Requested size: 469.75502pt x 136.87617pt.
+ [7 <./images/train_action_samples_1.png> <./images/train_action_samples_2.png> <./images/train_action_samples_3.png>]
+<images/sacson_test_action_samples_1.png, id=128, 1617.04124pt x 476.78125pt>
 File: images/sacson_test_action_samples_1.png Graphic file (type png)
 <use images/sacson_test_action_samples_1.png>
-Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 353.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-<images/sacson_test_action_samples_2.png, id=174, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 232.
+(pdftex.def)             Requested size: 469.75502pt x 138.5031pt.
+<images/sacson_test_action_samples_2.png, id=129, 1617.04124pt x 472.76625pt>
 File: images/sacson_test_action_samples_2.png Graphic file (type png)
 <use images/sacson_test_action_samples_2.png>
-Package pdftex.def Info: images/sacson_test_action_samples_2.png  used on input line 360.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
-<images/sacson_test_action_samples_3.png, id=175, 1856.9375pt x 1053.9375pt>
+Package pdftex.def Info: images/sacson_test_action_samples_2.png  used on input line 236.
+(pdftex.def)             Requested size: 469.75502pt x 137.33675pt.
+<images/sacson_test_action_samples_3.png, id=130, 1642.135pt x 497.86pt>
 File: images/sacson_test_action_samples_3.png Graphic file (type png)
 <use images/sacson_test_action_samples_3.png>
-Package pdftex.def Info: images/sacson_test_action_samples_3.png  used on input line 367.
-(pdftex.def)             Requested size: 225.4804pt x 127.96265pt.
- [10 <./images/train_action_samples_1.png> <./images/train_action_samples_2.png> <./images/train_action_samples_3.png> <./images/train_action_samples_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 374--379
+Package pdftex.def Info: images/sacson_test_action_samples_3.png  used on input line 240.
+(pdftex.def)             Requested size: 469.75502pt x 142.41574pt.
+ [8 <./images/train_action_samples_4.png> <./images/sacson_test_action_samples_1.png> <./images/sacson_test_action_samples_2.png>]
+<images/gc_distloss_nomad.png, id=141, 3044.37375pt x 1598.97375pt>
+File: images/gc_distloss_nomad.png Graphic file (type png)
+<use images/gc_distloss_nomad.png>
+Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 252.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/gc_dist_loss_test.png, id=142, 3044.37375pt x 1598.97375pt>
+File: images/gc_dist_loss_test.png Graphic file (type png)
+<use images/gc_dist_loss_test.png>
+Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 259.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--264
 
  []
 
-[11 <./images/sacson_test_action_samples_1.png> <./images/sacson_test_action_samples_2.png> <./images/sacson_test_action_samples_3.png>]
-Overfull \hbox (13.354pt too wide) in paragraph at lines 401--402
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+[9 <./images/sacson_test_action_samples_3.png> <./images/gc_distloss_nomad.png> <./images/gc_dist_loss_test.png>]
+<images/gc_actionloss_nomad.png, id=152, 3044.37375pt x 1598.97375pt>
+File: images/gc_actionloss_nomad.png Graphic file (type png)
+<use images/gc_actionloss_nomad.png>
+Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 272.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/gc_actionloss_test_nomad.png, id=153, 3044.37375pt x 1598.97375pt>
+File: images/gc_actionloss_test_nomad.png Graphic file (type png)
+<use images/gc_actionloss_test_nomad.png>
+Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 279.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--284
+
+ []
+
+<images/gc_action_waypts_cos_sim_train.png, id=154, 2537.48pt x 1332.98pt>
+File: images/gc_action_waypts_cos_sim_train.png Graphic file (type png)
+<use images/gc_action_waypts_cos_sim_train.png>
+Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 290.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+<images/gc_action_waypts_cos_sim_test.png, id=155, 2537.48pt x 1332.98pt>
+File: images/gc_action_waypts_cos_sim_test.png Graphic file (type png)
+<use images/gc_action_waypts_cos_sim_test.png>
+Package pdftex.def Info: images/gc_action_waypts_cos_sim_test.png  used on input line 297.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--302
+
+ []
+
+[10 <./images/gc_actionloss_nomad.png> <./images/gc_actionloss_test_nomad.png> <./images/gc_action_waypts_cos_sim_train.png> <./images/gc_action_waypts_cos_sim_test.png>]
+<images/gc_multi_action_waypts_cos_sim.png, id=166, 2537.48pt x 1332.98pt>
+File: images/gc_multi_action_waypts_cos_sim.png Graphic file (type png)
+<use images/gc_multi_action_waypts_cos_sim.png>
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 309.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+<images/gc_multi_action_waypts_cos_sim_test.png, id=167, 2537.48pt x 1332.98pt>
+File: images/gc_multi_action_waypts_cos_sim_test.png Graphic file (type png)
+<use images/gc_multi_action_waypts_cos_sim_test.png>
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 316.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--321
+
+ []
+
+<images/uc_action_train.png, id=168, 3044.37375pt x 1598.97375pt>
+File: images/uc_action_train.png Graphic file (type png)
+<use images/uc_action_train.png>
+Package pdftex.def Info: images/uc_action_train.png  used on input line 330.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/uc_action_test.png, id=169, 3044.37375pt x 1598.97375pt>
+File: images/uc_action_test.png Graphic file (type png)
+<use images/uc_action_test.png>
+Package pdftex.def Info: images/uc_action_test.png  used on input line 337.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--342
+
+ []
+
+<images/uc_action_sim_train(1).png, id=170, 2271.48625pt x 1193.45876pt>
+File: images/uc_action_sim_train(1).png Graphic file (type png)
+<use images/uc_action_sim_train(1).png>
+Package pdftex.def Info: images/uc_action_sim_train(1).png  used on input line 348.
+(pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
+<images/uc_action_sim_test.png, id=171, 2271.48625pt x 1193.45876pt>
+File: images/uc_action_sim_test.png Graphic file (type png)
+<use images/uc_action_sim_test.png>
+Package pdftex.def Info: images/uc_action_sim_test.png  used on input line 355.
+(pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--360
+
+ []
+
+[11 <./images/gc_multi_action_waypts_cos_sim.png> <./images/gc_multi_action_waypts_cos_sim_test.png> <./images/uc_action_train.png> <./images/uc_action_test.png>]
+<images/cs_multi_action_cos_train.png, id=182, 2271.48625pt x 1193.45876pt>
+File: images/cs_multi_action_cos_train.png Graphic file (type png)
+<use images/cs_multi_action_cos_train.png>
+Package pdftex.def Info: images/cs_multi_action_cos_train.png  used on input line 366.
+(pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
+<images/uc_multi_action_sim_test.png, id=183, 2271.48625pt x 1193.45876pt>
+File: images/uc_multi_action_sim_test.png Graphic file (type png)
+<use images/uc_multi_action_sim_test.png>
+Package pdftex.def Info: images/uc_multi_action_sim_test.png  used on input line 372.
+(pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--377
+
+ []
+
+<images/dist_loss.png, id=184, 2537.48pt x 1332.98pt>
+File: images/dist_loss.png Graphic file (type png)
+<use images/dist_loss.png>
+Package pdftex.def Info: images/dist_loss.png  used on input line 384.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--388
+
+ []
+
+<images/diffusion_loss.png, id=185, 2537.48pt x 1332.98pt>
+File: images/diffusion_loss.png Graphic file (type png)
+<use images/diffusion_loss.png>
+Package pdftex.def Info: images/diffusion_loss.png  used on input line 395.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+<images/diffusion_eval_loss_random_masking.png, id=186, 2537.48pt x 1332.98pt>
+File: images/diffusion_eval_loss_random_masking.png Graphic file (type png)
+<use images/diffusion_eval_loss_random_masking.png>
+Package pdftex.def Info: images/diffusion_eval_loss_random_masking.png  used on input line 402.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+<images/diffusion_eval_loss_no_masking.png, id=187, 2537.48pt x 1332.98pt>
+File: images/diffusion_eval_loss_no_masking.png Graphic file (type png)
+<use images/diffusion_eval_loss_no_masking.png>
+Package pdftex.def Info: images/diffusion_eval_loss_no_masking.png  used on input line 408.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+<images/diffusion_eval_loss_goal_masking.png, id=188, 2537.48pt x 1332.98pt>
+File: images/diffusion_eval_loss_goal_masking.png Graphic file (type png)
+<use images/diffusion_eval_loss_goal_masking.png>
+Package pdftex.def Info: images/diffusion_eval_loss_goal_masking.png  used on input line 415.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+[12 <./images/uc_action_sim_train(1).png> <./images/uc_action_sim_test.png> <./images/cs_multi_action_cos_train.png> <./images/uc_multi_action_sim_test.png> <./images/dist_loss.png>]
+<images/total_loss.png, id=201, 2537.48pt x 1332.98pt>
+File: images/total_loss.png Graphic file (type png)
+<use images/total_loss.png>
+Package pdftex.def Info: images/total_loss.png  used on input line 426.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--439
+
+ []
+
+[13 <./images/diffusion_loss.png> <./images/diffusion_eval_loss_random_masking.png> <./images/diffusion_eval_loss_no_masking.png> <./images/diffusion_eval_loss_goal_masking.png> <./images/total_loss.png>]
+<images/distloss_vint.png, id=215, 2537.48pt x 1332.98pt>
+File: images/distloss_vint.png Graphic file (type png)
+<use images/distloss_vint.png>
+Package pdftex.def Info: images/distloss_vint.png  used on input line 444.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+File: images/gc_distloss_nomad.png Graphic file (type png)
+<use images/gc_distloss_nomad.png>
+Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 451.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/dist_test_vint.png, id=216, 2537.48pt x 1332.98pt>
+File: images/dist_test_vint.png Graphic file (type png)
+<use images/dist_test_vint.png>
+Package pdftex.def Info: images/dist_test_vint.png  used on input line 457.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+File: images/gc_dist_loss_test.png Graphic file (type png)
+<use images/gc_dist_loss_test.png>
+Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 464.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/action_train_vint.png, id=217, 2537.48pt x 1332.98pt>
+File: images/action_train_vint.png Graphic file (type png)
+<use images/action_train_vint.png>
+Package pdftex.def Info: images/action_train_vint.png  used on input line 474.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+File: images/gc_actionloss_nomad.png Graphic file (type png)
+<use images/gc_actionloss_nomad.png>
+Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 481.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+<images/action_test_vint.png, id=218, 2537.48pt x 1332.98pt>
+File: images/action_test_vint.png Graphic file (type png)
+<use images/action_test_vint.png>
+Package pdftex.def Info: images/action_test_vint.png  used on input line 487.
+(pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
+File: images/gc_actionloss_test_nomad.png Graphic file (type png)
+<use images/gc_actionloss_test_nomad.png>
+Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 494.
+(pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
+ [14 <./images/distloss_vint.png> <./images/dist_test_vint.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
+
+ []
+
+
+Overfull \hbox (13.354pt too wide) in paragraph at lines 512--513
 []\OT1/cmr/m/n/12 Diffusion Pol-icy GitHub Repos-i-tory: []$\OT1/cmtt/m/n/12 https : / / github . com / wayveai / diffusion-[]policy$[] 
  []
 
-[12]
+[15 <./images/action_train_vint.png> <./images/action_test_vint.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 406.
+(hyperref)                removing `\\' on input line 522.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--409
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--417
+Underfull \hbox (badness 10000) in paragraph at lines 523--525
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--533
 
  []
 
-[14] [15] [16] [17] [18] [19] (./report.aux)
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+
+ []
+
+[17] [18] [19] [20] [21] [22] (./report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -651,22 +809,25 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 8ACAB9DC291C803EFA95B331D1E4B0AF;2667.
+(rerunfilecheck)             Checksum: 9685F88A20B5817FE609F4A0B7F619B0;2356.
  ) 
 Here is how much of TeX's memory you used:
- 12425 strings out of 476182
- 199703 string characters out of 5795595
+ 13884 strings out of 474222
+ 222522 string characters out of 5748733
  1935975 words of memory out of 5000000
- 34235 multiletter control sequences out of 15000+600000
+ 35923 multiletter control sequences out of 15000+600000
  567526 words of font info for 69 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 75i,9n,79p,610b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/ishobhnik/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (19 pages, 7619040 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 75i,9n,79p,612b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on report.pdf (22 pages, 9539283 bytes).
 PDF statistics:
- 319 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 260 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -16,6 +16,36 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{subcaption}
+% Package for listings
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define custom colors for code
+\definecolor{codegray}{gray}{0.95}
+\definecolor{commentgreen}{rgb}{0,0.6,0}
+\definecolor{keywordblue}{rgb}{0.2,0.2,0.8}
+
+% Set up lstlisting for Python
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{codegray},
+    commentstyle=\color{commentgreen}\ttfamily,
+    keywordstyle=\color{keywordblue}\bfseries,
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{red},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    language=Python
+}
+
+\lstset{style=pythonstyle}
 
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
@@ -148,6 +178,12 @@ For overall loss function, we add the MSE temporal distance loss to the objectiv
  \begin{itemize}
      \item The weighting factor $\lambda$ for the auxiliary distance loss was set to $10^{-4}$.
      \item The model was trained using the \textbf{AdamW} optimizer with a learning rate of $1\text{e}^{-4}$ and a weight decay of $1\text{e}^{-2}$.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{images/lr.png}
+            \caption{Learned rate schedule for the NoMaD model.}
+            \label{fig:lr}
+        \end{figure}
      \item We applied \textbf{cosine annealing} to decay the learning rate over time.
      \item We used \textbf{goal masking} with probability $p_m = 0.5$, encouraging the model to generalize across goal-visible and goal-agnostic contexts.
      \item The diffusion process used a \textbf{square cosine schedule} with $K = 10$ denoising steps.
@@ -168,7 +204,44 @@ Evaluation was performed on the validation set using the following metrics:
     \item cosine similarity
     \item action loss
 \end{itemize}
-\section{Experiments}
+\subsection{Using WandB}
+We used wandb to log training progress, visualize losses, and monitor bothmodel behavior and system resources (e.g., GPU/CPU utilization)
+throughout experimentation. \\
+Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
+Refer to Appendix X for more details about how we used wandb.
+\section{Experiments and Results}
+\subsection*{Train action samples:}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_1.png}    
+    \label{fig:train_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_2.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_3.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_4.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\subsection*{Sacson test action samples:}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_1.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_2.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_3.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+
+
 \subsection*{Goal-Conditioned (GC) Evaluation}
 We set the goal mask $m = 0$ to evaluate the model's performance in goal-directed navigation.\\
 \noindent \textbf{Distance Loss:}\\
@@ -246,6 +319,63 @@ We see that the loss has plateaued after the first epoch, both in test and train
     \end{subfigure}
     \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
 \end{figure}
+
+\subsection*{Unconditional (UC) Evaluation}
+We set the goal mask $m = 1$ to evaluate the model's performance in open-ended exploration.\\
+\noindent \textbf{Action loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_train.png}
+        \caption{Action Loss on Training Set}
+        \label{fig:gc_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_test.png}
+        \caption{Action Loss on Validation Set}
+        \label{fig:gc_action_loss_val}
+    \end{subfigure}
+    \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+\noindent \textbf{uc\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_sim_train(1).png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:uc_action_waypts_cos_sim_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:uc_action_waypts_cos_sim_val}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+\noindent \textbf{uc\_multi\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/cs_multi_action_cos_train.png}
+        \label{fig:uc_multi_action_waypts_cos_sim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_multi_action_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:uc_action_multi_waypts_cos_sim_test}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+
 \noindent \textbf{Distance Loss:}\\
 \begin{figure}[H]
     \centering
@@ -257,19 +387,7 @@ We see that the loss has plateaued after the first epoch, both in test and train
     \end{subfigure}
     \end{figure}
 
-\noindent \textbf{Learning Rate:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/lr.png}
-        \caption{Learning Rate on Training Set}
-        \label{fig:lr}
-    \end{subfigure}
-    \end{figure}
-
-\newpage
-\noindent \textbf{Diffusion Loss:}\\
+\subsection*{Diffusion Loss}
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -310,65 +428,6 @@ We see that the loss has plateaued after the first epoch, both in test and train
         \label{fig:total_loss}
     \end{subfigure}
     \end{figure}
-\
-
-\subsection{Train action samples:}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/train_action_samples_1.png}
-        \caption{Sample actions generated by the model during training.}
-        \label{fig:train_action_samples_1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/train_action_samples_2.png}
-        \caption{Sample actions generated by the model during training.}
-        \label{fig:train_action_samples_2}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/train_action_samples_3.png}
-        \caption{Sample actions generated by the model during training.}
-        \label{fig:train_action_samples_3}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/train_action_samples_4.png}
-        \caption{Sample actions generated by the model during training.}
-        \label{fig:train_action_samples_4}
-    \end{subfigure}
-    \hfill
-    \end{figure}
-
-\subsection{Sacson test action samples:}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/sacson_test_action_samples_1.png}
-        \caption{Sample actions generated by the model during testing.}
-        \label{fig:sacon_test_action_samples_1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/sacson_test_action_samples_2.png}
-        \caption{Sample actions generated by the model during testing.}
-        \label{fig:sacon_test_action_samples_2}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/sacson_test_action_samples_3.png}
-        \caption{Sample actions generated by the model during testing.}
-        \label{fig:sacon_test_action_samples_3}
-    \end{subfigure}
-\end{figure}
 
 \subsection*{Comparison with ViNT}
 To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD.\\
@@ -376,21 +435,73 @@ We used the same EfficientNet-B0 encoder and transformer architecture, but witho
 We evaluated both models under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints.\\
 Interestingly, we observed that in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD achieved comparable performance across key metrics. This suggests that the introduction of a diffusion-based decoder in NoMaD does not degrade performance in goal-directed planning tasks. Instead, it provides a more expressive generative mechanism while maintaining task performance.\\
 This supports the hypothesis that \textbf{diffusion-based modeling can match deterministic approaches in accuracy while offering better generative flexibility}, particularly for multi-modal or long-horizon planning scenarios.\\
+Here are some plots from WandB comparing the two models:\\
 
-
-
-\subsection{Training Metrics}
-\begin{itemize}
-\item Final training loss: \text 0.003
-\item Cosine similarity: \text 0.47 (multi-action waypoints)
-\item Distance loss: \text 10.2
-\end{itemize}
-
-\subsection{Observations}
-Loss plateaued after around 5,000 batches. Training logs show improvement in cosine similarity and reduction in loss. Action losses remained stable across UC and GC branches.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/distloss_vint.png}
+        \caption{Distance Loss on Training Set for ViNT}
+        \label{fig:vint_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
+        \caption{Distance Loss on Training Set for NoMaD}
+        \label{fig:vint_action_loss_val}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/dist_test_vint.png}
+        \caption{Distance Loss on Validation Set for ViNT}
+        \label{fig:gc_dist_loss_val}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
+        \caption{Distance Loss on Validation Set for ViNT}
+        \label{fig:gc_dist_loss_val_vint}
+    \end{subfigure}
+    \caption{Distance loss comparison between ViNT and NoMaD on training and validation sets.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_train_vint.png}
+        \caption{Action Loss on Training Set for ViNT}
+        \label{fig:vint_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+        \caption{Action Loss on Training Set for NoMaD}
+        \label{fig:vint_action_loss_val}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_test_vint.png}
+        \caption{Action Loss on Validation Set for ViNT}
+        \label{fig:gc_action_loss_val_vint}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
+        \caption{Action Loss on Validation Set for NoMaD}
+        \label{fig:gc_action_loss_val_vint}
+    \end{subfigure}
+    \caption{Action loss comparison between ViNT and NoMaD on training and validation sets.}
+\end{figure}
+Refer to appendix for Comparision of their Cosine Similarity.\\
 
 \section{Challenges and Debugging}
 
+\section{Team Contributions}
 
 \section{Conclusion and Future Work}
 We successfully trained the NOMAD policy and analyzed the perception module. Future work could involve domain randomization, hyperparameter tuning, and evaluating transfer to real-world or simulated environments.
@@ -400,6 +511,11 @@ We successfully trained the NOMAD policy and analyzed the perception module. Fut
 \item H. Janner et al., "NOMAD: Planning with Diffusion for Visual Navigation," 2022.
 \item Diffusion Policy GitHub Repository: \url{https://github.com/wayveai/diffusion-policy}
 \end{enumerate}
+
+
+
+
+
 
 \newpage
 \begin{appendices}
