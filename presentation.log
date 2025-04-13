@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1401,7 +1401,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [37
 
 ]
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 536--536
+Overfull \hbox (136.87523pt too wide) in paragraph at lines 533--533
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1413,7 +1413,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [38
 
 ]
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 550--550
+Overfull \hbox (136.87523pt too wide) in paragraph at lines 552--552
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1425,7 +1425,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [39
 
 ]
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 564--564
+Overfull \hbox (136.87523pt too wide) in paragraph at lines 566--566
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1437,7 +1437,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [40
 
 ]
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 570--570
+Overfull \hbox (136.87523pt too wide) in paragraph at lines 572--572
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1454,9 +1454,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 583--583
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1464,14 +1461,6 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [42
 
 ]
-Overfull \vbox (14.12917pt too high) has occurred while \output is active []
-
-
-Overfull \hbox (136.87523pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[43]
 Overfull \hbox (136.87523pt too wide) in paragraph at lines 590--590
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1481,19 +1470,19 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[44
+[43
 
 ]
 Overfull \hbox (136.87523pt too wide) in paragraph at lines 613--613
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/gc_action_sim_nomad.png, id=1723, 3044.37375pt x 1598.97375pt>
+<images/gc_action_sim_nomad.png, id=1696, 3044.37375pt x 1598.97375pt>
 File: images/gc_action_sim_nomad.png Graphic file (type png)
 <use images/gc_action_sim_nomad.png>
 Package pdftex.def Info: images/gc_action_sim_nomad.png  used on input line 613.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/gc_action_cos_sim_test.png, id=1724, 3044.37375pt x 1598.97375pt>
+<images/gc_action_cos_sim_test.png, id=1697, 3044.37375pt x 1598.97375pt>
 File: images/gc_action_cos_sim_test.png Graphic file (type png)
 <use images/gc_action_cos_sim_test.png>
 Package pdftex.def Info: images/gc_action_cos_sim_test.png  used on input line 613.
@@ -1503,19 +1492,19 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[45
+[44
 
  <./images/gc_action_sim_nomad.png> <./images/gc_action_cos_sim_test.png>]
 Overfull \hbox (136.87523pt too wide) in paragraph at lines 636--636
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/multi_action_sim_train.png, id=1766, 3044.37375pt x 1598.97375pt>
+<images/multi_action_sim_train.png, id=1740, 3044.37375pt x 1598.97375pt>
 File: images/multi_action_sim_train.png Graphic file (type png)
 <use images/multi_action_sim_train.png>
 Package pdftex.def Info: images/multi_action_sim_train.png  used on input line 636.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/multi_action_sim.png, id=1767, 3044.37375pt x 1598.97375pt>
+<images/multi_action_sim.png, id=1741, 3044.37375pt x 1598.97375pt>
 File: images/multi_action_sim.png Graphic file (type png)
 <use images/multi_action_sim.png>
 Package pdftex.def Info: images/multi_action_sim.png  used on input line 636.
@@ -1525,19 +1514,19 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[46
+[45
 
  <./images/multi_action_sim_train.png> <./images/multi_action_sim.png>]
 Overfull \hbox (136.87523pt too wide) in paragraph at lines 658--658
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/cs_multi_action_cos_train.png, id=1806, 2271.48625pt x 1193.45876pt>
+<images/cs_multi_action_cos_train.png, id=1779, 2271.48625pt x 1193.45876pt>
 File: images/cs_multi_action_cos_train.png Graphic file (type png)
 <use images/cs_multi_action_cos_train.png>
 Package pdftex.def Info: images/cs_multi_action_cos_train.png  used on input line 658.
 (pdftex.def)             Requested size: 164.30028pt x 86.31866pt.
-<images/uc_multi_action_sim_test.png, id=1807, 2271.48625pt x 1193.45876pt>
+<images/uc_multi_action_sim_test.png, id=1780, 2271.48625pt x 1193.45876pt>
 File: images/uc_multi_action_sim_test.png Graphic file (type png)
 <use images/uc_multi_action_sim_test.png>
 Package pdftex.def Info: images/uc_multi_action_sim_test.png  used on input line 658.
@@ -1547,16 +1536,9 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[47
+[46
 
  <./images/cs_multi_action_cos_train.png> <./images/uc_multi_action_sim_test.png>]
-Overfull \hbox (136.87523pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[48
-
-]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1582,18 +1564,18 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: B70BF10812DAF92F57B133BE4A10BD7E;93.
  ) 
 Here is how much of TeX's memory you used:
- 29079 strings out of 476182
- 604008 string characters out of 5795595
+ 29075 strings out of 476182
+ 603970 string characters out of 5795595
  1949975 words of memory out of 5000000
  50423 multiletter control sequences out of 15000+600000
  574750 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,15n,107p,433b,900s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on presentation.pdf (48 pages, 8264005 bytes).
+Output written on presentation.pdf (46 pages, 8259529 bytes).
 PDF statistics:
- 1967 PDF objects out of 2073 (max. 8388607)
- 1529 compressed objects within 16 object streams
- 108 named destinations out of 1000 (max. 500000)
+ 1914 PDF objects out of 2073 (max. 8388607)
+ 1479 compressed objects within 15 object streams
+ 104 named destinations out of 1000 (max. 500000)
  1632 words of extra memory for PDF output out of 10000 (max. 10000000)
 
