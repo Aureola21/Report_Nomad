@@ -80,7 +80,7 @@ Unlike traditional latent-variable models or methods that rely on separate gener
 In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model's ability to generalize across diverse scenarios.
 
 \section{Methodology}
-The NoMaD (Navigation with Goal-Masked Diffusion) framework introduces a unified visual navigation policy capable of both goal-conditioned navigation and open-ended exploration within a single architecture. Building on the Visual Navigation Transformer (ViNT) \cite{vint_paper} and diffusion-based policy learning (see Appendix \ref{app:preliminaries}), NoMaD extends these approaches with two key innovations: (1) attention-based goal masking for flexible behavior switching, and (2) a diffusion decoder for multimodal waypoint prediction.
+The NoMaD (Navigation with Goal-Masked Diffusion) framework introduces a unified visual navigation policy capable of both goal-conditioned navigation and open-ended exploration within a single architecture. Building on the Visual Navigation Transformer (ViNT) \cite{vint} and diffusion-based policy learning (see Appendix \ref{app:preliminaries}), NoMaD extends these approaches with two key innovations: (1) attention-based goal masking for flexible behavior switching, and (2) a diffusion decoder for multimodal waypoint prediction.
 \subsection*{Architecture Overview}
 \label{subsec:architecture}
 Figure \ref{fig:nomad_architecture} illustrates the NoMaD architecture, which consists of three main components:
@@ -119,7 +119,7 @@ During training, the goal mask $m$ is sampled from a Bernoulli distribution with
 At test time, $m$ is explicitly set based on the task: $m = 0$ for goal-reaching, and $m = 1$ for exploration.
 
 \subsection*{B. Diffusion Policy}
-Refer to Appendix for more on Diffusion policies.\\
+Refer to Appendix \ref{app:diffusion} for more on Diffusion policies.\\
 In general, diffusion models are generative models that work by gradually adding noise to data (a forward process), and then learning to remove that noise (a reverse denoising process) to generate realistic samples.\\
 To model complex, multimodal action distributions, especially in unstructured or ambiguous environments, NoMaD employs a \textbf{diffusion model} to approximate the conditional distribution of the next action as $p(a_t | c_t)$. \\
 The denoising process is as follows:\\
@@ -265,7 +265,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{subfigure}
     \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
-We see that the loss has plateaued after the first epoch, both in test and training sets, indicating the model has learned to predict the distance to the goal.\\
+We see that the loss has plateaued after the first epoch, both in test and training sets, indicating that the model quickly learns a strong initial estimate of the distance to the goal.\\
 \newpage
 \noindent \textbf{Action loss:}\\
 \begin{figure}[H]
@@ -285,6 +285,8 @@ We see that the loss has plateaued after the first epoch, both in test and train
     \end{subfigure}
     \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
+The action loss steadily decreases across epochs in both training and validation datasets, suggesting that the diffusion-based policy learns to generate feasible future actions conditioned on the visual goal and current context.\\
+
 \noindent \textbf{gc\_action\_waypts\_cos\_sim:}\\
 \begin{figure}[H]
     \centering
@@ -303,7 +305,13 @@ We see that the loss has plateaued after the first epoch, both in test and train
     \end{subfigure}
     \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
 \end{figure}
-\newpage
+The Cosine Similarity metric evaluates how well the predicted action direction aligns with the ground-truth direction by measuring the angle between the two vectors. A value closer to 1 indicates better directional alignment.
+
+\begin{itemize}
+    \item During training, the model achieves a high and stable cosine similarity on the training set, indicating that it effectively learns to predict actions aligned with the ground-truth directions in seen environments.
+    \item However, the validation set shows noticeable variance in cosine similarity across epochs. This could be attributed to the fact that the dataset configuration had \texttt{learn\_angle = False}, meaning the model was not explicitly trained to predict the robot's orientation or angular displacement.
+    \item As a result, while the model can align its predictions in direction (to some extent), the lack of angular supervision might reduce its generalization capacity in unseen environments, leading to inconsistency in cosine similarity.
+\end{itemize}
 \noindent \textbf{gc\_multi\_action\_waypts\_cos\_sim:}\\
 \begin{figure}[H]
     \centering
@@ -343,6 +351,7 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
     \end{subfigure}
     \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
+\newpage
 \noindent \textbf{uc\_action\_waypts\_cos\_sim:}\\
 \begin{figure}[H]
     \centering
@@ -517,10 +526,10 @@ Refer to \hyperref[app:wandb]{Appendix G} for Comparision of their Cosine Simila
     \item \hyperref[app:preliminaries]{\textbf{Appendix B:}} Technical Preliminaries
     \item \hyperref[app:vit]{\textbf{Appendix C:}} Vision Transformer
     \item \hyperref[app:efficientnet]{\textbf{Appendix D:}} EfficientNet
-    \item \textbf{Appendix E:} Diffusion
-    \item \textbf{Appendix F:} Weights and Biases
-    \item \textbf{Appendix G:} Team Contributions
-    \item \textbf{References}
+    \item \hyperref[app:diffusion]{\textbf{Appendix E:}} Diffusion Models
+    \item \hyperref[app:wandb]{\textbf{Appendix F:}} Weights and Biases
+    \item \hyperref[app:team_contributions]{\textbf{Appendix G:}} Team Contributions
+    \item \hyperref[references]{\textbf{References}}
 \end{itemize}
 \section{Related Work and \\ Contextual Foundations of NoMaD}
 \label{app:related_work}
@@ -769,8 +778,171 @@ where:
     \item $T = 400M$ (target FLOPS for B0)
 \end{itemize}
 
+\section{Diffusion Policy: Visuomotor Policy Learning via Action Diffusion} \cite{diff_paper}
+\label{app:diffusion}
+\textbf{Diffusion Policy}, a novel approach for generating robot behavior by representing a robot's visuomotor policy as a conditional denoising diffusion process. This method leverages the strengths of diffusion models to address challenges in robot policy learning, such as handling multimodal action distributions, high-dimensional action spaces, and training stability. The authors benchmark Diffusion Policy across 15 tasks from 4 different robot manipulation benchmarks, demonstrating an average improvement of 46.9\% over existing state-of-the-art methods.\\
+Traditional policy learning from demonstrations faces challenges due to:
+\begin{itemize}
+    \item \textbf{Multimodal action distributions}: Multiple valid actions for the same observation.
+    \item \textbf{Sequential correlation}: Actions are temporally dependent.
+    \item \textbf{High precision requirements}: Robot tasks often require precise control.
+\end{itemize}
+
+Prior work has explored various action representations (e.g., mixtures of Gaussians, categorical representations) and policy representations (e.g., explicit vs. implicit policies). However, these methods often struggle with stability, scalability, or expressiveness.
+
+\subsection*{Diffusion Policy Formulation}
+Diffusion Policy is based on Denoising Diffusion Probabilistic Models (DDPMs), adapted for robot visuomotor control. The key modifications include:
+\begin{itemize}
+    \item \textbf{Action-space diffusion}: The output \(\mathbf{x}\) represents robot actions instead of images.
+    \item \textbf{Conditional denoising}: The denoising process is conditioned on input observations \(\mathbf{O}_t\).
+\end{itemize}
+
+The policy predicts action sequences using a receding horizon control strategy:
+\begin{itemize}
+    \item At time \(t\), the policy takes the latest \(T_o\) steps of observations and predicts \(T_p\) steps of actions.
+    \item Only \(T_a\) steps are executed before re-planning, balancing temporal consistency and responsiveness.
+\end{itemize}
+
+\subsubsection*{Training}
+The training process involves:
+\begin{enumerate}
+    \item Sampling an action \(\mathbf{A}_t^0\) from the dataset.
+    \item Adding noise \(\boldsymbol{\varepsilon}^k\) to create a noisy action \(\mathbf{A}_t^k\).
+    \item Training the noise prediction network \(\epsilon_\theta\) to estimate \(\boldsymbol{\varepsilon}^k\) given \(\mathbf{O}_t\) and \(\mathbf{A}_t^k\).
+\end{enumerate}
+
+The loss function is:
+\[
+\mathcal{L} = \text{MSE}(\boldsymbol{\varepsilon}^k, \epsilon_\theta(\mathbf{O}_t, \mathbf{A}_t^0 + \boldsymbol{\varepsilon}^k, k)).
+\]
+
+\subsection*{Network Architectures}
+Two architectures are explored:
+\begin{itemize}
+    \item \textbf{CNN-based}: Uses 1D temporal CNNs with FiLM conditioning for observation features. Suitable for most tasks but struggles with high-frequency action changes.
+    \item \textbf{Transformer-based}: Introduces a time-series diffusion transformer to reduce over-smoothing. Performs better for complex tasks but requires more tuning.
+\end{itemize}
+
+\subsection*{Visual Conditioning}
+Visual observations are encoded independently for each timestep and concatenated into a latent embedding \(\mathbf{O}_t\). A ResNet-18 encoder is used with modifications:
+\begin{itemize}
+    \item Spatial softmax pooling replaces global average pooling.
+    \item GroupNorm replaces BatchNorm for stable training.
+\end{itemize}
+
+\subsection*{Noise Schedule}
+The square cosine schedule from iDDPM is used to control the noise level during denoising, balancing high- and low-frequency action characteristics.
+
+\subsection*{Inference Acceleration}
+Denoising Diffusion Implicit Models (DDIM) reduce inference iterations from 100 to 16, enabling real-time control with low latency (0.1s on an NVIDIA 3080 GPU).
+
+
+\subsection*{Multimodal Action Distributions}
+Diffusion Policy naturally handles multimodal action distributions by:
+\begin{itemize}
+    \item Stochastic initialization: Starting from random noise allows exploration of different modes.
+    \item Stochastic optimization: Gaussian perturbations during denoising enable transitions between modes.
+\end{itemize}
+The method scales well to high-dimensional action spaces, enabling joint prediction of action sequences for long-horizon planning.
+Unlike implicit policies that require negative sampling, Diffusion Policy learns the score function directly, avoiding instability issues.
+Diffusion Policy performs better with position control than velocity control, contrasting with prior work that favors velocity control.\\
+The authors evaluate Diffusion Policy on 15 tasks across 4 benchmarks:
+\begin{itemize}
+    \item \textbf{Robomimic}: 5 manipulation tasks with human demonstrations.
+    \item \textbf{Push-T}: A planar pushing task with RGB or keypoint observations.
+    \item \textbf{Multimodal Block Pushing}: Tests long-horizon multimodality.
+    \item \textbf{Franka Kitchen}: A multi-task environment with 7 objects.
+\end{itemize}
+
+\subsubsection*{Key Findings}
+\begin{itemize}
+    \item Diffusion Policy outperforms baselines (LSTM-GMM, IBC, BET) by 46.9\% on average.
+    \item Handles both short- and long-horizon multimodality effectively.
+    \item Stable training with consistent hyperparameters across tasks.
+\end{itemize}
+\newpage
 \section{WandB}
 \label{app:wandb}
+Here are some plots from WandB comparing the two models(NoMaD and ViNT)\\
+\subsection*{Action Cosine Similarity}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_sim_train_vint.png}
+        \label{fig:action_train_vint}
+        \caption{ViNT Action Cosine Similarity on Training Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
+        \label{fig:action_train_nomad}
+        \caption{NoMaD Action Cosine Similarity on Training Set}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_sim_test_vint.png}
+        \label{fig:action_test_vint}
+        \caption{ViNT Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_cos_sim_test.png}
+        \label{fig:action_test_nomad}
+        \caption{NoMaD Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+\end{figure}
+\subsection*{Multi Action Cosine Similarity}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/multiaction_train_vint.png}
+        \label{fig:multiaction_train_vint}
+        \caption{ViNT Multi Action Cosine Similarity on Training Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
+        \label{fig:multiaction_train_nomad}
+        \caption{NoMaD Multi Action Cosine Similarity on Training Set}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/multiaction_test_vint.png}
+        \label{fig:multiaction_test_vint}
+        \caption{ViNT Multi Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
+        \label{fig:multiaction_test_nomad}
+        \caption{NoMaD Multi Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+\end{figure}
+\newpage
+Following are some of the visualizations of \textbf{ViNT} model's predictions on the validation set.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/test_action_sample_vint.png}
+    \label{fig:test_action_sample_vint}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/test_action_sample_vint_2.png}
+    \label{fig:test_action_sample_vint2}
+\end{figure}
+\newpage
 \section{Team Contributions}
 \label{app:team_contributions}
 \textbf{Abhishek Kumar Jha:} \\
@@ -798,14 +970,24 @@ where:
         \item Developed the training pipeline
         \item Conducted experiments and analysis
     \end{itemize}
+\newpage
 \begin{thebibliography}{9}
-\bibitem{nomad}
-H. Janner et al.,\textit{NOMAD: Planning with Diffusion for Visual Navigation} 2022.
+\label{references}
+\bibitem{nomad_paper}
+Dhruv Shah et al.
+\textit{NoMaD: A Diffusion Policy for Visual Navigation}.
+2023
+\href{https://arxiv.org/abs/2310.07896}{arXiv:2310.07896}
 \bibitem{diff}
 \href{https://github.com/wayveai/diffusion-policy}{Diffusion Policy GitHub Repository:}
 \bibitem{gitnomad}
 \href{https://github.com/robodhruv/visualnav-transformer}{NoMaD GitHub Repository}
 
+\bibitem{diff_paper}
+Cheng Chi et al.
+\textit{Diffusion Policy: Visuomotor Policy Learning via Action Diffusion}.
+2023
+\href{https://arxiv.org/abs/2303.04137}{arXiv:2303.04137}
 \bibitem{vit} 
 Dosovitskiy et al. 
 \textit{An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale}. 
@@ -817,7 +999,11 @@ Tan \& Le.
 \textit{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}. 
 2019. 
 \href{https://arxiv.org/abs/1905.11946}{arXiv:1905.11946}
-\end{thebibliography}
 
+\bibitem{vint}
+Dhruv Shah et al.,
+\textit{ViNT: A Foundation Model for Visual Navigation} 2023
+\href{https://arxiv.org/abs/2306.14846}{arXiv:2306.14846}
+\end{thebibliography}
 \end{appendices}
 \end{document}
