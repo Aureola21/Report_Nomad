@@ -15,6 +15,7 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{subcaption}
 
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
@@ -123,7 +124,7 @@ All experiments were conducted on a system equipped with an NVIDIA GeForce GTX 1
 The code was implemented in Python 3.12.9 in a conda environment. All the packages and libraries used are listed in the requirements.txt file.\\
 The codebase was adapted from an open-source repository, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and hyperparameter sweeps.
 \subsection{Data Pipeline}
-We trained the NoMaD model using the \textbf{SACSoN, RECON} dataset, which contains diverse real-world trajectories across various environments and robot platforms.
+We trained the NoMaD model using the \textbf{SACSoN} and parts of \textbf{RECON} dataset, which contains diverse real-world trajectories across various environments and robot platforms.
 The SACSoN dataset was already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
 \subsection{Training Procedure}
 Training was done on a single NVIDIA GPU using a batch size of 32 for 10 epochs.\\
@@ -168,7 +169,32 @@ Evaluation was performed on the validation set using the following metrics:
     \item action loss
 \end{itemize}
 \section{Experiments}
-\subsection*{Training Loss Curves}
+\subsection*{Goal-Conditioned (GC) Evaluation}
+We set the goal mask $m = 0$ to evaluate the model's performance in goal-directed navigation.\\
+\noindent \textbf{Distance Loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
+        \caption{Distance Loss on Training Set}
+        \label{fig:gc_dist_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
+        \caption{Distance Loss on Validation Set}
+        \label{fig:gc_dist_loss_val}
+    \end{subfigure}
+    \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+
+
+
+
+
+
 \subsection*{Comparison with ViNT}
 To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD.\\
 We used the same EfficientNet-B0 encoder and transformer architecture, but without the diffusion decoder.\\
@@ -329,7 +355,7 @@ A learnable classification token $\mathbf{z}_{cls} \in \mathbf{R}^D$ is prepende
 Learned positional embeddings are added to retain spatial information:
 
 \[
-\mathbf{Z} = \mathbf{Z} + \mathbf{E}_{pos}, \quad \mathbf{E}_{pos} \in \mathbb{R}^{(N+1) \times D}
+\mathbf{Z} = \mathbf{Z} + \mathbf{E}_{pos}, \quad \mathbf{E}_{pos} \in \mathbf{R}^{(N+1) \times D}
 \]
 
 \subsection*{2. Transformer Encoder}
@@ -420,7 +446,7 @@ The core building block consists of:
 
 \subsubsection*{(b) Squeeze-and-Excitation (SE)}
 \begin{itemize}
-    \item \textbf{Squeeze}: Global average pooling $\rightarrow \mathbf{s} \in \mathbb{R}^C$
+    \item \textbf{Squeeze}: Global average pooling $\rightarrow \mathbf{s} \in \mathbf{R}^C$
     \item \textbf{Excitation}:
     \[
     \mathbf{s}_{excite} = \sigma(\mathbf{W}_2 \text{ReLU}(\mathbf{W}_1 \mathbf{s}))

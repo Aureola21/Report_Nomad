@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744514758.6055 "/home/sehajganjoo/Report_Nomad/report.tex" "report.pdf" "report" 1744514759.05408 2
+["pdflatex"] 1744516274.35577 "/home/sehajganjoo/Report_Nomad/report.tex" "report.pdf" "report" 1744516275.26004 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/report.tex" 1744514758.22606 25776 dd7e0e155031c8685b733ffbaed26faf ""
+  "/home/sehajganjoo/Report_Nomad/report.tex" 1744516274.47717 26619 8f18cc62c1534d31aad1724455f36411 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -67,6 +67,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty" 1690576852 12494 0c0cdb824278a4d51cefeb2e79901315 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -103,10 +104,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1733207108.46717 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1733207121 8213759 d8d8a65f83db2f052d38fd0f3d567e46 ""
+  "images/gc_dist_loss_test.png" 1744516084.05866 577898 f69ef42f003b79916ac0a769c1e80f4e ""
+  "images/gc_distloss_nomad.png" 1744515448.49487 341834 e09205c438041b980b41f01c3876be63 ""
   "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "report.aux" 1744514758.99909 3068 7fea53bcabd9dc872309bda406869f82 "pdflatex"
-  "report.out" 1744514758.99909 2295 09afb09763ef7e7abfca2e2ea371b12b "pdflatex"
-  "report.tex" 1744514758.22606 25776 dd7e0e155031c8685b733ffbaed26faf ""
+  "report.aux" 1744516275.2212 3665 20a6a9d956c15d349de64b778f2475f3 "pdflatex"
+  "report.out" 1744516275.2222 2295 185ff05b09066da12504e05ad886a9e5 "pdflatex"
+  "report.tex" 1744516274.47717 26619 8f18cc62c1534d31aad1724455f36411 ""
   (generated)
   "report.aux"
   "report.log"
