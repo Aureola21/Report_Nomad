@@ -189,7 +189,25 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{subfigure}
     \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
-
+We see that the loss has plateaued after the first epoch, both in test and training sets, indicating the model has learned to predict the distance to the goal.\\
+\noindent \textbf{action loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+        \caption{Action Loss on Training Set}
+        \label{fig:gc_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
+        \caption{Action Loss on Validation Set}
+        \label{fig:gc_action_loss_val}
+    \end{subfigure}
+    \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
+\end{figure}
 
 
 

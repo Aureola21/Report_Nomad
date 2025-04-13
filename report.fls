@@ -191,6 +191,16 @@ INPUT ./images/gc_dist_loss_test.png
 INPUT ./images/gc_dist_loss_test.png
 INPUT ./images/gc_dist_loss_test.png
 INPUT ./images/gc_dist_loss_test.png
+INPUT ./images/gc_actionloss_nomad.png
+INPUT ./images/gc_actionloss_nomad.png
+INPUT ./images/gc_actionloss_nomad.png
+INPUT ./images/gc_actionloss_nomad.png
+INPUT ./images/gc_actionloss_nomad.png
+INPUT ./images/gc_actionloss_test_nomad.png
+INPUT ./images/gc_actionloss_test_nomad.png
+INPUT ./images/gc_actionloss_test_nomad.png
+INPUT ./images/gc_actionloss_test_nomad.png
+INPUT ./images/gc_actionloss_test_nomad.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
