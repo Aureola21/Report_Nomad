@@ -447,16 +447,15 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
 
 
 \begin{frame}{Comparision with ViNT: Temporal Distance Loss}
-        \begin{block}{Motivation}
-            ViNT serves as a strong baseline for visual navigation with transformer-based context encoding. We compare its distance prediction ability against NoMaD.
+        \begin{block}{}
+            ViNT serves as a strong baseline for visual navigation with transformer-based context encoding. we trained the original ViNT architecture using the same dataset
+            and training hyperparameters as used for NoMaD.
         \end{block}
-    
         \begin{columns}
             \begin{column}{0.48\textwidth}
                 \begin{block}{\centering \small \textbf{NoMaD Distance Loss}}
                     \centering
-                    \includegraphics[width=\textwidth]{images/dist_loss.png}
-                    \tiny NoMaD achieves lower and more stable distance loss due to diffusion-based modeling and goal conditioning.
+                    \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
                 \end{block}
             \end{column}
     
@@ -464,18 +463,13 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
                 \begin{block}{\centering \small \textbf{ViNT Distance Loss}}
                     \centering
                     \includegraphics[width=\textwidth]{images/dist_loss (train).png}
-                    \tiny ViNT performs comparably in early epochs but struggles with long-horizon distance regression.
                 \end{block}
             \end{column}
         \end{columns}
-    
-        \vspace{0.5em}
-        \centering
-        \textit{Observation:} \textbf{NoMaD’s diffusion-based decoder improves distance supervision} without sacrificing ViNT’s transformer strengths.
 \end{frame}
 
 \begin{frame}{ViNT vs NoMaD: Action Loss}
-    \begin{block}{Objective}
+    \begin{block}{}
         We compare the quality of predicted waypoints by measuring the Mean Squared Error (MSE) between predicted and ground-truth actions.
     \end{block}
 
@@ -484,7 +478,6 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \begin{block}{\centering \small \textbf{NoMaD Action Loss}}
                 \centering
                 \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
-                \tiny NoMaD consistently achieves lower action loss, aided by the stochastic denoising process and goal-conditioned context.
             \end{block}
         \end{column}
 
@@ -492,18 +485,17 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \begin{block}{\centering \small \textbf{ViNT Action Loss}}
                 \centering
                 \includegraphics[width=\textwidth]{images/action_train_vint.png}
-                \tiny ViNT shows slightly higher variance, and loss plateaus earlier due to MLP-based decoding.
             \end{block}
         \end{column}
     \end{columns}
 
     \vspace{0.5em}
     \centering
-    \textit{Observation:} \textbf{NoMaD benefits from the expressiveness of diffusion decoding} in predicting fine-grained waypoint actions.
+    \textit{Observation:} Interestingly, in the goal-conditioned (GC) setting, both ViNT and NoMaD demonstrated comparable performances.
 \end{frame}
 
 \begin{frame}{Comparison with ViNT: Total Loss}
-    \begin{block}{Motivation}
+    \begin{block}{}
         To assess the overall effectiveness of NoMaD vs. ViNT, we compare the combined loss: action prediction loss + temporal distance prediction loss.
     \end{block}
 
@@ -512,7 +504,6 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \begin{block}{\centering \small \textbf{NoMaD Total Loss}}
                 \centering
                 \includegraphics[width=\textwidth]{images/total_loss.png}
-                \tiny NoMaD achieves better convergence, with lower final loss due to richer diffusion-based decoding.
             \end{block}
         \end{column}
 
@@ -520,14 +511,14 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \begin{block}{\centering \small \textbf{ViNT Total Loss}}
                 \centering
                 \includegraphics[width=\textwidth]{images/distloss_vint.png}
-                \tiny ViNT exhibits slower learning and higher loss, limited by direct MLP-based action prediction.
             \end{block}
         \end{column}
     \end{columns}
 
     \vspace{0.5em}
     \centering
-    \textit{Takeaway:} \textbf{NoMaD demonstrates improved learning dynamics and generalization.}
+    \textit{Takeaway:} Integration of a diffusion-based decoder in NoMaD does not negatively impact performance
+    on goal-directed planning tasks. 
 \end{frame}
 
 \begin{frame}{Challenges Faced}

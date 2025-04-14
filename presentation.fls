@@ -573,10 +573,10 @@ INPUT ./images/total_loss.png
 INPUT ./images/total_loss.png
 INPUT ./images/total_loss.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT ./images/dist_loss.png
-INPUT ./images/dist_loss.png
-INPUT ./images/dist_loss.png
-INPUT ./images/dist_loss.png
+INPUT ./images/gc_distloss_nomad.png
+INPUT ./images/gc_distloss_nomad.png
+INPUT ./images/gc_distloss_nomad.png
+INPUT ./images/gc_distloss_nomad.png
 INPUT ./images/dist_loss (train).png
 INPUT ./images/dist_loss (train).png
 INPUT ./images/dist_loss (train).png
