@@ -40,7 +40,7 @@
     \pause
     \begin{block}{Key Question}
         Can a \textit{single model} unify both tasks — exploration and navigation?
-    \end{block}
+    \end{block}~
     \end{frame}
     \begin{frame}{What is NoMaD?}
         \textbf{NoMaD} is a transformer-based diffusion policy designed for long-horizon, memory-efficient navigation.\\[0.5em]
@@ -463,7 +463,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \begin{column}{0.48\textwidth}
                 \begin{block}{\centering \small \textbf{ViNT Distance Loss}}
                     \centering
-                    \includegraphics[width=\textwidth]{images/distloss_vint.png}
+                    \includegraphics[width=\textwidth]{images/dist_loss (train).png}
                     \tiny ViNT performs comparably in early epochs but struggles with long-horizon distance regression.
                 \end{block}
             \end{column}
@@ -543,14 +543,19 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
 \begin{frame}{Team Contributions}
     \textbf{Abhishek Kumar Jha:} \\
     \begin{itemize}
-        \item Helped in Understanding the diffusion model
-        \item Helped in solving the errors while training the NoMaD model
+        \item Implemented the Nomad Architecture and helped in the Training and Experiments
+        \item Made the README file for the repository.
+        \item Assisted in creating the report and Presentation.
+        \item Contributed towards making the code demo video.
+        \item Helped in integrating and debugging the diffusion policy repository
+    
     \end{itemize}
     \textbf{Namashivayaa V:} \\
     \begin{itemize}
-        \item Helped in Understanding the theory for the entire project
-        \item Helped Extrating the data from the datasets
-        \item Made the Appendices section of the Report
+        \item Explained the workflow of the suggested papers to the entire team.
+        \item Contributed in report formation, by adding important formulas and results in the
+        appendix section.
+        \item Extracted the .bag files which were around 300GB.
     \end{itemize}
 \end{frame}
 
@@ -559,17 +564,19 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
 \begin{frame}{Team Contributions}
     \textbf{Sehaj Ganjoo:} \\
     \begin{itemize}
-        \item Implemented the ViNT architecture
-        \item Developed the goal fusion encoder
-        \item Conducted experiments and analysis for comapring NoMaD and ViNT
-        \item Made the Presentation and Report
+        \item Implemented the ViNT architecture and trained it
+        \item Helped in debuggeding the errors while training the NoMaD model
+        \item Assisted in conducting experiments and analysis for the project
+        \item Contributed towards the Presentation and project report
     \end{itemize}
     \textbf{Shobhnik Kriplani:} \\
     \begin{itemize}
-        \item Implemented the Tockenizer, embeddings and positional encodings from scratch
         \item Implemented the NoMaD architecture
         \item Developed the training pipeline
         \item Conducted experiments and analysis
+        \item Made a website for the project
+
+        
     \end{itemize}
 \end{frame}
 
