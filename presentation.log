@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  14 APR 2025 23:45
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.13)  14 APR 2025 23:02
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  14 APR 2025 22:50
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  14 APR 2025 23:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -982,23 +974,6 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [9
 
 ]
-<<<<<<< HEAD
-=======
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 85--85
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-<<<<<<< HEAD
-<effnet_scaling.png, id=407, 867.24pt x 600.2425pt>
-=======
-<effnet_scaling.png, id=404, 867.24pt x 600.2425pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: effnet_scaling.png Graphic file (type png)
-<use effnet_scaling.png>
-Package pdftex.def Info: effnet_scaling.png  used on input line 85.
-(pdftex.def)             Requested size: 273.83728pt x 189.52617pt.
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1030,28 +1005,6 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [12
 
 ]
-<<<<<<< HEAD
-=======
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 133--133
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-<<<<<<< HEAD
-<effnet_imagenet.png, id=522, 1164.35pt x 890.32625pt>
-=======
-<effnet_imagenet.png, id=519, 1164.35pt x 890.32625pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: effnet_imagenet.png Graphic file (type png)
-<use effnet_imagenet.png>
-Package pdftex.def Info: effnet_imagenet.png  used on input line 133.
-(pdftex.def)             Requested size: 273.83728pt x 209.38972pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:efficientnet}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.133 \end{frame}
-                 
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1063,7 +1016,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 120--120
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<effnet_scaling.png, id=674, 867.24pt x 600.2425pt>
+<effnet_scaling.png, id=679, 867.24pt x 600.2425pt>
 File: effnet_scaling.png Graphic file (type png)
 <use effnet_scaling.png>
 Package pdftex.def Info: effnet_scaling.png  used on input line 120.
@@ -1104,7 +1057,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 169--169
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<effnet_imagenet.png, id=789, 1164.35pt x 890.32625pt>
+<effnet_imagenet.png, id=793, 1164.35pt x 890.32625pt>
 File: effnet_imagenet.png Graphic file (type png)
 <use effnet_imagenet.png>
 Package pdftex.def Info: effnet_imagenet.png  used on input line 169.
@@ -1126,23 +1079,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 187--187
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<nomad_diagram.png, id=702, 1583.9175pt x 467.7475pt>
-=======
-<nomad_diagram.png, id=699, 1583.9175pt x 467.7475pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: nomad_diagram.png Graphic file (type png)
-<use nomad_diagram.png>
-Package pdftex.def Info: nomad_diagram.png  used on input line 179.
-(pdftex.def)             Requested size: 345.71637pt x 102.09111pt.
-
-Overfull \hbox (3.42107pt too wide) in paragraph at lines 179--179
- [] 
- []
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1181,24 +1117,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 209--209
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 (./presentation.toc)
-=======
-<<<<<<< HEAD
-<lrdecay.png, id=816, 1085.05376pt x 641.39626pt>
-=======
-<lrdecay.png, id=813, 1085.05376pt x 641.39626pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: lrdecay.png Graphic file (type png)
-<use lrdecay.png>
-Package pdftex.def Info: lrdecay.png  used on input line 243.
-(pdftex.def)             Requested size: 273.83728pt x 161.86563pt.
-
-Overfull \vbox (24.32423pt too high) detected at line 243
- []
-
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1210,7 +1129,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 221--221
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<nomad_diagram.png, id=1010, 1583.9175pt x 467.7475pt>
+<nomad_diagram.png, id=1014, 1583.9175pt x 467.7475pt>
 File: nomad_diagram.png Graphic file (type png)
 <use nomad_diagram.png>
 Package pdftex.def Info: nomad_diagram.png  used on input line 221.
@@ -1244,27 +1163,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 258--258
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<images/qr_project.png, id=933, 3011.25pt x 3011.25pt>
-=======
-<images/qr_project.png, id=930, 3011.25pt x 3011.25pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/qr_project.png Graphic file (type png)
-<use images/qr_project.png>
-Package pdftex.def Info: images/qr_project.png  used on input line 290.
-(pdftex.def)             Requested size: 68.45801pt x 68.41644pt.
-<<<<<<< HEAD
-<images/gpu_powerusage.png, id=934, 2271.48625pt x 1193.45876pt>
-=======
-<images/gpu_powerusage.png, id=931, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gpu_powerusage.png Graphic file (type png)
-<use images/gpu_powerusage.png>
-Package pdftex.def Info: images/gpu_powerusage.png  used on input line 290.
-(pdftex.def)             Requested size: 164.30403pt x 86.31866pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1277,7 +1175,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 271--271
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 File: nomad_diagram.png Graphic file (type png)
 <use nomad_diagram.png>
 Package pdftex.def Info: nomad_diagram.png  used on input line 271.
@@ -1291,17 +1188,6 @@ Overfull \hbox (3.42107pt too wide) in paragraph at lines 271--271
 Overfull \vbox (4.42058pt too high) detected at line 271
  []
 
-=======
-<<<<<<< HEAD
-<images/train_action_samples_2.png, id=966, 1583.9175pt x 505.89pt>
-=======
-<images/train_action_samples_2.png, id=963, 1583.9175pt x 505.89pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/train_action_samples_2.png Graphic file (type png)
-<use images/train_action_samples_2.png>
-Package pdftex.def Info: images/train_action_samples_2.png  used on input line 302.
-(pdftex.def)             Requested size: 342.2953pt x 109.32pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1314,20 +1200,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 276--276
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 (./presentation.toc)
-=======
-<<<<<<< HEAD
-<images/sacson_test_action_samples_1.png, id=1007, 1617.04124pt x 476.78125pt>
-=======
-<images/sacson_test_action_samples_1.png, id=1004, 1617.04124pt x 476.78125pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/sacson_test_action_samples_1.png Graphic file (type png)
-<use images/sacson_test_action_samples_1.png>
-Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 314.
-(pdftex.def)             Requested size: 342.2953pt x 100.92pt.
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1339,8 +1212,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 292--292
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-<lrdecay.png, id=1165, 1085.05376pt x 641.39626pt>
+<lrdecay.png, id=1169, 1085.05376pt x 641.39626pt>
 File: lrdecay.png Graphic file (type png)
 <use lrdecay.png>
 Package pdftex.def Info: lrdecay.png  used on input line 292.
@@ -1349,26 +1221,6 @@ Package pdftex.def Info: lrdecay.png  used on input line 292.
 Overfull \vbox (24.32423pt too high) detected at line 292
  []
 
-=======
-<<<<<<< HEAD
-<images/gc_distloss_nomad.png, id=1049, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_distloss_nomad.png, id=1046, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_distloss_nomad.png Graphic file (type png)
-<use images/gc_distloss_nomad.png>
-Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 335.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-<images/gc_dist_loss_test.png, id=1050, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_dist_loss_test.png, id=1047, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_dist_loss_test.png Graphic file (type png)
-<use images/gc_dist_loss_test.png>
-Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 335.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1381,7 +1233,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 314--314
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 
 Overfull \hbox (10.88074pt too wide) detected at line 314
 \OMS/cmtt/m/n/10.95 L[]\OT1/cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^^;  ; \OT1/mathkerncmss/m/sl/10.95 f\OML/cmm/m/it/10.95 ; ^^R; \OT1/mathkerncmss/m/sl/10.95 f[]\OT1/cmss/m/n/10.95 ) = \OT1/mathkerncmss/m/sl/10.95 MSE\OT1/cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^O[]; ^^O[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 c[]\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 a[] \OT1/cmss/m/n/10.95 + \OML/cmm/m/it/10.95 ^^O[]; \OT1/mathkerncmss/m/sl/10.95 k\OT1/cmss/m/n/10.95 )) + \OML/cmm/m/it/10.95 ^^U:\OT1/mathkerncmss/m/sl/10.95 MSE\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 d\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 o[]\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 o[]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 f[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 c[]\OT1/cmss/m/n/10.95 ))
@@ -1391,26 +1242,6 @@ Overfull \hbox (10.88074pt too wide) detected at line 314
 Overfull \vbox (1.91777pt too high) detected at line 314
  []
 
-=======
-<<<<<<< HEAD
-<images/gc_actionloss_nomad.png, id=1097, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_actionloss_nomad.png, id=1094, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_actionloss_nomad.png Graphic file (type png)
-<use images/gc_actionloss_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 357.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-<images/gc_actionloss_test_nomad.png, id=1098, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_actionloss_test_nomad.png, id=1095, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_actionloss_test_nomad.png Graphic file (type png)
-<use images/gc_actionloss_test_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 357.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1427,27 +1258,6 @@ Overfull \hbox (10.88074pt too wide) detected at line 314
 Overfull \vbox (1.91777pt too high) detected at line 314
  []
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<images/uc_action_train.png, id=1141, 3044.37375pt x 1598.97375pt>
-=======
-<images/uc_action_train.png, id=1138, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/uc_action_train.png Graphic file (type png)
-<use images/uc_action_train.png>
-Package pdftex.def Info: images/uc_action_train.png  used on input line 378.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-<images/uc_action_test.png, id=1142, 3044.37375pt x 1598.97375pt>
-=======
-<images/uc_action_test.png, id=1139, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/uc_action_test.png Graphic file (type png)
-<use images/uc_action_test.png>
-Package pdftex.def Info: images/uc_action_test.png  used on input line 378.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1460,29 +1270,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 319--319
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 (./presentation.toc)
-=======
-<<<<<<< HEAD
-<images/dist_loss.png, id=1185, 2029.5825pt x 1065.9825pt>
-=======
-<images/dist_loss.png, id=1182, 2029.5825pt x 1065.9825pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/dist_loss.png Graphic file (type png)
-<use images/dist_loss.png>
-Package pdftex.def Info: images/dist_loss.png  used on input line 395.
-(pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-<<<<<<< HEAD
-<images/diffusion_loss.png, id=1186, 2029.5825pt x 1065.9825pt>
-=======
-<images/diffusion_loss.png, id=1183, 2029.5825pt x 1065.9825pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/diffusion_loss.png Graphic file (type png)
-<use images/diffusion_loss.png>
-Package pdftex.def Info: images/diffusion_loss.png  used on input line 395.
-(pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1494,37 +1282,16 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 345--345
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-<images/qr_project.png, id=1325, 3011.25pt x 3011.25pt>
+<images/qr_project.png, id=1329, 3011.25pt x 3011.25pt>
 File: images/qr_project.png Graphic file (type png)
 <use images/qr_project.png>
 Package pdftex.def Info: images/qr_project.png  used on input line 345.
 (pdftex.def)             Requested size: 68.45801pt x 68.41644pt.
-<images/gpu_powerusage.png, id=1326, 2271.48625pt x 1193.45876pt>
+<images/gpu_powerusage.png, id=1330, 2271.48625pt x 1193.45876pt>
 File: images/gpu_powerusage.png Graphic file (type png)
 <use images/gpu_powerusage.png>
 Package pdftex.def Info: images/gpu_powerusage.png  used on input line 345.
 (pdftex.def)             Requested size: 164.30403pt x 86.31866pt.
-=======
-<<<<<<< HEAD
-<images/diff_eval_no_masking.png, id=1229, 2271.48625pt x 1193.45876pt>
-=======
-<images/diff_eval_no_masking.png, id=1226, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/diff_eval_no_masking.png Graphic file (type png)
-<use images/diff_eval_no_masking.png>
-Package pdftex.def Info: images/diff_eval_no_masking.png  used on input line 426.
-(pdftex.def)             Requested size: 164.30028pt x 86.31866pt.
-<<<<<<< HEAD
-<images/diff_eval_random.png, id=1242, 2271.48625pt x 1193.45876pt>
-=======
-<images/diff_eval_random.png, id=1239, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/diff_eval_random.png Graphic file (type png)
-<use images/diff_eval_random.png>
-Package pdftex.def Info: images/diff_eval_random.png  used on input line 426.
-(pdftex.def)             Requested size: 164.30028pt x 86.31866pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1537,23 +1304,11 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 357--357
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-<images/train_action_samples_2.png, id=1359, 1583.9175pt x 505.89pt>
+<images/train_action_samples_2.png, id=1363, 1583.9175pt x 505.89pt>
 File: images/train_action_samples_2.png Graphic file (type png)
 <use images/train_action_samples_2.png>
 Package pdftex.def Info: images/train_action_samples_2.png  used on input line 357.
 (pdftex.def)             Requested size: 342.2953pt x 109.32pt.
-=======
-<<<<<<< HEAD
-<images/diff_eval_goal_masking.png, id=1282, 2271.48625pt x 1193.45876pt>
-=======
-<images/diff_eval_goal_masking.png, id=1279, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/diff_eval_goal_masking.png Graphic file (type png)
-<use images/diff_eval_goal_masking.png>
-Package pdftex.def Info: images/diff_eval_goal_masking.png  used on input line 435.
-(pdftex.def)             Requested size: 273.83728pt x 143.86446pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1566,23 +1321,11 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 369--369
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-<images/sacson_test_action_samples_1.png, id=1401, 1617.04124pt x 476.78125pt>
+<images/sacson_test_action_samples_1.png, id=1405, 1617.04124pt x 476.78125pt>
 File: images/sacson_test_action_samples_1.png Graphic file (type png)
 <use images/sacson_test_action_samples_1.png>
 Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 369.
 (pdftex.def)             Requested size: 342.2953pt x 100.92pt.
-=======
-<<<<<<< HEAD
-<images/total_loss.png, id=1325, 2029.5825pt x 1065.9825pt>
-=======
-<images/total_loss.png, id=1322, 2029.5825pt x 1065.9825pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/total_loss.png Graphic file (type png)
-<use images/total_loss.png>
-Package pdftex.def Info: images/total_loss.png  used on input line 446.
-(pdftex.def)             Requested size: 256.72147pt x 134.82524pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1595,28 +1338,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 374--374
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 (./presentation.toc)
-=======
-File: images/dist_loss.png Graphic file (type png)
-<use images/dist_loss.png>
-Package pdftex.def Info: images/dist_loss.png  used on input line 475.
-(pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-<<<<<<< HEAD
-<images/dist_loss (train).png, id=1390, 2029.5825pt x 1065.9825pt>
-=======
-<images/dist_loss (train).png, id=1387, 2029.5825pt x 1065.9825pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/dist_loss (train).png Graphic file (type png)
-<use images/dist_loss (train).png>
-Package pdftex.def Info: images/dist_loss (train).png  used on input line 475.
-(pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-
-Overfull \vbox (1.4643pt too high) detected at line 475
- []
-
-
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1628,28 +1350,16 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 396--396
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/gc_distloss_nomad.png, id=1483, 3044.37375pt x 1598.97375pt>
+<images/gc_distloss_nomad.png, id=1487, 3044.37375pt x 1598.97375pt>
 File: images/gc_distloss_nomad.png Graphic file (type png)
 <use images/gc_distloss_nomad.png>
 Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 396.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/gc_dist_loss_test.png, id=1484, 3044.37375pt x 1598.97375pt>
+<images/gc_dist_loss_test.png, id=1488, 3044.37375pt x 1598.97375pt>
 File: images/gc_dist_loss_test.png Graphic file (type png)
 <use images/gc_dist_loss_test.png>
 Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 396.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<images/action_train_vint.png, id=1452, 2537.48pt x 1332.98pt>
-=======
-<images/action_train_vint.png, id=1449, 2537.48pt x 1332.98pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/action_train_vint.png Graphic file (type png)
-<use images/action_train_vint.png>
-Package pdftex.def Info: images/action_train_vint.png  used on input line 503.
-(pdftex.def)             Requested size: 164.30028pt x 86.30096pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1662,32 +1372,16 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 418--418
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
-<images/gc_actionloss_nomad.png, id=1532, 3044.37375pt x 1598.97375pt>
+<images/gc_actionloss_nomad.png, id=1536, 3044.37375pt x 1598.97375pt>
 File: images/gc_actionloss_nomad.png Graphic file (type png)
 <use images/gc_actionloss_nomad.png>
 Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 418.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/gc_actionloss_test_nomad.png, id=1533, 3044.37375pt x 1598.97375pt>
+<images/gc_actionloss_test_nomad.png, id=1537, 3044.37375pt x 1598.97375pt>
 File: images/gc_actionloss_test_nomad.png Graphic file (type png)
 <use images/gc_actionloss_test_nomad.png>
 Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 418.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-=======
-File: images/total_loss.png Graphic file (type png)
-<use images/total_loss.png>
-Package pdftex.def Info: images/total_loss.png  used on input line 531.
-(pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-<<<<<<< HEAD
-<images/distloss_vint.png, id=1515, 2537.48pt x 1332.98pt>
-=======
-<images/distloss_vint.png, id=1512, 2537.48pt x 1332.98pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/distloss_vint.png Graphic file (type png)
-<use images/distloss_vint.png>
-Package pdftex.def Info: images/distloss_vint.png  used on input line 531.
-(pdftex.def)             Requested size: 164.30028pt x 86.30096pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1700,12 +1394,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 440--440
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/uc_action_train.png, id=1576, 3044.37375pt x 1598.97375pt>
+<images/uc_action_train.png, id=1580, 3044.37375pt x 1598.97375pt>
 File: images/uc_action_train.png Graphic file (type png)
 <use images/uc_action_train.png>
 Package pdftex.def Info: images/uc_action_train.png  used on input line 440.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/uc_action_test.png, id=1577, 3044.37375pt x 1598.97375pt>
+<images/uc_action_test.png, id=1581, 3044.37375pt x 1598.97375pt>
 File: images/uc_action_test.png Graphic file (type png)
 <use images/uc_action_test.png>
 Package pdftex.def Info: images/uc_action_test.png  used on input line 440.
@@ -1722,12 +1416,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 458--458
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/dist_loss.png, id=1618, 2029.5825pt x 1065.9825pt>
+<images/dist_loss.png, id=1622, 2029.5825pt x 1065.9825pt>
 File: images/dist_loss.png Graphic file (type png)
 <use images/dist_loss.png>
 Package pdftex.def Info: images/dist_loss.png  used on input line 458.
 (pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-<images/diffusion_loss.png, id=1619, 2029.5825pt x 1065.9825pt>
+<images/diffusion_loss.png, id=1623, 2029.5825pt x 1065.9825pt>
 File: images/diffusion_loss.png Graphic file (type png)
 <use images/diffusion_loss.png>
 Package pdftex.def Info: images/diffusion_loss.png  used on input line 458.
@@ -1744,12 +1438,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 489--489
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/diff_eval_no_masking.png, id=1663, 2271.48625pt x 1193.45876pt>
+<images/diff_eval_no_masking.png, id=1667, 2271.48625pt x 1193.45876pt>
 File: images/diff_eval_no_masking.png Graphic file (type png)
 <use images/diff_eval_no_masking.png>
 Package pdftex.def Info: images/diff_eval_no_masking.png  used on input line 489.
 (pdftex.def)             Requested size: 164.30028pt x 86.31866pt.
-<images/diff_eval_random.png, id=1676, 2271.48625pt x 1193.45876pt>
+<images/diff_eval_random.png, id=1680, 2271.48625pt x 1193.45876pt>
 File: images/diff_eval_random.png Graphic file (type png)
 <use images/diff_eval_random.png>
 Package pdftex.def Info: images/diff_eval_random.png  used on input line 489.
@@ -1766,7 +1460,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 498--498
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/diff_eval_goal_masking.png, id=1715, 2271.48625pt x 1193.45876pt>
+<images/diff_eval_goal_masking.png, id=1719, 2271.48625pt x 1193.45876pt>
 File: images/diff_eval_goal_masking.png Graphic file (type png)
 <use images/diff_eval_goal_masking.png>
 Package pdftex.def Info: images/diff_eval_goal_masking.png  used on input line 498.
@@ -1783,7 +1477,7 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 510--510
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/total_loss.png, id=1756, 2029.5825pt x 1065.9825pt>
+<images/total_loss.png, id=1760, 2029.5825pt x 1065.9825pt>
 File: images/total_loss.png Graphic file (type png)
 <use images/total_loss.png>
 Package pdftex.def Info: images/total_loss.png  used on input line 510.
@@ -1816,7 +1510,7 @@ File: images/gc_distloss_nomad.png Graphic file (type png)
 <use images/gc_distloss_nomad.png>
 Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 540.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/dist_loss (train).png, id=1864, 2029.5825pt x 1065.9825pt>
+<images/dist_loss (train).png, id=1868, 2029.5825pt x 1065.9825pt>
 File: images/dist_loss (train).png Graphic file (type png)
 <use images/dist_loss (train).png>
 Package pdftex.def Info: images/dist_loss (train).png  used on input line 540.
@@ -1833,31 +1527,11 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 565--565
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 File: images/gc_actionloss_nomad.png Graphic file (type png)
 <use images/gc_actionloss_nomad.png>
 Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 565.
-=======
-<<<<<<< HEAD
-<images/gc_action_sim_nomad.png, id=1769, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_action_sim_nomad.png, id=1765, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_action_sim_nomad.png Graphic file (type png)
-<use images/gc_action_sim_nomad.png>
-Package pdftex.def Info: images/gc_action_sim_nomad.png  used on input line 642.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-<images/gc_action_cos_sim_test.png, id=1770, 3044.37375pt x 1598.97375pt>
-=======
-<images/gc_action_cos_sim_test.png, id=1766, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/gc_action_cos_sim_test.png Graphic file (type png)
-<use images/gc_action_cos_sim_test.png>
-Package pdftex.def Info: images/gc_action_cos_sim_test.png  used on input line 642.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/action_train_vint.png, id=1928, 2537.48pt x 1332.98pt>
+<images/action_train_vint.png, id=1932, 2537.48pt x 1332.98pt>
 File: images/action_train_vint.png Graphic file (type png)
 <use images/action_train_vint.png>
 Package pdftex.def Info: images/action_train_vint.png  used on input line 565.
@@ -1874,36 +1548,15 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 591--591
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 File: images/total_loss.png Graphic file (type png)
 <use images/total_loss.png>
 Package pdftex.def Info: images/total_loss.png  used on input line 591.
 (pdftex.def)             Requested size: 164.30028pt x 86.2888pt.
-<images/distloss_vint.png, id=1990, 2537.48pt x 1332.98pt>
+<images/distloss_vint.png, id=1994, 2537.48pt x 1332.98pt>
 File: images/distloss_vint.png Graphic file (type png)
 <use images/distloss_vint.png>
 Package pdftex.def Info: images/distloss_vint.png  used on input line 591.
 (pdftex.def)             Requested size: 164.30028pt x 86.30096pt.
-=======
-<<<<<<< HEAD
-<images/multi_action_sim_train.png, id=1812, 3044.37375pt x 1598.97375pt>
-=======
-<images/multi_action_sim_train.png, id=1808, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/multi_action_sim_train.png Graphic file (type png)
-<use images/multi_action_sim_train.png>
-Package pdftex.def Info: images/multi_action_sim_train.png  used on input line 665.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<<<<<<< HEAD
-<images/multi_action_sim.png, id=1813, 3044.37375pt x 1598.97375pt>
-=======
-<images/multi_action_sim.png, id=1809, 3044.37375pt x 1598.97375pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
-File: images/multi_action_sim.png Graphic file (type png)
-<use images/multi_action_sim.png>
-Package pdftex.def Info: images/multi_action_sim.png  used on input line 665.
-(pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
 
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1916,7 +1569,6 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 597--597
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<<<<<<< HEAD
 (./presentation.toc)
 Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -2053,12 +1705,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 732--732
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/gc_action_sim_nomad.png, id=2414, 3044.37375pt x 1598.97375pt>
+<images/gc_action_sim_nomad.png, id=2419, 3044.37375pt x 1598.97375pt>
 File: images/gc_action_sim_nomad.png Graphic file (type png)
 <use images/gc_action_sim_nomad.png>
 Package pdftex.def Info: images/gc_action_sim_nomad.png  used on input line 732.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/gc_action_cos_sim_test.png, id=2415, 3044.37375pt x 1598.97375pt>
+<images/gc_action_cos_sim_test.png, id=2420, 3044.37375pt x 1598.97375pt>
 File: images/gc_action_cos_sim_test.png Graphic file (type png)
 <use images/gc_action_cos_sim_test.png>
 Package pdftex.def Info: images/gc_action_cos_sim_test.png  used on input line 732.
@@ -2075,12 +1727,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 755--755
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/multi_action_sim_train.png, id=2457, 3044.37375pt x 1598.97375pt>
+<images/multi_action_sim_train.png, id=2462, 3044.37375pt x 1598.97375pt>
 File: images/multi_action_sim_train.png Graphic file (type png)
 <use images/multi_action_sim_train.png>
 Package pdftex.def Info: images/multi_action_sim_train.png  used on input line 755.
 (pdftex.def)             Requested size: 164.30028pt x 86.27254pt.
-<images/multi_action_sim.png, id=2458, 3044.37375pt x 1598.97375pt>
+<images/multi_action_sim.png, id=2463, 3044.37375pt x 1598.97375pt>
 File: images/multi_action_sim.png Graphic file (type png)
 <use images/multi_action_sim.png>
 Package pdftex.def Info: images/multi_action_sim.png  used on input line 755.
@@ -2097,27 +1749,12 @@ Overfull \hbox (136.87523pt too wide) in paragraph at lines 777--777
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-<images/cs_multi_action_cos_train.png, id=2496, 2271.48625pt x 1193.45876pt>
-=======
-<<<<<<< HEAD
-<images/cs_multi_action_cos_train.png, id=1852, 2271.48625pt x 1193.45876pt>
-=======
-<images/cs_multi_action_cos_train.png, id=1848, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+<images/cs_multi_action_cos_train.png, id=2501, 2271.48625pt x 1193.45876pt>
 File: images/cs_multi_action_cos_train.png Graphic file (type png)
 <use images/cs_multi_action_cos_train.png>
 Package pdftex.def Info: images/cs_multi_action_cos_train.png  used on input line 777.
 (pdftex.def)             Requested size: 164.30028pt x 86.31866pt.
-<<<<<<< HEAD
-<images/uc_multi_action_sim_test.png, id=2497, 2271.48625pt x 1193.45876pt>
-=======
-<<<<<<< HEAD
-<images/uc_multi_action_sim_test.png, id=1853, 2271.48625pt x 1193.45876pt>
-=======
-<images/uc_multi_action_sim_test.png, id=1849, 2271.48625pt x 1193.45876pt>
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+<images/uc_multi_action_sim_test.png, id=2502, 2271.48625pt x 1193.45876pt>
 File: images/uc_multi_action_sim_test.png Graphic file (type png)
 <use images/uc_multi_action_sim_test.png>
 Package pdftex.def Info: images/uc_multi_action_sim_test.png  used on input line 777.
@@ -2130,7 +1767,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
 [60
 
  <./images/cs_multi_action_cos_train.png> <./images/uc_multi_action_sim_test.png>]
-Overfull \hbox (136.87523pt too wide) in paragraph at lines 705--705
+Overfull \hbox (136.87523pt too wide) in paragraph at lines 795--795
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -2139,7 +1776,7 @@ Overfull \hbox (136.87523pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[48
+[61
 
 ]
 \tf@nav=\write6
@@ -2164,55 +1801,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-<<<<<<< HEAD
-(rerunfilecheck)             Checksum: 361DE71DD38BD155D677C4AF567A0DA8;3050.
+(rerunfilecheck)             Checksum: 68F79E323E10D6A1B61DD9060F618282;3145.
  ) 
 Here is how much of TeX's memory you used:
- 29695 strings out of 474222
- 617716 string characters out of 5748733
+ 29704 strings out of 474222
+ 617804 string characters out of 5748733
  1953975 words of memory out of 5000000
- 51197 multiletter control sequences out of 15000+600000
-=======
-(rerunfilecheck)             Checksum: FAC70856FE81078FAF875086B1A9FA4F;186.
- ) 
-Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 29120 strings out of 476182
- 605425 string characters out of 5795595
- 1949975 words of memory out of 5000000
- 50463 multiletter control sequences out of 15000+600000
- 574750 words of font info for 98 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 101i,15n,107p,433b,904s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on presentation.pdf (48 pages, 7231855 bytes).
-PDF statistics:
- 2022 PDF objects out of 2073 (max. 8388607)
- 1560 compressed objects within 16 object streams
- 109 named destinations out of 1000 (max. 500000)
- 1758 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
- 29324 strings out of 474222
- 611241 string characters out of 5748733
- 1949975 words of memory out of 5000000
- 50905 multiletter control sequences out of 15000+600000
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+ 51203 multiletter control sequences out of 15000+600000
  575814 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,435b,906s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on presentation.pdf (60 pages, 7271569 bytes).
+Output written on presentation.pdf (61 pages, 7276558 bytes).
 PDF statistics:
-<<<<<<< HEAD
- 2644 PDF objects out of 2984 (max. 8388607)
- 2148 compressed objects within 22 object streams
- 151 named destinations out of 1000 (max. 500000)
- 1920 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
- 1985 PDF objects out of 2073 (max. 8388607)
- 1524 compressed objects within 16 object streams
- 106 named destinations out of 1000 (max. 500000)
- 1750 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+ 2683 PDF objects out of 2984 (max. 8388607)
+ 2185 compressed objects within 22 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 1928 words of extra memory for PDF output out of 10000 (max. 10000000)
 
