@@ -107,196 +107,13 @@ We evaluate the model in two modes:\\
 (i) \textbf{Unconditional (UC)}, where the policy predicts future waypoints based only on the observation history; and \\
 (ii) \textbf{Goal-Conditioned (GC)}, where it also receives a goal image to guide planning. This distinction allows us to measure both general scene understanding and goal-directed behavior.
 \section{Experiments and Results}
-The figures below illustrates scenarios where a robot is trying to navigate towards a specific goal. The left plot shows the diffusion model's sampled action trajectories in a 2D projection space. Green and red lines denote various sampled action sequences, coressponding to different samples or different stages in the diffusion process (e.g., noisy vs. denoised predictions), while the pink trajectory represents the final action sequence selected by the model. This trajectory leads from the robot's current position toward the predicted goal location.  The spread of the predicted actions reflects the model's uncertainty about the optimal path.
-\subsection*{Train action samples:}
+Refer to Appendix \ref{app:results} for further results and details regarding the experiments.\\
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{images/train_action_samples_1.png}    
     \label{fig:train_action_samples_1}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/train_action_samples_2.png}
-    \label{fig:train_action_samples_1}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/train_action_samples_3.png}
-    \label{fig:train_action_samples_1}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/train_action_samples_4.png}
-    \label{fig:train_action_samples_1}
-\end{figure}
-\subsection*{Sacson test action samples:}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_1.png}
-        \label{fig:sacon_test_action_samples_1}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_2.png}
-        \label{fig:sacon_test_action_samples_1}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_3.png}
-        \label{fig:sacon_test_action_samples_1}
-\end{figure}
-
-
-\subsection*{Goal-Conditioned (GC) Evaluation}
-We set the goal mask $m = 0$ to evaluate the model's performance in goal-directed navigation.\\
-\noindent \textbf{Distance Loss:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
-        \caption{Distance Loss on Training Set}
-        \label{fig:gc_dist_loss_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
-        \caption{Distance Loss on Validation Set}
-        \label{fig:gc_dist_loss_val}
-    \end{subfigure}
-    \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
-\end{figure}
-We see that the loss has plateaued after the first epoch, both in test and training sets, indicating that the model quickly learns a strong initial estimate of the distance to the goal.\\
-
-\noindent \textbf{Action loss:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
-        \caption{Action Loss on Training Set}
-        \label{fig:gc_action_loss_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
-        \caption{Action Loss on Validation Set}
-        \label{fig:gc_action_loss_val}
-    \end{subfigure}
-    \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
-\end{figure}
-The action loss steadily decreases across epochs in both training and validation datasets, suggesting that the diffusion-based policy learns to generate feasible future actions conditioned on the visual goal and current context.\\
-
-\noindent \textbf{gc\_action\_waypts\_cos\_sim:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
-        \caption{Cosine Similarity on Training Set}
-        \label{fig:gc_action_waypts_cos_sim_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_test.png}
-        \caption{Cosine Similarity on Validation Set}
-        \label{fig:gc_action_waypts_cos_sim_val}
-    \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
-\end{figure}
-The Cosine Similarity metric evaluates how well the predicted action direction aligns with the ground-truth direction by measuring the angle between the two vectors. A value closer to 1 indicates better directional alignment.
-
-\begin{itemize}
-    \item During training, the model achieves a high and stable cosine similarity on the training set, indicating that it effectively learns to predict actions aligned with the ground-truth directions in seen environments.
-    \item However, the validation set shows noticeable variance in cosine similarity across epochs. This could be attributed to the fact that the dataset configuration had \texttt{learn\_angle = False}, meaning the model was not explicitly trained to predict the robot's orientation or angular displacement.
-    \item As a result, while the model can align its predictions in direction (to some extent), the lack of angular supervision might reduce its generalization capacity in unseen environments, leading to inconsistency in cosine similarity.
-\end{itemize}
-\noindent \textbf{gc\_multi\_action\_waypts\_cos\_sim:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
-        \caption{Cosine Similarity on Training Set}
-        \label{fig:gc_multi_action_waypts_cos_sim}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
-        \caption{Cosine Similarity on Validation Set}
-        \label{fig:gc_action_multi_waypts_cos_sim_test}
-    \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
-\end{figure}
-Multi-action cosine similarity compares the overall alignment of full predicted trajectory vectors with ground truth, rather than frame-by-frame. This provides a more holistic measure of long-horizon trajectory quality.
-We see a similar trend in multi-action cosine similarity as action waypts cosine similarity. On the training set, the plot consistently improves and stabilizes at a high value, indicating that the model effectively learns to align its predicted trajectories with the desired paths. Similarly we notice the lower and more volatile cosine similarity on the validation set.
-\newpage
-\subsection*{Unconditional (UC) Evaluation}
-We set the goal mask $m = 1$ to evaluate the model's performance in open-ended exploration.\\
-Interestingly, the model's behavior in this unconditioned setting closely mirrors that observed during goal-conditioned evaluations. This indicates that the model encounters similar generalization challenges and follows comparable learning dynamics, even in the absence of explicit goal cues.\\
-\noindent \textbf{Action loss:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/uc_action_train.png}
-        \caption{Action Loss on Training Set}
-        \label{fig:gc_action_loss_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/uc_action_test.png}
-        \caption{Action Loss on Validation Set}
-        \label{fig:gc_action_loss_val}
-    \end{subfigure}
-    \caption{Action loss comparison between training and validation sets under goal-agnostic evaluation.}
-\end{figure}
-\noindent \textbf{uc\_action\_waypts\_cos\_sim:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/uc_action_sim_train(1).png}
-        \caption{Cosine Similarity on Training Set}
-        \label{fig:uc_action_waypts_cos_sim_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/uc_action_sim_test.png}
-        \caption{Cosine Similarity on Validation Set}
-        \label{fig:uc_action_waypts_cos_sim_val}
-    \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-agnostic evalutation}
+    \caption{Illustrates a scenario where a robot is trying to navigate towards a specific goal (Train Action Sample)}
 \end{figure}
 \newpage
-\noindent \textbf{uc\_multi\_action\_waypts\_cos\_sim:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/cs_multi_action_cos_train.png}
-        \label{fig:uc_multi_action_waypts_cos_sim}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/uc_multi_action_sim_test.png}
-        \caption{Cosine Similarity on Validation Set}
-        \label{fig:uc_action_multi_waypts_cos_sim_test}
-    \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-agnostic evalutation}
-\end{figure}
-\bigskip
-\noindent \textbf{Distance Loss:}\\
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.8\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/dist_loss.png}
-        \caption{Distance Loss on Training Set}
-        \label{fig:dist_loss}
-    \end{subfigure}
-    \end{figure}
-    Figure \ref{fig:dist_loss} illustrates the variation in distance loss over the course of training steps. The sharp drop in loss around 35k steps marks a point where the model begins to learn more effectively. The loss stabilizes at a low value in the later stages, indicating that the model has successfully converged to a well-optimized solution for the training data. This reduction in uncertainty further suggests that the learning process has become more consistent and efficient.\\
 \subsection*{Diffusion Loss}
 \begin{figure}[H]
     \centering
@@ -326,30 +143,31 @@ Interestingly, the model's behavior in this unconditioned setting closely mirror
         \caption{Diffusion evaluation loss with goal masking}
         \label{fig:diffusion_eval_loss_goal_masking}
     \end{subfigure}
-    \caption{Diffusion loss on training set and evaluation loss with different masking strategies}
-   \label{fig:diffusion_loss_figure} 
 \end{figure}
-Figure \ref{fig:diffusion_loss_figure} compares the diffusion loss during training with the evaluation loss under different masking strategies: random masking, no masking, and goal masking.\\
-\begin{enumerate}
-    \item \ref{fig:diffusion_loss} The diffusion loss starts relatively high and then decreases sharply around the 30k-40k step mark, eventually stabilizing at a much lower level. This suggests that the diffusion model learns effectively during training.
-    \item \ref{fig:diffusion_eval_loss_goal_masking}, \ref{fig:diffusion_eval_loss_no_masking} and \ref{fig:diffusion_eval_loss_random_masking} indicate that the evaluation losses (with all masking strategies) are generally higher and more unstable than the training loss. All of the losses drop significantly in the initial evaluation steps.
+The above figure compares training and evaluation diffusion losses under random, no, and goal masking strategies.\
+\begin{enumerate} \item \ref{fig:diffusion_loss}: Training loss decreases sharply around 30k–40k steps and then stabilizes, indicating effective learning.
+\item \ref{fig:diffusion_eval_loss_goal_masking}, \ref{fig:diffusion_eval_loss_no_masking}, \ref{fig:diffusion_eval_loss_random_masking}: Evaluation losses are higher and more unstable, but all show an initial sharp decline. 
 \end{enumerate}
-\newpage
-\noindent \textbf{Total Loss:}\\
+\subsection*{Distance Loss and Total Loss}
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.8\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/dist_loss.png}
+        \caption{Distance Loss on Training Set}
+        \label{fig:dist_loss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/total_loss.png}
         \caption{Total Loss on Training Set}
         \label{fig:total_loss}
     \end{subfigure}
-    \end{figure}
-The plot agrees that the model is learning effectively, confirmed by the sharp drop in the loss around 35k steps. The model appears to converge to a stable solution.\\
-
+\end{figure}
+The plot agrees that the model is learning effectively, confirmed by the sharp drop in the loss around 35k steps. The losses later stabilizes, suggesting successful convergence and consistent learning performance.\\
 \noindent \textbf{Remarks:}\\
-The plots in \ref{fig:dist_loss}, \ref{fig:diffusion_loss} and \ref{fig:total_loss} correspond to another run of the experiment with similar datasets, conditions and parameters.\\
-Refer to Appendix \ref{app:wandb} for more details regarding the plots of \texttt{distance\_loss}, \texttt{diffusion\_loss} and \texttt{total\_loss}
+The plots in \ref{fig:dist_loss}, \ref{fig:diffusion_loss} and \ref{fig:total_loss} correspond to another run of the experiment with similar datasets, conditions and parameters. Refer to Appendix \ref{app:wandb} for more details regarding the plots of \texttt{distance\_loss}, \texttt{diffusion\_loss} and \texttt{total\_loss}
 
 \subsection*{Comparison with ViNT}
 Both models were evaluated under identical conditions and intrestingly in the \textbf{goal-conditioned (GC)} setting, both demonstrated comparable performances.
@@ -376,7 +194,7 @@ Refer to Appendix \ref{app:comparison_vint} for further comparision plots.
     \item \hyperref[app:implementation]{\textbf{Appendix D:}} Implementation Details
     \item \hyperref[app:results]{\textbf{Appendix E:}} Results and Experiments
     \item \hyperref[app:comparison_vint]{\textbf{Appendix E:}} Comparison with ViNT
-    \item \hyperref[app:app:vit]{\textbf{Appendix F:}} Vision Transformer
+    \item \hyperref[app:vit]{\textbf{Appendix F:}} Vision Transformer
     \item \hyperref[app:efficientnet]{\textbf{Appendix G:}} EfficientNet
     \item \hyperref[app:diffusion]{\textbf{Appendix H:}} Diffusion Models
     \item \hyperref[app:wandb]{\textbf{Appendix I:}} Weights and Biases
@@ -587,6 +405,183 @@ We used wandb to log training progress, visualize losses, and monitor both model
 throughout experimentation. \\
 Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
 Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
+
+\section{Results and Experiments}
+\label{app:results}
+The figures below illustrates scenarios where a robot is trying to navigate towards a specific goal. The left plot shows the diffusion model's sampled action trajectories in a 2D projection space. Green and red lines denote various sampled action sequences, coressponding to different samples or different stages in the diffusion process (e.g., noisy vs. denoised predictions), while the pink trajectory represents the final action sequence selected by the model. This trajectory leads from the robot's current position toward the predicted goal location.  The spread of the predicted actions reflects the model's uncertainty about the optimal path.
+\subsection*{Train action samples:}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_2.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_3.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/train_action_samples_4.png}
+    \label{fig:train_action_samples_1}
+\end{figure}
+\subsection*{Sacson test action samples:}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_1.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_2.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{images/sacson_test_action_samples_3.png}
+        \label{fig:sacon_test_action_samples_1}
+\end{figure}
+
+\subsection*{Goal-Conditioned (GC) Evaluation}
+We set the goal mask $m = 0$ to evaluate the model's performance in goal-directed navigation.\\
+\noindent \textbf{Distance Loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
+        \caption{Distance Loss on Training Set}
+        \label{fig:gc_dist_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
+        \caption{Distance Loss on Validation Set}
+        \label{fig:gc_dist_loss_val}
+    \end{subfigure}
+    \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+We see that the loss has plateaued after the first epoch, both in test and training sets, indicating that the model quickly learns a strong initial estimate of the distance to the goal.\\
+
+\noindent \textbf{Action loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+        \caption{Action Loss on Training Set}
+        \label{fig:gc_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
+        \caption{Action Loss on Validation Set}
+        \label{fig:gc_action_loss_val}
+    \end{subfigure}
+    \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+The action loss steadily decreases across epochs in both training and validation datasets, suggesting that the diffusion-based policy learns to generate feasible future actions conditioned on the visual goal and current context.\\
+
+\noindent \textbf{gc\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:gc_action_waypts_cos_sim_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:gc_action_waypts_cos_sim_val}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+The Cosine Similarity metric evaluates how well the predicted action direction aligns with the ground-truth direction by measuring the angle between the two vectors. A value closer to 1 indicates better directional alignment.
+
+\begin{itemize}
+    \item During training, the model achieves a high and stable cosine similarity on the training set, indicating that it effectively learns to predict actions aligned with the ground-truth directions in seen environments.
+    \item However, the validation set shows noticeable variance in cosine similarity across epochs. This could be attributed to the fact that the dataset configuration had \texttt{learn\_angle = False}, meaning the model was not explicitly trained to predict the robot's orientation or angular displacement.
+    \item As a result, while the model can align its predictions in direction (to some extent), the lack of angular supervision might reduce its generalization capacity in unseen environments, leading to inconsistency in cosine similarity.
+\end{itemize}
+\noindent \textbf{gc\_multi\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:gc_multi_action_waypts_cos_sim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:gc_action_multi_waypts_cos_sim_test}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
+\end{figure}
+Multi-action cosine similarity compares the overall alignment of full predicted trajectory vectors with ground truth, rather than frame-by-frame. This provides a more holistic measure of long-horizon trajectory quality.
+We see a similar trend in multi-action cosine similarity as action waypts cosine similarity. On the training set, the plot consistently improves and stabilizes at a high value, indicating that the model effectively learns to align its predicted trajectories with the desired paths. Similarly we notice the lower and more volatile cosine similarity on the validation set.
+\newpage
+\subsection*{Unconditional (UC) Evaluation}
+We set the goal mask $m = 1$ to evaluate the model's performance in open-ended exploration.\\
+Interestingly, the model's behavior in this unconditioned setting closely mirrors that observed during goal-conditioned evaluations. This indicates that the model encounters similar generalization challenges and follows comparable learning dynamics, even in the absence of explicit goal cues.\\
+\noindent \textbf{Action loss:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_train.png}
+        \caption{Action Loss on Training Set}
+        \label{fig:gc_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_test.png}
+        \caption{Action Loss on Validation Set}
+        \label{fig:gc_action_loss_val}
+    \end{subfigure}
+    \caption{Action loss comparison between training and validation sets under goal-agnostic evaluation.}
+\end{figure}
+\noindent \textbf{uc\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_sim_train(1).png}
+        \caption{Cosine Similarity on Training Set}
+        \label{fig:uc_action_waypts_cos_sim_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_action_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:uc_action_waypts_cos_sim_val}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-agnostic evalutation}
+\end{figure}
+\newpage
+\noindent \textbf{uc\_multi\_action\_waypts\_cos\_sim:}\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/cs_multi_action_cos_train.png}
+        \label{fig:uc_multi_action_waypts_cos_sim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/uc_multi_action_sim_test.png}
+        \caption{Cosine Similarity on Validation Set}
+        \label{fig:uc_action_multi_waypts_cos_sim_test}
+    \end{subfigure}
+    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-agnostic evalutation}
+\end{figure}
+\bigskip
 
 \section{Comparison with ViNT}
 \label{app:comparison_vint}
