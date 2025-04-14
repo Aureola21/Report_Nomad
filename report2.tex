@@ -102,60 +102,16 @@ Each denoising step is :
 \subsection*{C. Implementation Details}
 The github repository implementing NOMaD is as follows: \href{https://github.com/ishobhnik/RobotNavigation}{RobotNavigation}\\
 The website hosting the project and the results is: \href{https://nomad-fawn.vercel.app/}{NoMaD}
-Refer to Appendix \ref{app:implementation} for more details regarding the implementation.\\
+Refer to Appendix \ref{app:implementation} for more details regarding the implementation.
 \subsection{Training Procedure}
-Training was done on a single NVIDIA GPU using a batch size of 47 for 10 epochs.\\
-\textbf{Training Objective:}\\
-We calculate the Mean Squares Error(MSE) between  the predicted and the actual noise.
-For overall loss function, we add the MSE temporal distance loss to the objective function.
-\begin{center}
-    \[ 
-    \mathcal{L}_{NoMaD}(\phi,\psi,f,\theta,f_d) = MSE(\epsilon^{k}, \epsilon_{\theta}(c_t, a^{0}_t + \epsilon^{k},k)) + \lambda .MSE(d(o_t, o_g), f_{d}(c_t))
-    \]
- \end{center}
- where:\\
- \begin{itemize}
-     \item $\psi$,\ $\phi$ correspond to the visual encoders for the observation and goal images.
-     \item $f$ corresponds to the transformer layers,
-     \item $\theta$ corresponds to diffusion process parameters,
-     \item $f_d$ corresponds to the temporal distance predictor.
- \end{itemize}
+\textbf{Training Objective:} The loss combines MSE between predicted and actual noise with a temporal distance loss
+\begin{center} \[ \mathcal{L}_{NoMaD}(\phi,\psi,f,\theta,f_d) = MSE(\epsilon^{k}, \epsilon_{\theta}(c_t, a^{0}_t + \epsilon^{k},k)) + \lambda .MSE(d(o_t, o_g), f_{d}(c_t))\] \end{center}
+where: $\psi$,\ $\phi$ correspond to the visual encoders for the observation and goal images, $f$ corresponds to the transformer layers, $\theta$ is a diffusion parameters and $f_d$ corresponds to the temporal distance predictor.
 
- \textbf{Training Configuration:}
- \begin{itemize}
-     \item The weighting factor $\lambda$ for the auxiliary distance loss was set to $10^{-4}$.
-     \item The model was trained using the \textbf{AdamW} optimizer with a learning rate of $1\text{e}^{-4}$ and a weight decay of $1\text{e}^{-2}$.
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=1\textwidth]{images/lr.png}
-            \caption{Learned rate schedule for the NoMaD model.}
-            \label{fig:lr}
-        \end{figure}
-     \item We applied \textbf{cosine annealing} to decay the learning rate over time.
-     \item We used \textbf{goal masking} with probability $p_m = 0.5$, encouraging the model to generalize across goal-visible and goal-agnostic contexts.
-     \item The diffusion process used a \textbf{square cosine schedule} with $K = 10$ denoising steps.
-     \item The ViNT observation encoder was an EfficientNet-B0, mapping $96 \times 96$ RGB images into a 256-dimensional latent embedding.
-     \item The transformer used for context encoding had 4 layers and 4 attention heads.
-     \item Training checkpoints and EMA snapshots were saved at the end of each epoch for model tracking and potential evaluation.
-     \item Training and validation loss curves were logged using \texttt{Wandb} for detailed inspection.
-\end{itemize}
 \subsection{Evaluation}
 We evaluate the model in two modes:\\ 
 (i) \textbf{Unconditional (UC)}, where the policy predicts future waypoints based only on the observation history; and \\
 (ii) \textbf{Goal-Conditioned (GC)}, where it also receives a goal image to guide planning. This distinction allows us to measure both general scene understanding and goal-directed behavior.
-
-Evaluation was performed on the validation set using the following metrics:
-\begin{itemize}
-    \item distance loss
-    \item diffusion loss
-    \item cosine similarity
-    \item action loss
-\end{itemize}
-\subsection{Using WandB}
-We used wandb to log training progress, visualize losses, and monitor both model behavior and system resources (e.g., GPU/CPU utilization)
-throughout experimentation. \\
-Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
-Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
 \section{Experiments and Results}
 The figures below illustrates scenarios where a robot is trying to navigate towards a specific goal. The left plot shows the diffusion model's sampled action trajectories in a 2D projection space. Green and red lines denote various sampled action sequences, coressponding to different samples or different stages in the diffusion process (e.g., noisy vs. denoised predictions), while the pink trajectory represents the final action sequence selected by the model. This trajectory leads from the robot's current position toward the predicted goal location.  The spread of the predicted actions reflects the model's uncertainty about the optimal path.
 \subsection*{Train action samples:}
@@ -671,6 +627,42 @@ The codebase was adapted from an open-source repository\cite{gitnomad}, and expe
 \subsection{Data Pipeline}
 We trained the NoMaD model using the \textbf{SACSON} and parts of \textbf{RECON} dataset along with \textbf{go\_stanford}, which contains diverse real-world trajectories across various environments and robot platforms.
 The SACSON and go\_stanford dataset were already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
+
+\textbf{Training Configuration:}
+ \begin{itemize}
+     \item We trained the model with batch size of 47 for 10 epochs.
+     \item The weighting factor $\lambda$ for the auxiliary distance loss was set to $10^{-4}$.
+     \item The model was trained using the \textbf{AdamW} optimizer with a learning rate of $1\text{e}^{-4}$ and a weight decay of $1\text{e}^{-2}$.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{images/lr.png}
+            \caption{Learned rate schedule for the NoMaD model.}
+            \label{fig:lr}
+        \end{figure}
+     \item We applied \textbf{cosine annealing} to decay the learning rate over time.
+     \item We used \textbf{goal masking} with probability $p_m = 0.5$, encouraging the model to generalize across goal-visible and goal-agnostic contexts.
+     \item The diffusion process used a \textbf{square cosine schedule} with $K = 10$ denoising steps.
+     \item The ViNT observation encoder was an EfficientNet-B0, mapping $96 \times 96$ RGB images into a 256-dimensional latent embedding.
+     \item The transformer used for context encoding had 4 layers and 4 attention heads.
+     \item Training checkpoints and EMA snapshots were saved at the end of each epoch for model tracking and potential evaluation.
+     \item Training and validation loss curves were logged using \texttt{Wandb} for detailed inspection.
+\end{itemize}
+
+\noindent \textbf{Evaluation:}\\
+Evaluation was performed on the validation set using the following metrics:
+\begin{itemize}
+    \item distance loss
+    \item diffusion loss
+    \item cosine similarity
+    \item action loss
+\end{itemize}
+
+\subsection{Using WandB}
+We used wandb to log training progress, visualize losses, and monitor both model behavior and system resources (e.g., GPU/CPU utilization)
+throughout experimentation. \\
+Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
+Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
+
 \section{Vision Transformer (ViT)}
 \label{app:vit}
 

@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744646591.1429 "/home/sehajganjoo/Report_Nomad/report2.tex" "report2.pdf" "report2" 1744646598.74932 0
+["pdflatex"] 1744647320.29525 "/home/sehajganjoo/Report_Nomad/report2.tex" "report2.pdf" "report2" 1744647327.94554 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/report2.tex" 1744646583.454 58020 9c7d75b09b1fb3f2418a536d193c5631 ""
+  "/home/sehajganjoo/Report_Nomad/report2.tex" 1744647326.86007 57837 bea294867ec3ebd535fcd0b7f7f56020 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -159,9 +159,9 @@
   "images/uc_multi_action_sim_test.png" 1744528069.10463 529109 3ff8d1ae2b744d5f7050278a25b36a87 ""
   "images/vint_dist_loss.png" 1744640854.1403 572170 37293a128a803d0962ee586c0c2d0363 ""
   "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "report2.aux" 1744646598.69559 17152 fec144749d4186b11b492f680312b867 "pdflatex"
-  "report2.out" 1744646598.69659 2946 3eb1d57b436a674af33a122c5923751b "pdflatex"
-  "report2.tex" 1744646583.454 58020 9c7d75b09b1fb3f2418a536d193c5631 ""
+  "report2.aux" 1744647327.89111 17139 6c260158c42d5c446d107fcf2862a1e3 "pdflatex"
+  "report2.out" 1744647327.89211 2951 1a23e26d46a9b177e336053862a02a3b "pdflatex"
+  "report2.tex" 1744647326.86007 57837 bea294867ec3ebd535fcd0b7f7f56020 ""
   (generated)
   "report2.aux"
   "report2.log"
