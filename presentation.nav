@@ -114,7 +114,6 @@
 \headcommand {\beamer@framepages {46}{46}}
 \headcommand {\slideentry {7}{0}{4}{47/47}{}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-<<<<<<< HEAD
 \headcommand {\beamer@sectionpages {44}{47}}
 \headcommand {\beamer@subsectionpages {44}{47}}
 \headcommand {\sectionentry {7}{Challenges Faced}{48}{Challenges Faced}{0}}
@@ -153,20 +152,13 @@
 \headcommand {\beamer@framepages {59}{59}}
 \headcommand {\slideentry {10}{0}{5}{60/60}{}{0}}
 \headcommand {\beamer@framepages {60}{60}}
-\headcommand {\beamer@partpages {1}{60}}
-\headcommand {\beamer@subsectionpages {56}{60}}
 \headcommand {\beamer@sectionpages {56}{60}}
-\headcommand {\beamer@documentpages {60}}
-\headcommand {\gdef \inserttotalframenumber {52}}
-=======
-\headcommand {\beamer@sectionpages {43}{47}}
-\headcommand {\beamer@subsectionpages {43}{47}}
-\headcommand {\sectionentry {2}{References}{48}{References}{0}}
-\headcommand {\slideentry {2}{0}{1}{48/48}{}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\beamer@partpages {1}{48}}
-\headcommand {\beamer@subsectionpages {48}{48}}
-\headcommand {\beamer@sectionpages {48}{48}}
-\headcommand {\beamer@documentpages {48}}
-\headcommand {\gdef \inserttotalframenumber {40}}
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+\headcommand {\beamer@subsectionpages {56}{60}}
+\headcommand {\sectionentry {11}{References}{61}{References}{0}}
+\headcommand {\slideentry {11}{0}{1}{61/61}{}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\beamer@partpages {1}{61}}
+\headcommand {\beamer@subsectionpages {61}{61}}
+\headcommand {\beamer@sectionpages {61}{61}}
+\headcommand {\beamer@documentpages {61}}
+\headcommand {\gdef \inserttotalframenumber {53}}

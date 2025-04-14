@@ -1,19 +1,7 @@
 # Fdb version 4
-<<<<<<< HEAD
-["pdflatex"] 1744654551.62756 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744654558.86423 0
+["pdflatex"] 1744654778.99626 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744654786.16663 0
   "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744654547.91631 31573 2ee3306cc500c1fcf9b42f2e98b081b1 ""
-=======
-<<<<<<< HEAD
-["pdflatex"] 1744651947.78387 "/home/ishobhnik/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744651956.70214 0
-  "/etc/texmf/web2c/texmf.cnf" 1735446591.24186 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ishobhnik/Report_Nomad/presentation.tex" 1744651947.54704 31442 8498dae70520c95ca06cd16184dcf85d ""
-=======
-["pdflatex"] 1744651200.54271 "/home/sehajganjoo/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744651207.86169 0
-  "/etc/texmf/web2c/texmf.cnf" 1733206864.61216 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744651200.06101 30159 8a6f991597eb8d3255be4d6b30a31cfe ""
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+  "/home/sehajganjoo/Report_Nomad/presentation.tex" 1744654743.02435 32856 367832ce86fe29cfb41783f1ae95ecf6 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -261,43 +249,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-<<<<<<< HEAD
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1744493809.63684 128028 f533b797fba58d231669ea19e894e23e ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1744523507 6800787 e3345b5f8a42b453c9709428d788c546 ""
-  "effnet_imagenet.png" 1744646734.9954 256602 7c56aa9a043673181a4a4e376152746c ""
-  "effnet_scaling.png" 1744646734.9964 74887 5eb9c6ddb3bf00a42ae23891f9ba0517 ""
-  "images/action_train_vint.png" 1744646735.0004 534188 b08225741bb5493135f2205d01497b57 ""
-  "images/cs_multi_action_cos_train.png" 1744646735.0004 156112 40a0d1c7e84e1b48315364d86e90b397 ""
-  "images/diff_eval_goal_masking.png" 1744646735.0024 441918 52f29e64cf64661556975dab66481ac2 ""
-  "images/diff_eval_no_masking.png" 1744646735.0034 437803 6b7f01d235da07362415fc2bc7a7b2e5 ""
-  "images/diff_eval_random.png" 1744646735.0054 437373 d30210093e5a56fb1d05786edbcb8a22 ""
-  "images/diffusion_loss.png" 1744646735.0124 221541 bb514675c54bb8e95742cf74fd1ca437 ""
-  "images/dist_loss (train).png" 1744650113.76112 297559 5e9c8698f9110bccbee00805c6348108 ""
-  "images/dist_loss.png" 1744646735.0144 280064 ac91433d7480b74961c1d53d87bae9c0 ""
-  "images/distloss_vint.png" 1744646735.0154 254278 1490364b446f7ea8c0810a681e6904e8 ""
-  "images/gc_action_cos_sim_test.png" 1744646735.0184 816623 bd574ebb256cacfbdc1fdb83bdbae4ff ""
-  "images/gc_action_sim_nomad.png" 1744646735.0194 347952 5077177bb81a5c0bc2aef4550abc9508 ""
-  "images/gc_actionloss_nomad.png" 1744646735.0234 335549 00d923f50436c884cb9a33948f5bd8ad ""
-  "images/gc_actionloss_test_nomad.png" 1744646735.0244 466484 8a7756b958e6f93d910b99b6a4467215 ""
-  "images/gc_dist_loss_test.png" 1744646735.0264 577898 f69ef42f003b79916ac0a769c1e80f4e ""
-  "images/gc_distloss_nomad.png" 1744646735.0274 341834 e09205c438041b980b41f01c3876be63 ""
-  "images/gpu_powerusage.png" 1744646735.0314 409034 df3973bea7c0c40a76bcb750f2f88470 ""
-  "images/multi_action_sim.png" 1744646735.0354 831159 bf451d811353a0d3493e8986a221449a ""
-  "images/multi_action_sim_train.png" 1744646735.0364 360313 c02af76bf08190541420238375b8ed13 ""
-  "images/qr_project.png" 1744646735.0424 52316 2862c5f659acec9d959440f49fdad861 ""
-  "images/sacson_test_action_samples_1.png" 1744646735.0434 273426 68daa66e9d75881d2e3ffe155380da77 ""
-  "images/total_loss.png" 1744646735.0484 208354 98d7877de52ce47f46af9314015e88bc ""
-  "images/train_action_samples_2.png" 1744646735.0564 374317 122259bfd228e908470bd81b2bf10978 ""
-  "images/uc_action_test.png" 1744646735.06241 495121 e5047b8f7a8116459ba998a30610994d ""
-  "images/uc_action_train.png" 1744646735.06341 327818 ac748486e93109e10bd504c2afed1081 ""
-  "images/uc_multi_action_sim_test.png" 1744646735.06541 529109 3ff8d1ae2b744d5f7050278a25b36a87 ""
-  "lrdecay.png" 1744646735.06741 70827 2417149e52fff6ea9b89d81d2f706e22 ""
-  "nomad_diagram.png" 1744646735.06941 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "presentation.aux" 1744651956.592 7755 a35ed339b3506387d1d9779e11b25dbc "pdflatex"
-  "presentation.nav" 1744651956.593 4227 9d69d9994e31d6a25b889b502b4b64ff "pdflatex"
-  "presentation.out" 1744651956.592 186 fac70856fe81078faf875086b1a9fa4f "pdflatex"
-  "presentation.tex" 1744651947.54704 31442 8498dae70520c95ca06cd16184dcf85d ""
-=======
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1733207108.46717 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1733207121 8213759 d8d8a65f83db2f052d38fd0f3d567e46 ""
   "effnet_imagenet.png" 1744365055.69208 256602 7c56aa9a043673181a4a4e376152746c ""
@@ -329,19 +280,11 @@
   "images/uc_multi_action_sim_test.png" 1744528069.10463 529109 3ff8d1ae2b744d5f7050278a25b36a87 ""
   "lrdecay.png" 1744399195.827 70827 2417149e52fff6ea9b89d81d2f706e22 ""
   "nomad_diagram.png" 1744132916.92157 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-<<<<<<< HEAD
-  "presentation.aux" 1744654558.78466 14269 9c0b8e941bb5a55852aa07117e4665d6 "pdflatex"
-  "presentation.nav" 1744654558.78566 8375 21a9c79bec6451cb14c5f8fd2d08c2db "pdflatex"
-  "presentation.out" 1744654558.78566 3050 361de71dd38bd155d677c4af567a0da8 "pdflatex"
-  "presentation.tex" 1744654547.91631 31573 2ee3306cc500c1fcf9b42f2e98b081b1 ""
-  "presentation.toc" 1744654558.78566 919 f14ac05da2d16c7b9ddbbcb1cfb4a47d "pdflatex"
-=======
-  "presentation.aux" 1744651207.46033 7416 28a3404b0f973f887ce8bbede320f1bc "pdflatex"
-  "presentation.nav" 1744651207.46133 3978 9c866a4817b408696c8470684668e1cb "pdflatex"
-  "presentation.out" 1744651207.46133 93 b70bf10812daf92f57b133be4a10bd7e "pdflatex"
-  "presentation.tex" 1744651200.06101 30159 8a6f991597eb8d3255be4d6b30a31cfe ""
->>>>>>> f795b18799b63b69c1f64dcf16e90344d153568f
->>>>>>> 012f55dca29f9043796498b1665544b66052ce02
+  "presentation.aux" 1744654786.06566 14610 7399be7e9a74071401d04e33217e35ff "pdflatex"
+  "presentation.nav" 1744654786.06666 8626 6254e2dd4d7bb8487e5ed3977cb78b29 "pdflatex"
+  "presentation.out" 1744654786.06666 3145 68f79e323e10d6a1b61dd9060f618282 "pdflatex"
+  "presentation.tex" 1744654743.02435 32856 367832ce86fe29cfb41783f1ae95ecf6 ""
+  "presentation.toc" 1744654786.06666 919 f14ac05da2d16c7b9ddbbcb1cfb4a47d "pdflatex"
   (generated)
   "presentation.aux"
   "presentation.log"
