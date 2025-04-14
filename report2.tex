@@ -352,105 +352,36 @@ The plots in \ref{fig:dist_loss}, \ref{fig:diffusion_loss} and \ref{fig:total_lo
 Refer to Appendix \ref{app:wandb} for more details regarding the plots of \texttt{distance\_loss}, \texttt{diffusion\_loss} and \texttt{total\_loss}
 
 \subsection*{Comparison with ViNT}
-To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD. The model configuration included the same EfficientNet-B0 encoder and transformer-based architecture, but excluded the diffusion decoder.\\
-
-Both models were evaluated under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints. The ViNT model was trained for 10 epochs with a batch size of 47.\\
-
-Interestingly, in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD demonstrated comparable performance across the key evaluation metrics. This suggests that the integration of a diffusion-based decoder in NoMaD does not negatively impact performance on goal-directed planning tasks. Instead, it enables a more expressive generative modeling capability while preserving task effectiveness.\\
-
-Here are some plots from WandB comparing the two models on the basis of \texttt{distance\_loss},\texttt{action\_loss} as well as \texttt{total\_loss} :\\
-\bigskip
+Both models were evaluated under identical conditions and intrestingly in the \textbf{goal-conditioned (GC)} setting, both demonstrated comparable performances.
+Refer to Appendix \ref{app:comparison_vint} for further comparision plots.
 \begin{figure}[H]
-    \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/vint_dist_loss.png}
-        \caption{Distance Loss on Training Set for ViNT}
-        \label{fig:vint_action_loss_train}
+        \includegraphics[width=\textwidth]{images/distloss_vint.png}
+        \caption{Total Loss on Training Set for ViNT}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
-        \caption{Distance Loss on Training Set for NoMaD}
-        \label{fig:vint_action_loss_val}
+        \includegraphics[width=\textwidth]{images/total_loss.png}
+        \caption{Total Loss on Training Set for NoMaD}
     \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/dist_test_vint.png}
-        \caption{Distance Loss on Validation Set for ViNT}
-        \label{fig:gc_dist_loss_val}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
-        \caption{Distance Loss on Validation Set for ViNT}
-        \label{fig:gc_dist_loss_val_vint}
-    \end{subfigure}
-    \caption{Distance loss comparison between ViNT and NoMaD on training and validation sets.}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/action_train_vint.png}
-        \caption{Action Loss on Training Set for ViNT}
-        \label{fig:vint_action_loss_train}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
-        \caption{Action Loss on Training Set for NoMaD}
-        \label{fig:vint_action_loss_val}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/action_test_vint.png}
-        \caption{Action Loss on Validation Set for ViNT}
-        \label{fig:gc_action_loss_val_vint}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
-        \caption{Action Loss on Validation Set for NoMaD}
-        \label{fig:gc_action_loss_val_vint}
-    \end{subfigure}
-    \caption{Action loss comparison between ViNT and NoMaD on training and validation sets.}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/distloss_vint.png}
-    \caption{Total Loss on Training Set for ViNT}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/total_loss.png}
-    \caption{Total Loss on Training Set for NoMaD}
-\end{figure}
-Refer to \hyperref[app:wandb]{Appendix G} for Comparision of their Cosine Similarity.\\
-
-\section{Challenges and Debugging}
-\begin{itemize}
-    \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
-    \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
-    \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
-    \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
-    \item The initial implementation caused several system crashes due to heavy computational load. We had to reduce evalutation batchsize and reduce the number of epochs to avoid this.
-\end{itemize}
 \newpage
 \begin{appendices}
 \begin{itemize}
     \item \hyperref[app:related_work]{\textbf{Appendix A:}} Related Work and Contextual Foundations of NoMaD
     \item \hyperref[app:preliminaries]{\textbf{Appendix B:}} Technical Preliminaries
-    \item \hyperref[app:vit]{\textbf{Appendix C:}} Vision Transformer
-    \item \hyperref[app:efficientnet]{\textbf{Appendix D:}} EfficientNet
-    \item \hyperref[app:diffusion]{\textbf{Appendix E:}} Diffusion Models
-    \item \hyperref[app:wandb]{\textbf{Appendix F:}} Weights and Biases
-    \item \hyperref[app:team_contributions]{\textbf{Appendix G:}} Team Contributions
+    \item \hyperref[app:method_ctd]{\textbf{Appendix C:}} Methodology Ctd.
+    \item \hyperref[app:implementation]{\textbf{Appendix D:}} Implementation Details
+    \item \hyperref[app:results]{\textbf{Appendix E:}} Results and Experiments
+    \item \hyperref[app:comparison_vint]{\textbf{Appendix E:}} Comparison with ViNT
+    \item \hyperref[app:app:vit]{\textbf{Appendix F:}} Vision Transformer
+    \item \hyperref[app:efficientnet]{\textbf{Appendix G:}} EfficientNet
+    \item \hyperref[app:diffusion]{\textbf{Appendix H:}} Diffusion Models
+    \item \hyperref[app:wandb]{\textbf{Appendix I:}} Weights and Biases
+    \item \hyperref[app:team_contributions]{\textbf{Appendix J:}} Team Contributions
+    \item \hyperref[app:challenges]{\textbf{Appendix K:}} Challenges and Debugging
     \item \hyperref[references]{\textbf{References}}
 \end{itemize}
 \section{Related Work and \\ Contextual Foundations of NoMaD}
@@ -656,6 +587,156 @@ We used wandb to log training progress, visualize losses, and monitor both model
 throughout experimentation. \\
 Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
 Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
+
+\section{Comparison with ViNT}
+\label{app:comparison_vint}
+To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD. The model configuration included the same EfficientNet-B0 encoder and transformer-based architecture, but excluded the diffusion decoder.\\
+
+Both models were evaluated under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints. The ViNT model was trained for 10 epochs with a batch size of 47.\\
+
+Interestingly, in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD demonstrated comparable performance across the key evaluation metrics. This suggests that the integration of a diffusion-based decoder in NoMaD does not negatively impact performance on goal-directed planning tasks. Instead, it enables a more expressive generative modeling capability while preserving task effectiveness.\\
+
+Here are some plots from WandB comparing the two models on the basis of \texttt{distance\_loss} and \texttt{action\_loss}:\\
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/vint_dist_loss.png}
+        \caption{Distance Loss on Training Set for ViNT}
+        \label{fig:vint_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_distloss_nomad.png}
+        \caption{Distance Loss on Training Set for NoMaD}
+        \label{fig:vint_action_loss_val}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/dist_test_vint.png}
+        \caption{Distance Loss on Validation Set for ViNT}
+        \label{fig:gc_dist_loss_val}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_dist_loss_test.png}
+        \caption{Distance Loss on Validation Set for ViNT}
+        \label{fig:gc_dist_loss_val_vint}
+    \end{subfigure}
+    \caption{Distance loss comparison between ViNT and NoMaD on training and validation sets.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_train_vint.png}
+        \caption{Action Loss on Training Set for ViNT}
+        \label{fig:vint_action_loss_train}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_nomad.png}
+        \caption{Action Loss on Training Set for NoMaD}
+        \label{fig:vint_action_loss_val}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_test_vint.png}
+        \caption{Action Loss on Validation Set for ViNT}
+        \label{fig:gc_action_loss_val_vint}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_actionloss_test_nomad.png}
+        \caption{Action Loss on Validation Set for NoMaD}
+        \label{fig:gc_action_loss_val_vint}
+    \end{subfigure}
+    \caption{Action loss comparison between ViNT and NoMaD on training and validation sets.}
+\end{figure}
+
+Here are some plots from WandB comparing the two models(NoMaD and ViNT)\\
+\subsection*{Action Cosine Similarity}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_sim_train_vint.png}
+        \label{fig:action_train_vint}
+        \caption{ViNT Action Cosine Similarity on Training Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
+        \label{fig:action_train_nomad}
+        \caption{NoMaD Action Cosine Similarity on Training Set}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/action_sim_test_vint.png}
+        \label{fig:action_test_vint}
+        \caption{ViNT Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_action_cos_sim_test.png}
+        \label{fig:action_test_nomad}
+        \caption{NoMaD Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+\end{figure}
+\subsection*{Multi Action Cosine Similarity}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/multiaction_train_vint.png}
+        \label{fig:multiaction_train_vint}
+        \caption{ViNT Multi Action Cosine Similarity on Training Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
+        \label{fig:multiaction_train_nomad}
+        \caption{NoMaD Multi Action Cosine Similarity on Training Set}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/multiaction_test_vint.png}
+        \label{fig:multiaction_test_vint}
+        \caption{ViNT Multi Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
+        \label{fig:multiaction_test_nomad}
+        \caption{NoMaD Multi Action Cosine Similarity on Validation Set}
+    \end{subfigure}
+\end{figure}
+\newpage
+Following are some of the visualizations of \textbf{ViNT} model's predictions on the validation set.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/test_action_sample_vint.png}
+    \label{fig:test_action_sample_vint}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/test_action_sample_vint_2.png}
+    \label{fig:test_action_sample_vint2}
+\end{figure}
 
 \section{Vision Transformer (ViT)}
 \label{app:vit}
@@ -916,87 +997,6 @@ These are our initial plots of \texttt{distance\_loss}, \texttt{diffusion\_loss}
 It is somewhat surprising that the total distance\ref{fig:init_dist_loss}, diffusion losses \ref{fig:init_diff_loss} as well as total loss \ref{fig:init_total_loss} do not show the expected downward trend. However, other loss curves clearly demonstrate a consistent decrease, indicating that the model was indeed able to learn and generalize effectively.
 Upon investigation, we discovered that the overall loss trend was skewed due to a specific run that encountered bugs in gradient propagation. As a result, the model in that particular run failed to learn properly. This anomaly in the plot was crucial in helping us identify the need for debugging within the training pipeline.\\
 While the total loss from correctly functioning runs was not plotted separately on Weights $\&$ Biases (W$\&$B), the consistent downward trends in individual components,such as distance and action losses,strongly indicate effective learning in those cases. To confirm this, we re-ran the training with a fresh model using the same parameters and dataset. The final plots included in this report are from this corrected run. We retained the original auxiliary plots, as their results were consistent with the corrected run.\\
-
-
-Here are some plots from WandB comparing the two models(NoMaD and ViNT)\\
-\subsection*{Action Cosine Similarity}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/action_sim_train_vint.png}
-        \label{fig:action_train_vint}
-        \caption{ViNT Action Cosine Similarity on Training Set}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_action_waypts_cos_sim_train.png}
-        \label{fig:action_train_nomad}
-        \caption{NoMaD Action Cosine Similarity on Training Set}
-    \end{subfigure}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/action_sim_test_vint.png}
-        \label{fig:action_test_vint}
-        \caption{ViNT Action Cosine Similarity on Validation Set}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_action_cos_sim_test.png}
-        \label{fig:action_test_nomad}
-        \caption{NoMaD Action Cosine Similarity on Validation Set}
-    \end{subfigure}
-\end{figure}
-\subsection*{Multi Action Cosine Similarity}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/multiaction_train_vint.png}
-        \label{fig:multiaction_train_vint}
-        \caption{ViNT Multi Action Cosine Similarity on Training Set}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim.png}
-        \label{fig:multiaction_train_nomad}
-        \caption{NoMaD Multi Action Cosine Similarity on Training Set}
-    \end{subfigure}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/multiaction_test_vint.png}
-        \label{fig:multiaction_test_vint}
-        \caption{ViNT Multi Action Cosine Similarity on Validation Set}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/gc_multi_action_waypts_cos_sim_test.png}
-        \label{fig:multiaction_test_nomad}
-        \caption{NoMaD Multi Action Cosine Similarity on Validation Set}
-    \end{subfigure}
-\end{figure}
-\newpage
-Following are some of the visualizations of \textbf{ViNT} model's predictions on the validation set.\\
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/test_action_sample_vint.png}
-    \label{fig:test_action_sample_vint}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/test_action_sample_vint_2.png}
-    \label{fig:test_action_sample_vint2}
-\end{figure}
 \newpage
 \section{Team Contributions}
 \label{app:team_contributions}
@@ -1027,6 +1027,15 @@ Following are some of the visualizations of \textbf{ViNT} model's predictions on
         \item Implemented the NoMaD architecture
         \item Developed the training pipeline and contributed towards data extraction
         \item Conducted experiments and analysis
+    \end{itemize}
+\section{Challenges and Debugging}
+\label{app:challenges}
+    \begin{itemize}
+        \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
+        \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
+        \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
+        \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
+        \item The initial implementation caused several system crashes due to heavy computational load. We had to reduce evalutation batchsize and reduce the number of epochs to avoid this.
     \end{itemize}
 \newpage
 \begin{thebibliography}{9}
