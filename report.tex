@@ -75,7 +75,7 @@ NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-
     \item Go to a specific place or object when given a goal image (goal-directed behavior).
 \end{itemize}
 Our project involves implementing the NoMaD Policy adapting its Transformer-based architecture and conditional diffusion decoder
-to learn from a rich, multimodal dataset (SACSoN,SCAND,go\_stanford,RECON) composed of real-world trajectories.
+to learn from a rich, multimodal dataset (SACSON,go\_stanford,RECON) composed of real-world trajectories.
 Unlike traditional latent-variable models or methods that rely on separate generative components for subgoal planning, the unified diffusion policy exhibits superior generalization and robustness in unseen environments, while maintaining a compact model size.
 In this report, we focus on the perception and training components of this policy, emphasizing how a strong visual encoder combined with a diffusion-based decoder leads to improved alignment of predicted and ground-truth waypoints. We analyze the training dynamics, present key quantitative metrics such as cosine similarity and distance loss, and highlight the model's ability to generalize across diverse scenarios.
 
@@ -151,11 +151,11 @@ Where:
 
 \subsection*{C. Implementation Details}
 The github repository implementing NOMaD is as follows: \href{https://github.com/ishobhnik/RobotNavigation}{RobotNavigation}\\
-The website hosting the project and the results is: \href{}{Website}
+The website hosting the project and the results is: \href{https://nomad-fawn.vercel.app/}{NoMaD}
 \subsection{Environment Setup}
 All experiments were conducted on a system equipped with an NVIDIA GeForce GTX 1660 SUPER GPU and a 12\textsuperscript{th} Gen Intel\textregistered~Core\texttrademark~i9-12900K (24-core) processor. \\
 The code was implemented in Python 3.12.9 in a conda environment. All the packages and libraries used are listed in the requirements.txt file in the github repo.\\
-The codebase was adapted from an open-source repository\cite{gitnomad}, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and debugging errors.
+The codebase was adapted from an open-source repository\cite{gitnomad}, and experiment tracking was performed using \texttt{Weights \& Biases (WandB)} for logging loss curves, evaluation metrics, and debugging errors. Refer to Appendix \ref{app:wandb} for more details and results.\\
 \subsection{Data Pipeline}
 We trained the NoMaD model using the \textbf{SACSON} and parts of \textbf{RECON} dataset along with \textbf{go\_stanford}, which contains diverse real-world trajectories across various environments and robot platforms.
 The SACSON and go\_stanford dataset were already processed and we it split into training and validation sets using 80-20 split ratio. The RECON dataset consisted of bag files, which needed to be preprocessed to extract RGB images, actions, and ground-truth waypoints.
@@ -211,8 +211,9 @@ Evaluation was performed on the validation set using the following metrics:
 We used wandb to log training progress, visualize losses, and monitor both model behavior and system resources (e.g., GPU/CPU utilization)
 throughout experimentation. \\
 Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
-Refer to \hyperref[app:wandb]{Appendix G} for other resulting plots and visualizations.\\
+Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
 \section{Experiments and Results}
+The figures below illustrates scenarios where a robot is trying to navigate towards a specific goal. The left plot shows the diffusion model's sampled action trajectories in a 2D projection space. Green and red lines denote various sampled action sequences, coressponding to different samples or different stages in the diffusion process (e.g., noisy vs. denoised predictions), while the pink trajectory represents the final action sequence selected by the model. This trajectory leads from the robot's current position toward the predicted goal location.  The spread of the predicted actions reflects the model's uncertainty about the optimal path.
 \subsection*{Train action samples:}
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{images/train_action_samples_1.png}    
@@ -266,7 +267,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \caption{Distance loss comparison between training and validation sets under goal-conditioned evaluation.}
 \end{figure}
 We see that the loss has plateaued after the first epoch, both in test and training sets, indicating that the model quickly learns a strong initial estimate of the distance to the goal.\\
-\newpage
+
 \noindent \textbf{Action loss:}\\
 \begin{figure}[H]
     \centering
@@ -330,9 +331,12 @@ The Cosine Similarity metric evaluates how well the predicted action direction a
     \end{subfigure}
     \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
 \end{figure}
-
+Multi-action cosine similarity compares the overall alignment of full predicted trajectory vectors with ground truth, rather than frame-by-frame. This provides a more holistic measure of long-horizon trajectory quality.
+We see a similar trend in multi-action cosine similarity as action waypts cosine similarity. On the training set, the plot consistently improves and stabilizes at a high value, indicating that the model effectively learns to align its predicted trajectories with the desired paths. Similarly we notice the lower and more volatile cosine similarity on the validation set.
+\newpage
 \subsection*{Unconditional (UC) Evaluation}
 We set the goal mask $m = 1$ to evaluate the model's performance in open-ended exploration.\\
+Interestingly, the model's behavior in this unconditioned setting closely mirrors that observed during goal-conditioned evaluations. This indicates that the model encounters similar generalization challenges and follows comparable learning dynamics, even in the absence of explicit goal cues.\\
 \noindent \textbf{Action loss:}\\
 \begin{figure}[H]
     \centering
@@ -349,9 +353,8 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
         \caption{Action Loss on Validation Set}
         \label{fig:gc_action_loss_val}
     \end{subfigure}
-    \caption{Action loss comparison between training and validation sets under goal-conditioned evaluation.}
+    \caption{Action loss comparison between training and validation sets under goal-agnostic evaluation.}
 \end{figure}
-\newpage
 \noindent \textbf{uc\_action\_waypts\_cos\_sim:}\\
 \begin{figure}[H]
     \centering
@@ -368,8 +371,9 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
         \caption{Cosine Similarity on Validation Set}
         \label{fig:uc_action_waypts_cos_sim_val}
     \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-conditioned evaluation.}
+    \caption{Cosine similarity between predicted and ground-truth waypoints on the training and validation sets under goal-agnostic evalutation}
 \end{figure}
+\newpage
 \noindent \textbf{uc\_multi\_action\_waypts\_cos\_sim:}\\
 \begin{figure}[H]
     \centering
@@ -385,20 +389,20 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
         \caption{Cosine Similarity on Validation Set}
         \label{fig:uc_action_multi_waypts_cos_sim_test}
     \end{subfigure}
-    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-conditioned evaluation.}
+    \caption{Cosine similarity between predicted and ground-truth multi-waypoints on the training and validation sets under goal-agnostic evalutation}
 \end{figure}
-
+\bigskip
 \noindent \textbf{Distance Loss:}\\
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/dist_loss.png}
         \caption{Distance Loss on Training Set}
         \label{fig:dist_loss}
     \end{subfigure}
     \end{figure}
-
+    Figure \ref{fig:dist_loss} illustrates the variation in distance loss over the course of training steps. The sharp drop in loss around 35k steps marks a point where the model begins to learn more effectively. The loss stabilizes at a low value in the later stages, indicating that the model has successfully converged to a well-optimized solution for the training data. This reduction in uncertainty further suggests that the learning process has become more consistent and efficient.\\
 \subsection*{Diffusion Loss}
 \begin{figure}[H]
     \centering
@@ -429,36 +433,44 @@ We set the goal mask $m = 1$ to evaluate the model's performance in open-ended e
         \label{fig:diffusion_eval_loss_goal_masking}
     \end{subfigure}
     \caption{Diffusion loss on training set and evaluation loss with different masking strategies}
-    \end{figure}
+   \label{fig:diffusion_loss_figure} 
+\end{figure}
+Figure \ref{fig:diffusion_loss_figure} compares the diffusion loss during training with the evaluation loss under different masking strategies: random masking, no masking, and goal masking.\\
+\begin{enumerate}
+    \item \ref{fig:diffusion_loss} The diffusion loss starts relatively high and then decreases sharply around the 30k-40k step mark, eventually stabilizing at a much lower level. This suggests that the diffusion model learns effectively during training.
+    \item \ref{fig:diffusion_eval_loss_goal_masking}, \ref{fig:diffusion_eval_loss_no_masking} and \ref{fig:diffusion_eval_loss_random_masking} indicate that the evaluation losses (with all masking strategies) are generally higher and more unstable than the training loss. All of the losses drop significantly in the initial evaluation steps.
+\end{enumerate}
+\newpage
 \noindent \textbf{Total Loss:}\\
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/total_loss.png}
         \caption{Total Loss on Training Set}
         \label{fig:total_loss}
     \end{subfigure}
     \end{figure}
+The plot agrees that the model is learning effectively, confirmed by the sharp drop in the loss around 35k steps. The model appears to converge to a stable solution.\\
 
 \noindent \textbf{Remarks:}\\
-It is somewhat surprising that the total distance and diffusion losses do not show the expected downward trend. However, other loss curves clearly demonstrate a consistent decrease, indicating that the model was indeed able to learn and generalize effectively.
-Upon investigation, we discovered that the overall loss trend was skewed due to a specific run that encountered bugs in gradient propagation. As a result, the model in that particular run failed to learn properly. This anomaly in the plot was crucial in helping us identify the need for debugging within the training pipeline.  
-While the total loss for the correctly functioning runs was not separately plotted on Weights $\&$ Biases (wandb), the behavior of individual loss components—such as distance and action losses—provides strong evidence that the model was learning as expected in those runs.
+The plots in \ref{fig:dist_loss}, \ref{fig:diffusion_loss} and \ref{fig:total_loss} correspond to another run of the experiment with similar datasets, conditions and parameters.\\
+Refer to Appendix \ref{app:wandb} for more details regarding the plots of \texttt{distance\_loss}, \texttt{diffusion\_loss} and \texttt{total\_loss}
 
 \subsection*{Comparison with ViNT}
-To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD.\\
-We used the same EfficientNet-B0 encoder and transformer architecture, but without the diffusion decoder.\\
-We evaluated both models under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints.\\
-Interestingly, we observed that in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD achieved comparable performance across key metrics. This suggests that the introduction of a diffusion-based decoder in NoMaD does not degrade performance in goal-directed planning tasks. Instead, it provides a more expressive generative mechanism while maintaining task performance.\\
-This supports the hypothesis that \textbf{diffusion-based modeling can match deterministic approaches in accuracy while offering better generative flexibility}, particularly for multi-modal or long-horizon planning scenarios.\\
-Here are some plots from WandB comparing the two models:\\
+To establish a baseline, we trained the original ViNT architecture using the same dataset and training hyperparameters as used for NoMaD. The model configuration included the same EfficientNet-B0 encoder and transformer-based architecture, but excluded the diffusion decoder.\\
 
+Both models were evaluated under identical conditions on the validation set, using metrics such as Mean Squared Error (MSE) for actions and cosine similarity between predicted and ground-truth waypoints. The ViNT model was trained for 10 epochs with a batch size of 47.\\
+
+Interestingly, in the \textbf{goal-conditioned (GC)} setting, both ViNT and NoMaD demonstrated comparable performance across the key evaluation metrics. This suggests that the integration of a diffusion-based decoder in NoMaD does not negatively impact performance on goal-directed planning tasks. Instead, it enables a more expressive generative modeling capability while preserving task effectiveness.\\
+
+Here are some plots from WandB comparing the two models on the basis of \texttt{distance\_loss},\texttt{action\_loss} as well as \texttt{total\_loss} :\\
+\bigskip
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/distloss_vint.png}
+        \includegraphics[width=\textwidth]{images/vint_dist_loss.png}
         \caption{Distance Loss on Training Set for ViNT}
         \label{fig:vint_action_loss_train}
     \end{subfigure}
@@ -513,6 +525,17 @@ Here are some plots from WandB comparing the two models:\\
         \label{fig:gc_action_loss_val_vint}
     \end{subfigure}
     \caption{Action loss comparison between ViNT and NoMaD on training and validation sets.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/distloss_vint.png}
+    \caption{Total Loss on Training Set for ViNT}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/total_loss.png}
+    \caption{Total Loss on Training Set for NoMaD}
 \end{figure}
 Refer to \hyperref[app:wandb]{Appendix G} for Comparision of their Cosine Similarity.\\
 
@@ -868,6 +891,30 @@ The authors evaluate Diffusion Policy on 15 tasks across 4 benchmarks:
 \newpage
 \section{WandB}
 \label{app:wandb}
+These are our initial plots of \texttt{distance\_loss}, \texttt{diffusion\_loss} and \texttt{total\_loss}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/old_dist_loss.png}
+    \caption{Initial plot of distance Loss on Training Set}
+    \label{fig:init_dist_loss}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/diffloss.png}
+    \caption{Initial plot of diffusion Loss on Training Set}
+    \label{fig:init_diff_loss}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/totalloss_nomad.png}
+    \caption{Initial plot of total Loss on Training Set}
+    \label{fig:init_total_loss}
+\end{figure}
+It is somewhat surprising that the total distance\ref{fig:init_dist_loss}, diffusion losses \ref{fig:init_diff_loss} as well as total loss \ref{fig:init_total_loss} do not show the expected downward trend. However, other loss curves clearly demonstrate a consistent decrease, indicating that the model was indeed able to learn and generalize effectively.
+Upon investigation, we discovered that the overall loss trend was skewed due to a specific run that encountered bugs in gradient propagation. As a result, the model in that particular run failed to learn properly. This anomaly in the plot was crucial in helping us identify the need for debugging within the training pipeline.\\
+While the total loss from correctly functioning runs was not plotted separately on Weights $\&$ Biases (W$\&$B), the consistent downward trends in individual components,such as distance and action losses,strongly indicate effective learning in those cases. To confirm this, we re-ran the training with a fresh model using the same parameters and dataset. The final plots included in this report are from this corrected run. We retained the original auxiliary plots, as their results were consistent with the corrected run.\\
+
+
 Here are some plots from WandB comparing the two models(NoMaD and ViNT)\\
 \subsection*{Action Cosine Similarity}
 \begin{figure}[H]
@@ -952,12 +999,11 @@ Following are some of the visualizations of \textbf{ViNT} model's predictions on
 \label{app:team_contributions}
 \textbf{Abhishek Kumar Jha:} \\
     \begin{itemize}
-        \item Implemented the Nomad Architecture ,by debugging many files which were causing errors while training.
-        \item Trained go_stanford dataset for 10 epochs(without wandb) and sacson dataset for 5 epochs (with wandb).
-        \item Made the \textbf{README} file for the repo where i explained the procedure of how to extract the data,other debuggings, dataset structure format,how to install the packages and dependencies ,the errors which can arise and how to finally train it.
-        \item Intially conducted experiment in 65 number machine where i got 'CUDA OUT OF MEMORY" error.
-        \item Was with the team while they were making the reports and presentation, and committed some changes in it.
-        \item Went through the papers which were suggested by our TA.
+        \item Implemented the Nomad Architecture and helped in the Training and Experiments 
+        \item Made the $\textbf{README}$ file for the repository.
+        \item Assisted in creating the report and Presentation.
+        \item Contributed towards making the code demo video.
+        \item Helped in integrating and debugging the diffusion\_policy repository
     \end{itemize}
     \textbf{Namashivayaa V:} \\
     \begin{itemize}
@@ -969,14 +1015,14 @@ Following are some of the visualizations of \textbf{ViNT} model's predictions on
     \begin{itemize}
         \item Implemented the ViNT architecture and trained it
         \item Helped in debuggeding the errors while training the NoMaD model
-        \item Conducted experiments and analysis for comapring NoMaD and ViNT
-        \item Made the Presentation and Report
+        \item Assisted in conducting experiments and analysis for the project
+        \item Contributed towards the Presentation and project report
     \end{itemize}
     \textbf{Shobhnik Kriplani:} \\
     \begin{itemize}
         \item Made a website for the project
         \item Implemented the NoMaD architecture
-        \item Developed the training pipeline
+        \item Developed the training pipeline and contributed towards data extraction
         \item Conducted experiments and analysis
     \end{itemize}
 \newpage
