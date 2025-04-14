@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744650629.41763 "/home/ishobhnik/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744650638.42454 0
+["pdflatex"] 1744651947.78387 "/home/ishobhnik/Report_Nomad/presentation.tex" "presentation.pdf" "presentation" 1744651956.70214 0
   "/etc/texmf/web2c/texmf.cnf" 1735446591.24186 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ishobhnik/Report_Nomad/presentation.tex" 1744650629.17385 30159 8a6f991597eb8d3255be4d6b30a31cfe ""
+  "/home/ishobhnik/Report_Nomad/presentation.tex" 1744651947.54704 31442 8498dae70520c95ca06cd16184dcf85d ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -271,10 +271,10 @@
   "images/uc_multi_action_sim_test.png" 1744646735.06541 529109 3ff8d1ae2b744d5f7050278a25b36a87 ""
   "lrdecay.png" 1744646735.06741 70827 2417149e52fff6ea9b89d81d2f706e22 ""
   "nomad_diagram.png" 1744646735.06941 171708 7b3a83cbdd9edd88ff3238c2a4c31af0 ""
-  "presentation.aux" 1744650638.31581 7416 28a3404b0f973f887ce8bbede320f1bc "pdflatex"
-  "presentation.nav" 1744650638.31681 3978 9c866a4817b408696c8470684668e1cb "pdflatex"
-  "presentation.out" 1744650638.31681 93 b70bf10812daf92f57b133be4a10bd7e "pdflatex"
-  "presentation.tex" 1744650629.17385 30159 8a6f991597eb8d3255be4d6b30a31cfe ""
+  "presentation.aux" 1744651956.592 7755 a35ed339b3506387d1d9779e11b25dbc "pdflatex"
+  "presentation.nav" 1744651956.593 4227 9d69d9994e31d6a25b889b502b4b64ff "pdflatex"
+  "presentation.out" 1744651956.592 186 fac70856fe81078faf875086b1a9fa4f "pdflatex"
+  "presentation.tex" 1744651947.54704 31442 8498dae70520c95ca06cd16184dcf85d ""
   (generated)
   "presentation.aux"
   "presentation.log"
