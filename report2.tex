@@ -58,16 +58,10 @@
 \maketitle
 
 \begin{abstract}
-This report presents our work on implementing and analyzing the training and perception components of a visual navigation system based on diffusion policies, as adapted from the NOMAD (Navigation with Goal Masked Diffusion) framework. 
-Our approach combines a visual perception backbone based on EfficientNet and Transformer, with a trajectory diffusion model for motion planning to support both goal-directed and exploratory navigation. We trained our model on the SACSON,and parts of RECON and go\_stanford dataset, which features diverse real-world trajectories across various environments and robot platforms. 
-We leverage a conditional diffusion model to generate multimodal waypoint predictions, enabling the agent to reason about complex, uncertain navigation scenarios. Our contributions include a detailed breakdown of the model architecture, a github repository implementing the model, a project website, training methodology, and evaluation metrics—logged using wandb for tracking and visualization. 
-We have left out the deployment aspects.
+    This report details our implementation and analysis of a visual navigation system based on the NoMaD framework. Our model combines an EfficientNet-Transformer perception backbone with a conditional diffusion-based planner, trained on SACSON and parts of RECON and Go\_Stanford datasets. It generates multimodal waypoint predictions for goal-directed and exploratory navigation in diverse real-world settings. We present the model architecture, training methodology, evaluation metrics (logged via Weights \& Biases), and provide a GitHub repository and project website. Deployment aspects are not covered.
 \end{abstract}
-
-
 \section{Introduction}
-Robotic learning for navigation in unfamiliar environments requires the ability to perform both task-oriented navigation (i.e., reaching a known goal) and task-agnostic exploration (i.e., searching for a goal in a novel environment). Traditionally, these functionalities are tackled by separate systems — for example, using subgoal proposals, explicit planning modules, or distinct navigation strategies for exploration and goal-reaching.
-
+Robotic learning for navigation in unfamiliar environments requires the ability to perform both task-oriented navigation and task-agnostic exploration. Traditionally, these functionalities are tackled by separate systems.
 \subsection*{What is NoMaD?}
 NoMaD is a transformer-based diffusion policy designed for long-horizon, memory-based navigation, that can:
 \begin{itemize}

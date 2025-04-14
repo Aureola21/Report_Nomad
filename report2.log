@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  14 APR 2025 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.3)  14 APR 2025 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -510,7 +510,7 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
@@ -518,93 +518,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--89
 <images/train_action_samples_1.png, id=108, 1715.40875pt x 594.22pt>
 File: images/train_action_samples_1.png Graphic file (type png)
 <use images/train_action_samples_1.png>
-Package pdftex.def Info: images/train_action_samples_1.png  used on input line 119.
+Package pdftex.def Info: images/train_action_samples_1.png  used on input line 113.
 (pdftex.def)             Requested size: 469.75502pt x 162.72644pt.
 <images/train_action_samples_2.png, id=110, 1583.9175pt x 505.89pt>
 File: images/train_action_samples_2.png Graphic file (type png)
 <use images/train_action_samples_2.png>
-Package pdftex.def Info: images/train_action_samples_2.png  used on input line 123.
+Package pdftex.def Info: images/train_action_samples_2.png  used on input line 117.
 (pdftex.def)             Requested size: 469.75502pt x 150.03133pt.
  [3]
 <images/train_action_samples_3.png, id=115, 1619.04875pt x 506.89375pt>
 File: images/train_action_samples_3.png Graphic file (type png)
 <use images/train_action_samples_3.png>
-Package pdftex.def Info: images/train_action_samples_3.png  used on input line 127.
+Package pdftex.def Info: images/train_action_samples_3.png  used on input line 121.
 (pdftex.def)             Requested size: 469.75502pt x 147.06503pt.
 <images/train_action_samples_4.png, id=116, 1594.95876pt x 464.73625pt>
 File: images/train_action_samples_4.png Graphic file (type png)
 <use images/train_action_samples_4.png>
-Package pdftex.def Info: images/train_action_samples_4.png  used on input line 131.
+Package pdftex.def Info: images/train_action_samples_4.png  used on input line 125.
 (pdftex.def)             Requested size: 469.75502pt x 136.87617pt.
  [4 <./images/train_action_samples_1.png> <./images/train_action_samples_2.png> <./images/train_action_samples_3.png>]
 <images/sacson_test_action_samples_1.png, id=127, 1617.04124pt x 476.78125pt>
 File: images/sacson_test_action_samples_1.png Graphic file (type png)
 <use images/sacson_test_action_samples_1.png>
-Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 136.
+Package pdftex.def Info: images/sacson_test_action_samples_1.png  used on input line 130.
 (pdftex.def)             Requested size: 469.75502pt x 138.5031pt.
 <images/sacson_test_action_samples_2.png, id=128, 1617.04124pt x 472.76625pt>
 File: images/sacson_test_action_samples_2.png Graphic file (type png)
 <use images/sacson_test_action_samples_2.png>
-Package pdftex.def Info: images/sacson_test_action_samples_2.png  used on input line 140.
+Package pdftex.def Info: images/sacson_test_action_samples_2.png  used on input line 134.
 (pdftex.def)             Requested size: 469.75502pt x 137.33675pt.
 <images/sacson_test_action_samples_3.png, id=129, 1642.135pt x 497.86pt>
 File: images/sacson_test_action_samples_3.png Graphic file (type png)
 <use images/sacson_test_action_samples_3.png>
-Package pdftex.def Info: images/sacson_test_action_samples_3.png  used on input line 144.
+Package pdftex.def Info: images/sacson_test_action_samples_3.png  used on input line 138.
 (pdftex.def)             Requested size: 469.75502pt x 142.41574pt.
  [5 <./images/train_action_samples_4.png> <./images/sacson_test_action_samples_1.png> <./images/sacson_test_action_samples_2.png>]
 <images/gc_distloss_nomad.png, id=140, 3044.37375pt x 1598.97375pt>
 File: images/gc_distloss_nomad.png Graphic file (type png)
 <use images/gc_distloss_nomad.png>
-Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 156.
+Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 150.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 <images/gc_dist_loss_test.png, id=141, 3044.37375pt x 1598.97375pt>
 File: images/gc_dist_loss_test.png Graphic file (type png)
 <use images/gc_dist_loss_test.png>
-Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 163.
+Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 157.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--168
+Underfull \hbox (badness 10000) in paragraph at lines 144--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 <images/gc_actionloss_nomad.png, id=142, 3044.37375pt x 1598.97375pt>
 File: images/gc_actionloss_nomad.png Graphic file (type png)
 <use images/gc_actionloss_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 176.
+Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 170.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 <images/gc_actionloss_test_nomad.png, id=143, 3044.37375pt x 1598.97375pt>
 File: images/gc_actionloss_test_nomad.png Graphic file (type png)
 <use images/gc_actionloss_test_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 183.
+Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 177.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--188
+Underfull \hbox (badness 10000) in paragraph at lines 165--182
 
  []
 
 [6 <./images/sacson_test_action_samples_3.png> <./images/gc_distloss_nomad.png> <./images/gc_dist_loss_test.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 <images/gc_action_waypts_cos_sim_train.png, id=153, 2537.48pt x 1332.98pt>
 File: images/gc_action_waypts_cos_sim_train.png Graphic file (type png)
 <use images/gc_action_waypts_cos_sim_train.png>
-Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 196.
+Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 190.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/gc_action_waypts_cos_sim_test.png, id=154, 2537.48pt x 1332.98pt>
 File: images/gc_action_waypts_cos_sim_test.png Graphic file (type png)
 <use images/gc_action_waypts_cos_sim_test.png>
-Package pdftex.def Info: images/gc_action_waypts_cos_sim_test.png  used on input line 203.
+Package pdftex.def Info: images/gc_action_waypts_cos_sim_test.png  used on input line 197.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--208
+Underfull \hbox (badness 10000) in paragraph at lines 185--202
 
  []
 
@@ -612,15 +612,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--208
 <images/gc_multi_action_waypts_cos_sim.png, id=166, 2537.48pt x 1332.98pt>
 File: images/gc_multi_action_waypts_cos_sim.png Graphic file (type png)
 <use images/gc_multi_action_waypts_cos_sim.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 221.
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 215.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/gc_multi_action_waypts_cos_sim_test.png, id=167, 2537.48pt x 1332.98pt>
 File: images/gc_multi_action_waypts_cos_sim_test.png Graphic file (type png)
 <use images/gc_multi_action_waypts_cos_sim_test.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 228.
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 222.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--233
+Underfull \hbox (badness 10000) in paragraph at lines 210--227
 
  []
 
@@ -628,30 +628,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--233
 <images/uc_action_train.png, id=175, 3044.37375pt x 1598.97375pt>
 File: images/uc_action_train.png Graphic file (type png)
 <use images/uc_action_train.png>
-Package pdftex.def Info: images/uc_action_train.png  used on input line 245.
+Package pdftex.def Info: images/uc_action_train.png  used on input line 239.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 <images/uc_action_test.png, id=176, 3044.37375pt x 1598.97375pt>
 File: images/uc_action_test.png Graphic file (type png)
 <use images/uc_action_test.png>
-Package pdftex.def Info: images/uc_action_test.png  used on input line 252.
+Package pdftex.def Info: images/uc_action_test.png  used on input line 246.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--257
+Underfull \hbox (badness 10000) in paragraph at lines 232--251
 
  []
 
 <images/uc_action_sim_train(1).png, id=177, 2271.48625pt x 1193.45876pt>
 File: images/uc_action_sim_train(1).png Graphic file (type png)
 <use images/uc_action_sim_train(1).png>
-Package pdftex.def Info: images/uc_action_sim_train(1).png  used on input line 263.
+Package pdftex.def Info: images/uc_action_sim_train(1).png  used on input line 257.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 <images/uc_action_sim_test.png, id=178, 2271.48625pt x 1193.45876pt>
 File: images/uc_action_sim_test.png Graphic file (type png)
 <use images/uc_action_sim_test.png>
-Package pdftex.def Info: images/uc_action_sim_test.png  used on input line 270.
+Package pdftex.def Info: images/uc_action_sim_test.png  used on input line 264.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--275
+Underfull \hbox (badness 10000) in paragraph at lines 252--269
 
  []
 
@@ -659,55 +659,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--275
 <images/cs_multi_action_cos_train.png, id=189, 2271.48625pt x 1193.45876pt>
 File: images/cs_multi_action_cos_train.png Graphic file (type png)
 <use images/cs_multi_action_cos_train.png>
-Package pdftex.def Info: images/cs_multi_action_cos_train.png  used on input line 282.
+Package pdftex.def Info: images/cs_multi_action_cos_train.png  used on input line 276.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 <images/uc_multi_action_sim_test.png, id=190, 2271.48625pt x 1193.45876pt>
 File: images/uc_multi_action_sim_test.png Graphic file (type png)
 <use images/uc_multi_action_sim_test.png>
-Package pdftex.def Info: images/uc_multi_action_sim_test.png  used on input line 288.
+Package pdftex.def Info: images/uc_multi_action_sim_test.png  used on input line 282.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--293
+Underfull \hbox (badness 10000) in paragraph at lines 271--287
 
  []
 
 <images/dist_loss.png, id=191, 2029.5825pt x 1065.9825pt>
 File: images/dist_loss.png Graphic file (type png)
 <use images/dist_loss.png>
-Package pdftex.def Info: images/dist_loss.png  used on input line 300.
+Package pdftex.def Info: images/dist_loss.png  used on input line 294.
 (pdftex.def)             Requested size: 375.80544pt x 197.3826pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--304
+Underfull \hbox (badness 10000) in paragraph at lines 289--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 <images/diffusion_loss.png, id=193, 2029.5825pt x 1065.9825pt>
 File: images/diffusion_loss.png Graphic file (type png)
 <use images/diffusion_loss.png>
-Package pdftex.def Info: images/diffusion_loss.png  used on input line 311.
+Package pdftex.def Info: images/diffusion_loss.png  used on input line 305.
 (pdftex.def)             Requested size: 225.4804pt x 118.41328pt.
 <images/diffusion_eval_loss_random_masking.png, id=194, 2537.48pt x 1332.98pt>
 File: images/diffusion_eval_loss_random_masking.png Graphic file (type png)
 <use images/diffusion_eval_loss_random_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_random_masking.png  used on input line 318.
+Package pdftex.def Info: images/diffusion_eval_loss_random_masking.png  used on input line 312.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/diffusion_eval_loss_no_masking.png, id=195, 2537.48pt x 1332.98pt>
 File: images/diffusion_eval_loss_no_masking.png Graphic file (type png)
 <use images/diffusion_eval_loss_no_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_no_masking.png  used on input line 324.
+Package pdftex.def Info: images/diffusion_eval_loss_no_masking.png  used on input line 318.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/diffusion_eval_loss_goal_masking.png, id=196, 2537.48pt x 1332.98pt>
 File: images/diffusion_eval_loss_goal_masking.png Graphic file (type png)
 <use images/diffusion_eval_loss_goal_masking.png>
-Package pdftex.def Info: images/diffusion_eval_loss_goal_masking.png  used on input line 331.
+Package pdftex.def Info: images/diffusion_eval_loss_goal_masking.png  used on input line 325.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 [10 <./images/cs_multi_action_cos_train.png> <./images/uc_multi_action_sim_test.png> <./images/dist_loss.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
@@ -715,30 +715,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 338--339
 <images/total_loss.png, id=223, 2029.5825pt x 1065.9825pt>
 File: images/total_loss.png Graphic file (type png)
 <use images/total_loss.png>
-Package pdftex.def Info: images/total_loss.png  used on input line 349.
+Package pdftex.def Info: images/total_loss.png  used on input line 343.
 (pdftex.def)             Requested size: 375.80544pt x 197.3826pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--353
+Underfull \hbox (badness 10000) in paragraph at lines 338--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
@@ -746,76 +746,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--366
 <images/vint_dist_loss.png, id=234, 2271.48625pt x 1193.45876pt>
 File: images/vint_dist_loss.png Graphic file (type png)
 <use images/vint_dist_loss.png>
-Package pdftex.def Info: images/vint_dist_loss.png  used on input line 373.
+Package pdftex.def Info: images/vint_dist_loss.png  used on input line 367.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 File: images/gc_distloss_nomad.png Graphic file (type png)
 <use images/gc_distloss_nomad.png>
-Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 380.
+Package pdftex.def Info: images/gc_distloss_nomad.png  used on input line 374.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 <images/dist_test_vint.png, id=235, 2537.48pt x 1332.98pt>
 File: images/dist_test_vint.png Graphic file (type png)
 <use images/dist_test_vint.png>
-Package pdftex.def Info: images/dist_test_vint.png  used on input line 386.
+Package pdftex.def Info: images/dist_test_vint.png  used on input line 380.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 File: images/gc_dist_loss_test.png Graphic file (type png)
 <use images/gc_dist_loss_test.png>
-Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 393.
+Package pdftex.def Info: images/gc_dist_loss_test.png  used on input line 387.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 
-Overfull \hbox (72.20732pt too wide) in paragraph at lines 367--398
+Overfull \hbox (72.20732pt too wide) in paragraph at lines 361--392
 []\OT1/cmr/m/n/12 Here are some plots from WandB com-par-ing the two mod-els on the ba-sis of \OT1/cmtt/m/n/12 distance[]loss\OT1/cmr/m/n/12 ,\OT1/cmtt/m/n/12 action[]loss
  []
 
 <images/action_train_vint.png, id=236, 2537.48pt x 1332.98pt>
 File: images/action_train_vint.png Graphic file (type png)
 <use images/action_train_vint.png>
-Package pdftex.def Info: images/action_train_vint.png  used on input line 403.
+Package pdftex.def Info: images/action_train_vint.png  used on input line 397.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 File: images/gc_actionloss_nomad.png Graphic file (type png)
 <use images/gc_actionloss_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 410.
+Package pdftex.def Info: images/gc_actionloss_nomad.png  used on input line 404.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 <images/action_test_vint.png, id=237, 2537.48pt x 1332.98pt>
 File: images/action_test_vint.png Graphic file (type png)
 <use images/action_test_vint.png>
-Package pdftex.def Info: images/action_test_vint.png  used on input line 416.
+Package pdftex.def Info: images/action_test_vint.png  used on input line 410.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 File: images/gc_actionloss_test_nomad.png Graphic file (type png)
 <use images/gc_actionloss_test_nomad.png>
-Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 423.
+Package pdftex.def Info: images/gc_actionloss_test_nomad.png  used on input line 417.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 [13 <./images/vint_dist_loss.png> <./images/dist_test_vint.png>]
 <images/distloss_vint.png, id=246, 2537.48pt x 1332.98pt>
 File: images/distloss_vint.png Graphic file (type png)
 <use images/distloss_vint.png>
-Package pdftex.def Info: images/distloss_vint.png  used on input line 432.
+Package pdftex.def Info: images/distloss_vint.png  used on input line 426.
 (pdftex.def)             Requested size: 469.75502pt x 246.76015pt.
 File: images/total_loss.png Graphic file (type png)
 <use images/total_loss.png>
-Package pdftex.def Info: images/total_loss.png  used on input line 437.
+Package pdftex.def Info: images/total_loss.png  used on input line 431.
 (pdftex.def)             Requested size: 469.75502pt x 246.71605pt.
  [14 <./images/action_train_vint.png> <./images/action_test_vint.png> <./images/distloss_vint.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 462.
+(hyperref)                removing `\\' on input line 456.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--466
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--474
+Underfull \hbox (badness 10000) in paragraph at lines 464--468
 
  []
 
 [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
@@ -823,30 +823,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 517--518
 <nomad_diagram.png, id=284, 1583.9175pt x 467.7475pt>
 File: nomad_diagram.png Graphic file (type png)
 <use nomad_diagram.png>
-Package pdftex.def Info: nomad_diagram.png  used on input line 564.
+Package pdftex.def Info: nomad_diagram.png  used on input line 558.
 (pdftex.def)             Requested size: 399.29463pt x 117.91438pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--574
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
 
  []
 
 [19 <./nomad_diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 624--627
+Underfull \hbox (badness 10000) in paragraph at lines 618--621
 
  []
 
 <images/lr.png, id=299, 2537.48pt x 1332.98pt>
 File: images/lr.png Graphic file (type png)
 <use images/lr.png>
-Package pdftex.def Info: images/lr.png  used on input line 638.
+Package pdftex.def Info: images/lr.png  used on input line 632.
 (pdftex.def)             Requested size: 469.75502pt x 246.76015pt.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 661--665
+Underfull \hbox (badness 10000) in paragraph at lines 655--659
 
  []
 
@@ -854,84 +854,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 661--665
 <images/old_dist_loss.png, id=346, 2537.48pt x 1332.98pt>
 File: images/old_dist_loss.png Graphic file (type png)
 <use images/old_dist_loss.png>
-Package pdftex.def Info: images/old_dist_loss.png  used on input line 906.
+Package pdftex.def Info: images/old_dist_loss.png  used on input line 900.
 (pdftex.def)             Requested size: 469.75502pt x 246.76015pt.
 <images/diffloss.png, id=347, 3044.37375pt x 1598.97375pt>
 File: images/diffloss.png Graphic file (type png)
 <use images/diffloss.png>
-Package pdftex.def Info: images/diffloss.png  used on input line 912.
+Package pdftex.def Info: images/diffloss.png  used on input line 906.
 (pdftex.def)             Requested size: 469.75502pt x 246.71605pt.
 <images/totalloss_nomad.png, id=348, 3044.37375pt x 1598.97375pt>
 File: images/totalloss_nomad.png Graphic file (type png)
 <use images/totalloss_nomad.png>
-Package pdftex.def Info: images/totalloss_nomad.png  used on input line 918.
+Package pdftex.def Info: images/totalloss_nomad.png  used on input line 912.
 (pdftex.def)             Requested size: 469.75502pt x 246.71605pt.
  [29 <./images/old_dist_loss.png> <./images/diffloss.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 922--925
+Underfull \hbox (badness 10000) in paragraph at lines 916--919
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 927--928
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
 
  []
 
 <images/action_sim_train_vint.png, id=360, 2271.48625pt x 1193.45876pt>
 File: images/action_sim_train_vint.png Graphic file (type png)
 <use images/action_sim_train_vint.png>
-Package pdftex.def Info: images/action_sim_train_vint.png  used on input line 933.
+Package pdftex.def Info: images/action_sim_train_vint.png  used on input line 927.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 File: images/gc_action_waypts_cos_sim_train.png Graphic file (type png)
 <use images/gc_action_waypts_cos_sim_train.png>
-Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 940.
+Package pdftex.def Info: images/gc_action_waypts_cos_sim_train.png  used on input line 934.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/action_sim_test_vint.png, id=361, 2271.48625pt x 1193.45876pt>
 File: images/action_sim_test_vint.png Graphic file (type png)
 <use images/action_sim_test_vint.png>
-Package pdftex.def Info: images/action_sim_test_vint.png  used on input line 949.
+Package pdftex.def Info: images/action_sim_test_vint.png  used on input line 943.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 <images/gc_action_cos_sim_test.png, id=362, 3044.37375pt x 1598.97375pt>
 File: images/gc_action_cos_sim_test.png Graphic file (type png)
 <use images/gc_action_cos_sim_test.png>
-Package pdftex.def Info: images/gc_action_cos_sim_test.png  used on input line 956.
+Package pdftex.def Info: images/gc_action_cos_sim_test.png  used on input line 950.
 (pdftex.def)             Requested size: 225.4804pt x 118.40515pt.
 [30 <./images/totalloss_nomad.png>]
 <images/multiaction_train_vint.png, id=369, 2271.48625pt x 1193.45876pt>
 File: images/multiaction_train_vint.png Graphic file (type png)
 <use images/multiaction_train_vint.png>
-Package pdftex.def Info: images/multiaction_train_vint.png  used on input line 966.
+Package pdftex.def Info: images/multiaction_train_vint.png  used on input line 960.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 File: images/gc_multi_action_waypts_cos_sim.png Graphic file (type png)
 <use images/gc_multi_action_waypts_cos_sim.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 973.
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim.png  used on input line 967.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
 <images/multiaction_test_vint.png, id=370, 2271.48625pt x 1193.45876pt>
 File: images/multiaction_test_vint.png Graphic file (type png)
 <use images/multiaction_test_vint.png>
-Package pdftex.def Info: images/multiaction_test_vint.png  used on input line 982.
+Package pdftex.def Info: images/multiaction_test_vint.png  used on input line 976.
 (pdftex.def)             Requested size: 225.4804pt x 118.46054pt.
 File: images/gc_multi_action_waypts_cos_sim_test.png Graphic file (type png)
 <use images/gc_multi_action_waypts_cos_sim_test.png>
-Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 989.
+Package pdftex.def Info: images/gc_multi_action_waypts_cos_sim_test.png  used on input line 983.
 (pdftex.def)             Requested size: 225.4804pt x 118.43755pt.
  [31 <./images/action_sim_train_vint.png> <./images/action_sim_test_vint.png> <./images/gc_action_cos_sim_test.png> <./images/multiaction_train_vint.png>] [32 <./images/multiaction_test_vint.png>]
 <images/test_action_sample_vint.png, id=389, 1255.69125pt x 385.44pt>
 File: images/test_action_sample_vint.png Graphic file (type png)
 <use images/test_action_sample_vint.png>
-Package pdftex.def Info: images/test_action_sample_vint.png  used on input line 998.
+Package pdftex.def Info: images/test_action_sample_vint.png  used on input line 992.
 (pdftex.def)             Requested size: 469.75502pt x 144.19264pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 995--1000
+Underfull \hbox (badness 10000) in paragraph at lines 989--994
 
  []
 
 <images/test_action_sample_vint_2.png, id=390, 1329.96875pt x 526.96875pt>
 File: images/test_action_sample_vint_2.png Graphic file (type png)
 <use images/test_action_sample_vint_2.png>
-Package pdftex.def Info: images/test_action_sample_vint_2.png  used on input line 1003.
+Package pdftex.def Info: images/test_action_sample_vint_2.png  used on input line 997.
 (pdftex.def)             Requested size: 469.75502pt x 186.1304pt.
 [33 <./images/test_action_sample_vint.png> <./images/test_action_sample_vint_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
 
  []
 
@@ -941,22 +946,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 
  []
 
 [34]
-Underfull \hbox (badness 3323) in paragraph at lines 1041--1045
+Underfull \hbox (badness 3323) in paragraph at lines 1035--1039
 []\OT1/cmr/m/n/12 Dhruv Shah et al. \OT1/cmr/m/it/12 No-MaD: A Dif-fu-sion Pol-icy for Vi-sual Nav-i-ga-tion\OT1/cmr/m/n/12 . 2023
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 1068--1071
+Underfull \hbox (badness 3138) in paragraph at lines 1062--1065
 []\OT1/cmr/m/n/12 Dhruv Shah et al., \OT1/cmr/m/it/12 ViNT: A Foun-da-tion Model for Vi-sual Nav-i-ga-tion \OT1/cmr/m/n/12 2023
  []
 
@@ -975,13 +975,13 @@ Package rerunfilecheck Info: File `report2.out' has not changed.
 Here is how much of TeX's memory you used:
  14047 strings out of 474222
  226705 string characters out of 5748733
- 1935975 words of memory out of 5000000
+ 1934975 words of memory out of 5000000
  36045 multiletter control sequences out of 15000+600000
  569367 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,79p,713b,692s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on report2.pdf (35 pages, 13041853 bytes).
+Output written on report2.pdf (35 pages, 13042167 bytes).
 PDF statistics:
  510 PDF objects out of 1000 (max. 8388607)
  349 compressed objects within 4 object streams
