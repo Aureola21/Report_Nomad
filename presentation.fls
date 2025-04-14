@@ -577,11 +577,11 @@ INPUT ./images/dist_loss.png
 INPUT ./images/dist_loss.png
 INPUT ./images/dist_loss.png
 INPUT ./images/dist_loss.png
-INPUT ./images/distloss_vint.png
-INPUT ./images/distloss_vint.png
-INPUT ./images/distloss_vint.png
-INPUT ./images/distloss_vint.png
-INPUT ./images/distloss_vint.png
+INPUT ./images/dist_loss (train).png
+INPUT ./images/dist_loss (train).png
+INPUT ./images/dist_loss (train).png
+INPUT ./images/dist_loss (train).png
+INPUT ./images/dist_loss (train).png
 INPUT ./images/gc_actionloss_nomad.png
 INPUT ./images/gc_actionloss_nomad.png
 INPUT ./images/gc_actionloss_nomad.png
@@ -595,6 +595,7 @@ INPUT ./images/total_loss.png
 INPUT ./images/total_loss.png
 INPUT ./images/total_loss.png
 INPUT ./images/total_loss.png
+INPUT ./images/distloss_vint.png
 INPUT ./images/distloss_vint.png
 INPUT ./images/distloss_vint.png
 INPUT ./images/distloss_vint.png
