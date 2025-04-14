@@ -10,6 +10,9 @@
 \usetikzlibrary{shapes, arrows, positioning, calc}
 \usepackage{multirow}
 \usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{color}
 
 \title[NoMaD]{NoMaD: \textbf{N}avigati\textbf{o}n with Goal-\textbf{Ma}sked \textbf{D}iffusion}
 \author{Abhishek,Namashivayaa, \\ Sehaj, Shobhnik}
@@ -22,6 +25,19 @@
 \titlepage
 \end{frame}
 
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
+\section{Motivation and Goal}
 \begin{frame}{Motivation and Goal}
     \textbf{Robotic navigation in unfamiliar environments requires:}
     \begin{itemize}
@@ -42,6 +58,16 @@
         Can a \textit{single model} unify both tasks — exploration and navigation?
     \end{block}~
     \end{frame}
+
+
+    \addtocounter{section}{1}
+    \begin{frame}
+      \frametitle{Outline}
+      \tableofcontents[currentsection]
+    \end{frame}
+    \addtocounter{section}{-1}
+
+\section{Introduction}
     \begin{frame}{What is NoMaD?}
         \textbf{NoMaD} is a transformer-based diffusion policy designed for long-horizon, memory-efficient navigation.\\[0.5em]
         It supports both:
@@ -59,6 +85,15 @@
         \end{block}
         \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
+\section{Literature Review}
+\subsection*{Overview of NoMaD Architecture}
 \begin{frame}{Overview of NoMaD Architecture}
     \begin{block}{Visual Goal-Conditioned Navigation}
         Backbone: ViNT (Visual Navigation Transformer)\\
@@ -83,6 +118,7 @@
         \label{fig:efficientnet}
     \end{figure}
 \end{frame}
+\subsection*{EfficientNet}
 \begin{frame}{EfficientNet}
     \begin{block}{}
         Use Network Architecture Search (NAS) to find the best baseline network (EfficientNet-B0)\\
@@ -132,7 +168,7 @@
     \end{figure}
 \end{frame}
 
-
+\subsection*{Visual Navigation Transformer (ViNT)}
 \begin{frame}{Overview of NoMaD Architecture}
     \begin{block}{Visual Goal-Conditioned Navigation}
         Backbone: ViNT (Visual Navigation Transformer)\\
@@ -149,6 +185,7 @@
         \end{itemize}
     \end{block}
 \end{frame}
+\subsection*{Topological Memory}
 \begin{frame}{Extending to Long-Horizon Planning with Topological Memory}
     \alert{However, ViNT is inherently goal-conditioned—it cannot operate in the absence
     of a goal image, limiting its ability to explore autonomously.}
@@ -166,6 +203,11 @@
         \end{itemize}
     \end{block}
 \end{frame}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\subsection{Goal Masking}
 \begin{frame}{Overview of NoMaD Architecture}
     \texttt{NoMaD = \{\textcolor{green}{EfficientNet + Vision Transformer}\} $\leftarrow$ \textbf{ViNT} \\+ Diffusion Policies}\\
     Nomad builds upon ViNT by:\\
@@ -178,6 +220,7 @@
     \end{figure}
 \end{frame}
 
+\subsection{Diffusion Policies}
 \begin{frame}{Overview of NoMaD Architecture}
     \texttt{NoMaD = \{EfficientNet + Vision Transformer\} $\leftarrow$ \textbf{ViNT} \\+ \textcolor{green}{Diffusion Policies}}\\
     \textbf{Diffusion Policies:}\\
@@ -226,7 +269,13 @@
         \includegraphics[width=1.01\linewidth]{nomad_diagram.png}
     \end{figure}
 \end{frame}
-
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+\section{Training Details and Experiments}
 \begin{frame}{Training Details and Experiments}
 \begin{itemize}
     \item Datasets used: Sacson/HuRoN, parts of RECON and SCAND
@@ -263,7 +312,13 @@
         \item $f_d$ corresponds to the temporal distance predictor.
     \end{itemize}
 \end{frame}
-
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+\section{Results}
 \begin{frame}{Training Visualization with \texttt{wandb}}
 
     \begin{block}{Why \texttt{Weights \& Biases (wandb)}?}
@@ -312,6 +367,12 @@ The figure illustrates a robot is trying to navigate towards a specific goal.\\
             \includegraphics[width=1\linewidth]{images/sacson_test_action_samples_1.png}        \end{figure}
     \end{block}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\subsection{Goal Conditioned Setting}
 \begin{frame}{Experiments and Results: (Goal Conditioned)}
 We set the goal mask $m = 0$ to evaluate the model's performance in goal-directed navigation.
 \begin{block}{Distance Loss}
@@ -355,6 +416,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
         \end{figure}
     \end{block}
     \end{frame}
+\subsection{Unconditioned setting}
     \begin{frame}{Experiments and Results: (Unconditioned Setting)}
         \begin{block}{Action Loss Evaluation}
             \begin{minipage}{0.48\textwidth}
@@ -376,6 +438,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             The unconditioned action loss measures model accuracy in open-loop, goal-agnostic settings. Lower loss indicates better generalization in exploratory behavior.
         \end{block}
     \end{frame}
+\subsection{Distance and Diffusion Losses}
     \begin{frame}{Experiments and Results: Distance and Diffusion Losses}
         \begin{block}{Overall Metrics}
             \begin{minipage}{0.48\textwidth}
@@ -433,6 +496,7 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
         \textbf{Description:} \\
         Each token is randomly masked with probability 0.5. This encourages the model to balance between exploring and exploiting goal cues.
     \end{frame}
+\subsection{Total Loss}
 \begin{frame}{Experiments and Results :Total Loss}
     \begin{block}{Total Loss}
         \centering
@@ -445,7 +509,14 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{block}
 \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
 
+\section{Comparison with ViNT}
 \begin{frame}{Comparision with ViNT: Temporal Distance Loss}
         \begin{block}{}
             ViNT serves as a strong baseline for visual navigation with transformer-based context encoding. we trained the original ViNT architecture using the same dataset
@@ -467,7 +538,6 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
             \end{column}
         \end{columns}
 \end{frame}
-
 \begin{frame}{ViNT vs NoMaD: Action Loss}
     \begin{block}{}
         We compare the quality of predicted waypoints by measuring the Mean Squared Error (MSE) between predicted and ground-truth actions.
@@ -493,7 +563,6 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \centering
     \textit{Observation:} Interestingly, in the goal-conditioned (GC) setting, both ViNT and NoMaD demonstrated comparable performances.
 \end{frame}
-
 \begin{frame}{Comparison with ViNT: Total Loss}
     \begin{block}{}
         To assess the overall effectiveness of NoMaD vs. ViNT, we compare the combined loss: action prediction loss + temporal distance prediction loss.
@@ -521,6 +590,14 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     on goal-directed planning tasks. 
 \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
+\section{Challenges Faced}
 \begin{frame}{Challenges Faced}
     \begin{itemize}
         \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
@@ -531,6 +608,14 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{itemize}
 \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
+\section{Team Contributions}
 \begin{frame}{Team Contributions}
     \textbf{Abhishek Kumar Jha:} \\
     \begin{itemize}
@@ -571,6 +656,14 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{itemize}
 \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
+\section{Conclusion and Future Work}
 \begin{frame}{Conclusion and Future Work}
 \begin{itemize}
     \item Successfully trained NoMaD using diffusion for visual navigation
@@ -591,13 +684,19 @@ We set the goal mask $m = 0$ to evaluate the model's performance in goal-directe
     \end{center}
 \end{frame}
 
+\addtocounter{section}{1}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{section}{-1}
+
 \section{Appendices}
 \begin{frame}{Appendices}
     \begin{block}{Appendices}
         \begin{itemize}
             \item Appendix A: Additional Results
-            \item Appendix B: Implementation Details
-            \item Appendix C: References
+            \item Appendix B: References
         \end{itemize}
     \end{block}
 \end{frame}

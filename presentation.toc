@@ -1,1 +1,16 @@
-\beamer@sectionintoc {1}{Appendices}{43}{0}{1}
+\beamer@sectionintoc {1}{Motivation and Goal}{4}{0}{1}
+\beamer@sectionintoc {2}{Introduction}{8}{0}{2}
+\beamer@sectionintoc {3}{Literature Review}{12}{0}{3}
+\beamer@subsectionintoc {3}{5}{Goal Masking}{23}{0}{3}
+\beamer@subsectionintoc {3}{6}{Diffusion Policies}{24}{0}{3}
+\beamer@sectionintoc {4}{Training Details and Experiments}{28}{0}{4}
+\beamer@sectionintoc {5}{Results}{32}{0}{5}
+\beamer@subsectionintoc {5}{1}{Goal Conditioned Setting}{36}{0}{5}
+\beamer@subsectionintoc {5}{2}{Unconditioned setting}{38}{0}{5}
+\beamer@subsectionintoc {5}{3}{Distance and Diffusion Losses}{39}{0}{5}
+\beamer@subsectionintoc {5}{4}{Total Loss}{42}{0}{5}
+\beamer@sectionintoc {6}{Comparison with ViNT}{44}{0}{6}
+\beamer@sectionintoc {7}{Challenges Faced}{48}{0}{7}
+\beamer@sectionintoc {8}{Team Contributions}{50}{0}{8}
+\beamer@sectionintoc {9}{Conclusion and Future Work}{53}{0}{9}
+\beamer@sectionintoc {10}{Appendices}{56}{0}{10}
