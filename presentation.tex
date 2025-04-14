@@ -364,7 +364,7 @@
     \begin{frame}{Experiments and Results: Diffusion Loss}
         \begin{block}{Training Performance}
             \centering
-            \includegraphics[width=0.7\textwidth]{images/diffloss.png}
+            \includegraphics[width=0.7\textwidth]{images/diffusion_loss.png}
         
             \vspace{0.5em}
             \small
@@ -407,7 +407,6 @@
         \begin{block}{Stochastic Goal Conditioning}
             \centering
             \includegraphics[width=0.75\textwidth]{images/diff_eval_goal_masking.png}
-            
             \vspace{0.5em}
             \small
             \textbf{Description:} 
@@ -417,7 +416,7 @@
 \begin{frame}{Experiments and Results :Total Loss}
     \begin{block}{Total Loss}
         \centering
-        \includegraphics[width=0.75\textwidth]{images/totalloss_nomad.png}
+        \includegraphics[width=0.75\textwidth]{images/total_loss.png}
         
         \vspace{0.5em}
         \small
@@ -436,7 +435,7 @@
             \begin{column}{0.48\textwidth}
                 \begin{block}{\centering \small \textbf{NoMaD Distance Loss}}
                     \centering
-                    \includegraphics[width=\textwidth]{images/distloss_vint.png}
+                    \includegraphics[width=\textwidth]{images/dist_loss.png}
                     \tiny NoMaD achieves lower and more stable distance loss due to diffusion-based modeling and goal conditioning.
                 \end{block}
             \end{column}
@@ -483,33 +482,34 @@
     \textit{Observation:} \textbf{NoMaD benefits from the expressiveness of diffusion decoding} in predicting fine-grained waypoint actions.
 \end{frame}
 
-% \begin{frame}{Comparison with ViNT: Total Loss}
-%     \begin{block}{Motivation}
-%         To assess the overall effectiveness of NoMaD vs. ViNT, we compare the combined loss: action prediction loss + temporal distance prediction loss.
-%     \end{block}
+\begin{frame}{Comparison with ViNT: Total Loss}
+    \begin{block}{Motivation}
+        To assess the overall effectiveness of NoMaD vs. ViNT, we compare the combined loss: action prediction loss + temporal distance prediction loss.
+    \end{block}
 
-%     \begin{columns}
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{\centering \small \textbf{NoMaD Total Loss}}
-%                 \centering
-%                 \includegraphics[width=\textwidth]{images/total_loss_nomad.png}
-%                 \tiny NoMaD achieves better convergence, with lower final loss due to richer diffusion-based decoding.
-%             \end{block}
-%         \end{column}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{\centering \small \textbf{NoMaD Total Loss}}
+                \centering
+                \includegraphics[width=\textwidth]{images/total_loss.png}
+                \tiny NoMaD achieves better convergence, with lower final loss due to richer diffusion-based decoding.
+            \end{block}
+        \end{column}
 
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{\centering \small \textbf{ViNT Total Loss}}
-%                 \centering
-%                 \includegraphics[width=\textwidth]{images/total_loss_vint.png}
-%                 \tiny ViNT exhibits slower learning and higher loss, limited by direct MLP-based action prediction.
-%             \end{block}
-%         \end{column}
-%     \end{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{\centering \small \textbf{ViNT Total Loss}}
+                \centering
+                \includegraphics[width=\textwidth]{images/distloss_vint.png}
+                \tiny ViNT exhibits slower learning and higher loss, limited by direct MLP-based action prediction.
+            \end{block}
+        \end{column}
+    \end{columns}
 
-%     \vspace{0.5em}
-%     \centering
-%     \textit{Takeaway:} \textbf{NoMaD demonstrates improved learning dynamics and generalization.}
-% \end{frame}
+    \vspace{0.5em}
+    \centering
+    \textit{Takeaway:} \textbf{NoMaD demonstrates improved learning dynamics and generalization.}
+\end{frame}
+
 \begin{frame}{Challenges Faced}
 \begin{itemize}
     \item CUDA Out Of Memory errors on limited GPU
