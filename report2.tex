@@ -157,8 +157,128 @@ throughout experimentation. \\
 Metrics such as action loss, goal prediction error, and the learning rate schedule were automatically tracked and visualized, which helped with debugging and plotting out results.
 Refer to \hyperref[app:wandb]{Appendix F} for other resulting plots and visualizations.\\
 \section{Experiments and Results}
-The figures below illustrates scenarios where a robot is trying to navigate towards a specific goal. The left plot shows the diffusion model's sampled action trajectories in a 2D projection space. Green and red lines denote various sampled action sequences, coressponding to different samples or different stages in the diffusion process (e.g., noisy vs. denoised predictions), while the pink trajectory represents the final action sequence selected by the model. This trajectory leads from the robot's current position toward the predicted goal location.  The spread of the predicted actions reflects the model's uncertainty about the optimal path.
-\subsection*{Train action samples:}
+The robot navigation scenario illustrates how a diffusion model generates action trajectories toward a goal. The green and red lines represent different sampled action sequences, indicating various stages in the diffusion process—ranging from noisy to refined predictions. The final selected trajectory, shown in pink, moves the robot from its current position toward the predicted goal. The spread of sampled paths highlights the model’s uncertainty in determining the optimal route. For visual reference, see the figures in the\hyperref[app:methods]{Appendix X}\\ appendix.\subsection*{Train action samples:}
+
+\section{Challenges and Debugging}
+\begin{itemize}
+    \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
+    \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
+    \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
+    \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
+    \item The initial implementation caused several system crashes due to heavy computational load. We had to reduce evalutation batchsize and reduce the number of epochs to avoid this.
+\end{itemize}
+\newpage
+\begin{appendices}
+\begin{itemize}
+    \item \hyperref[app:related_work]{\textbf{Appendix A:}} Related Work and Contextual Foundations of NoMaD
+    \item \hyperref[app:preliminaries]{\textbf{Appendix B:}} Technical Preliminaries
+    \item \hyperref[app:methods]{\textbf{Appendix X:}} Experiments and Results
+    \item \hyperref[app:vit]{\textbf{Appendix C:}} Vision Transformer
+    \item \hyperref[app:efficientnet]{\textbf{Appendix D:}} EfficientNet
+    \item \hyperref[app:diffusion]{\textbf{Appendix E:}} Diffusion Models
+    \item \hyperref[app:wandb]{\textbf{Appendix F:}} Weights and Biases
+    \item \hyperref[app:team_contributions]{\textbf{Appendix G:}} Team Contributions
+    \item \hyperref[references]{\textbf{References}}
+\end{itemize}
+\section{Related Work and \\ Contextual Foundations of NoMaD}
+\label{app:related_work}
+Exploration in unfamiliar enviroments is approached as the problem of efficient mapping, typically formulated around information maximization to guide the robot toward unexplored regions.\\
+We factorize the classical exploration problem into two categories:\\
+\begin{itemize}
+    \item Local exploration strategies that rely on current observations. Objective is to learn control policies that can take diverse,short-horizon actions
+    \item Global exploration strategies that utilize a map of the environment. Basically a high-level planner based on a topological graph that uses the policy for long-horizon goal-seeking
+\end{itemize}
+Robots exploring a new area are essentially trying to map it efficiently—this means covering as much area as possible, ideally without wasting time.\\
+However, building detailed geometric maps, can be difficult without accurate depth perception. \\
+Several prior approaches have investigated learning-based exploration policies. Some approaches use simulation data (training in virtual environments).\\
+Others learn from real-world data directly. These models may use:\\
+\begin{itemize}
+    \item Intrinsic rewards: Encouraging the robot to explore new things.
+    \item Semantic prediction: Going to interesting or informative places.
+    \item Latent variable models: Abstract models of how actions affect the world.
+\end{itemize}
+Yet, policies trained in simulation frequently struggle to transfer to real-world environments. Even real-world-trained models can underperform in complex indoor and outdoor settings.\\
+\bigskip
+\noindent \textbf{Enter NoMaD : A New Method}\\ 
+The work most closely related to NoMaD is ViNT (refer Appendix X for more details), which combines a goal-conditioned policy with a separate subgoal proposal module. The subgoal proposals are generated using an image diffusion model, condiitioned on robot's current view.\\
+NoMaD improves on this by:
+\begin{itemize}
+    \item Not generating images.
+    \item Directly predicting actions using diffusion models, which are typically used in image generation tasks but can model complex probabilities really well.
+    \item This makes NoMaD more accurate and much lighter (needs 15x fewer parameters).
+\end{itemize}
+One of the core challenges in modeling robot exploration policies is the inherently multimodal nature of action sequences.\\
+Observation-conditioned diffusion models  have emerged as powerful tools because they can learn complex action distributions without needing without needing explicit state prediction.\\
+Nomad builds upon this adding \textbf{goal conditioning} to diffusion-based action generation, meaning it is capable of both:
+\begin{itemize}
+    \item Goal-directed exploration
+    \item Undirected exploration 
+\end{itemize}
+
+\section{Technical Preliminaries}
+\label{app:preliminaries}
+The primary objective is to develop a visual navigation policy, denoted by $\pi$, that enables a robot to navigate using only RGB images from its onboard camera. \\
+The policy devised should operates as follows:
+\begin{itemize} 
+    \item It receives a sequence of past and current observations: $o_t := o_{t-P : t}$. 
+    \item It predicts a distribution over future actions: $a_t := a_{t : t+H}$. 
+    \item Optionally, it can also condition on a goal image $o_g$, representing the desired destination. 
+\end{itemize}
+Depending on whether a goal is provided, the policy behaves differently: 
+\begin{itemize} 
+    \item \textbf{Goal-directed navigation:} When a goal image $o_g$ is available, $\pi$ generates actions that guide the robot toward the goal. 
+    \item \textbf{Exploratory behavior:} When no goal is given (as in pure exploration settings), $\pi$ must still generate safe and purposeful actions—avoiding obstacles and staying on traversable paths—while efficiently covering the environment. 
+\end{itemize}
+To handle long-horizon planning and complex environments, the system is further augmented with: 
+\begin{itemize} 
+    \item A topological memory graph $\mathcal{M}$, which maintains a structured map of past visual observations. 
+    \item A high-level planner that leverages this memory to decide on intermediate goals and broader exploration strategies. 
+\end{itemize}
+\subsection*{Visual Goal-Conditioned Policies: ViNT as the Backbone}
+NoMaD builds on the ViNT (Visual Navigation Transformer) architecture, a Transformer-based model tailored for goal-conditioned navigation.\\
+\paragraph{Key Components of ViNT:} 
+\begin{itemize} 
+    \item \textbf{Visual Encoding:} Each observation is processed using an EfficientNet-B0 encoder to extract feature embeddings. 
+    \item \textbf{Goal Fusion:} The current and goal image features are combined using a goal fusion encoder. 
+    \item \textbf{Transformer Attention:} These fused features (tokens) are passed through a Transformer model to generate a context vector $c_t$. 
+    \item \textbf{Predictions:} The context vector is used to predict: 
+    \begin{itemize} 
+        \item A distribution over future actions: $a_t = f_a(c_t)$. 
+        \item An estimate of temporal distance to the goal: $d(o_t, o_g) = f_d(c_t)$. 
+    \end{itemize} 
+\end{itemize}
+These outputs are learned via supervised training, where the model is shown expert trajectories and learns to imitate them.
+\begin{quote}
+    \textit{However, ViNT is inherently goal-conditioned—it cannot operate in the absence of a goal image, limiting its ability to explore autonomously.} 
+\end{quote}
+\subsection*{Extending to Long-Horizon Planning with Topological Memory}
+To overcome this limitation, NoMaD incorporates a topological memory $\mathcal{M}$: 
+\begin{itemize} 
+    \item Nodes represent previously encountered visual observations. 
+    \item Edges represent traversable paths, established using ViNT's predicted distances. 
+\end{itemize}
+This memory graph enables both: 
+\begin{itemize} 
+    \item \textbf{Subgoal Planning:} If a goal cannot be reached directly, the planner identifies a sequence of reachable subgoals via $\mathcal{M}$. 
+    \item \textbf{Structured Exploration:} Even without a goal, $\mathcal{M}$ helps guide exploration toward promising, yet-unvisited areas. 
+\end{itemize}
+\subsection*{Frontier-Based Exploration with NoMaD}
+To evaluate NoMaD's ability to generalize to new environments, the authors implement a frontier-based exploration strategy:
+\begin{itemize} 
+    \item \textbf{Frontier:} The boundary between explored and unexplored areas in the environment. 
+    \item The high-level planner selects frontiers as subgoals, encouraging the robot to expand coverage. 
+\end{itemize}
+This builds on the ViKiNG framework, but replaces its prior policy with NoMaD, which supports both: 
+\begin{itemize} 
+    \item \textbf{Goal-seeking} behavior (when a goal image is provided), and 
+    \item \textbf{Autonomous exploration} (when no goal is available). 
+\end{itemize}
+
+
+
+\section{Experiments and Results}
+\label{app:methods}
+\subsection{Train action samples}
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{images/train_action_samples_1.png}    
     \label{fig:train_action_samples_1}
@@ -482,120 +602,6 @@ Here are some plots from WandB comparing the two models on the basis of \texttt{
     \caption{Total Loss on Training Set for NoMaD}
 \end{figure}
 Refer to \hyperref[app:wandb]{Appendix G} for Comparision of their Cosine Similarity.\\
-
-\section{Challenges and Debugging}
-\begin{itemize}
-    \item CUDA out of memory errors were common during training, especially with larger batch sizes. We mitigated this by reducing the batch size and using gradient accumulation.
-    \item The model was initially not being able to learn effectively, leading to high loss values. We debugged this by checking the data pipeline and ensuring that the input images were correctly preprocessed and normalized.
-    \item The system in UG computational labs didnot have ROS installed, which was required to process the datasets. With the help of our TA, we used a docker file to set up a container with ROS and the required dependencies.
-    \item The original codebase has several data-type related bugs which had to be fixed. For example, the original code was using torch.float32 for some tensors, while the model expected them to be in torch.float64. This caused several errors during training.
-    \item The initial implementation caused several system crashes due to heavy computational load. We had to reduce evalutation batchsize and reduce the number of epochs to avoid this.
-\end{itemize}
-\newpage
-\begin{appendices}
-\begin{itemize}
-    \item \hyperref[app:related_work]{\textbf{Appendix A:}} Related Work and Contextual Foundations of NoMaD
-    \item \hyperref[app:preliminaries]{\textbf{Appendix B:}} Technical Preliminaries
-    \item \hyperref[app:vit]{\textbf{Appendix C:}} Vision Transformer
-    \item \hyperref[app:efficientnet]{\textbf{Appendix D:}} EfficientNet
-    \item \hyperref[app:diffusion]{\textbf{Appendix E:}} Diffusion Models
-    \item \hyperref[app:wandb]{\textbf{Appendix F:}} Weights and Biases
-    \item \hyperref[app:team_contributions]{\textbf{Appendix G:}} Team Contributions
-    \item \hyperref[references]{\textbf{References}}
-\end{itemize}
-\section{Related Work and \\ Contextual Foundations of NoMaD}
-\label{app:related_work}
-Exploration in unfamiliar enviroments is approached as the problem of efficient mapping, typically formulated around information maximization to guide the robot toward unexplored regions.\\
-We factorize the classical exploration problem into two categories:\\
-\begin{itemize}
-    \item Local exploration strategies that rely on current observations. Objective is to learn control policies that can take diverse,short-horizon actions
-    \item Global exploration strategies that utilize a map of the environment. Basically a high-level planner based on a topological graph that uses the policy for long-horizon goal-seeking
-\end{itemize}
-Robots exploring a new area are essentially trying to map it efficiently—this means covering as much area as possible, ideally without wasting time.\\
-However, building detailed geometric maps, can be difficult without accurate depth perception. \\
-Several prior approaches have investigated learning-based exploration policies. Some approaches use simulation data (training in virtual environments).\\
-Others learn from real-world data directly. These models may use:\\
-\begin{itemize}
-    \item Intrinsic rewards: Encouraging the robot to explore new things.
-    \item Semantic prediction: Going to interesting or informative places.
-    \item Latent variable models: Abstract models of how actions affect the world.
-\end{itemize}
-Yet, policies trained in simulation frequently struggle to transfer to real-world environments. Even real-world-trained models can underperform in complex indoor and outdoor settings.\\
-\bigskip
-\noindent \textbf{Enter NoMaD : A New Method}\\ 
-The work most closely related to NoMaD is ViNT (refer Appendix X for more details), which combines a goal-conditioned policy with a separate subgoal proposal module. The subgoal proposals are generated using an image diffusion model, condiitioned on robot's current view.\\
-NoMaD improves on this by:
-\begin{itemize}
-    \item Not generating images.
-    \item Directly predicting actions using diffusion models, which are typically used in image generation tasks but can model complex probabilities really well.
-    \item This makes NoMaD more accurate and much lighter (needs 15x fewer parameters).
-\end{itemize}
-One of the core challenges in modeling robot exploration policies is the inherently multimodal nature of action sequences.\\
-Observation-conditioned diffusion models  have emerged as powerful tools because they can learn complex action distributions without needing without needing explicit state prediction.\\
-Nomad builds upon this adding \textbf{goal conditioning} to diffusion-based action generation, meaning it is capable of both:
-\begin{itemize}
-    \item Goal-directed exploration
-    \item Undirected exploration 
-\end{itemize}
-
-\section{Technical Preliminaries}
-\label{app:preliminaries}
-The primary objective is to develop a visual navigation policy, denoted by $\pi$, that enables a robot to navigate using only RGB images from its onboard camera. \\
-The policy devised should operates as follows:
-\begin{itemize} 
-    \item It receives a sequence of past and current observations: $o_t := o_{t-P : t}$. 
-    \item It predicts a distribution over future actions: $a_t := a_{t : t+H}$. 
-    \item Optionally, it can also condition on a goal image $o_g$, representing the desired destination. 
-\end{itemize}
-Depending on whether a goal is provided, the policy behaves differently: 
-\begin{itemize} 
-    \item \textbf{Goal-directed navigation:} When a goal image $o_g$ is available, $\pi$ generates actions that guide the robot toward the goal. 
-    \item \textbf{Exploratory behavior:} When no goal is given (as in pure exploration settings), $\pi$ must still generate safe and purposeful actions—avoiding obstacles and staying on traversable paths—while efficiently covering the environment. 
-\end{itemize}
-To handle long-horizon planning and complex environments, the system is further augmented with: 
-\begin{itemize} 
-    \item A topological memory graph $\mathcal{M}$, which maintains a structured map of past visual observations. 
-    \item A high-level planner that leverages this memory to decide on intermediate goals and broader exploration strategies. 
-\end{itemize}
-\subsection*{Visual Goal-Conditioned Policies: ViNT as the Backbone}
-NoMaD builds on the ViNT (Visual Navigation Transformer) architecture, a Transformer-based model tailored for goal-conditioned navigation.\\
-\paragraph{Key Components of ViNT:} 
-\begin{itemize} 
-    \item \textbf{Visual Encoding:} Each observation is processed using an EfficientNet-B0 encoder to extract feature embeddings. 
-    \item \textbf{Goal Fusion:} The current and goal image features are combined using a goal fusion encoder. 
-    \item \textbf{Transformer Attention:} These fused features (tokens) are passed through a Transformer model to generate a context vector $c_t$. 
-    \item \textbf{Predictions:} The context vector is used to predict: 
-    \begin{itemize} 
-        \item A distribution over future actions: $a_t = f_a(c_t)$. 
-        \item An estimate of temporal distance to the goal: $d(o_t, o_g) = f_d(c_t)$. 
-    \end{itemize} 
-\end{itemize}
-These outputs are learned via supervised training, where the model is shown expert trajectories and learns to imitate them.
-\begin{quote}
-    \textit{However, ViNT is inherently goal-conditioned—it cannot operate in the absence of a goal image, limiting its ability to explore autonomously.} 
-\end{quote}
-\subsection*{Extending to Long-Horizon Planning with Topological Memory}
-To overcome this limitation, NoMaD incorporates a topological memory $\mathcal{M}$: 
-\begin{itemize} 
-    \item Nodes represent previously encountered visual observations. 
-    \item Edges represent traversable paths, established using ViNT's predicted distances. 
-\end{itemize}
-This memory graph enables both: 
-\begin{itemize} 
-    \item \textbf{Subgoal Planning:} If a goal cannot be reached directly, the planner identifies a sequence of reachable subgoals via $\mathcal{M}$. 
-    \item \textbf{Structured Exploration:} Even without a goal, $\mathcal{M}$ helps guide exploration toward promising, yet-unvisited areas. 
-\end{itemize}
-\subsection*{Frontier-Based Exploration with NoMaD}
-To evaluate NoMaD's ability to generalize to new environments, the authors implement a frontier-based exploration strategy:
-\begin{itemize} 
-    \item \textbf{Frontier:} The boundary between explored and unexplored areas in the environment. 
-    \item The high-level planner selects frontiers as subgoals, encouraging the robot to expand coverage. 
-\end{itemize}
-This builds on the ViKiNG framework, but replaces its prior policy with NoMaD, which supports both: 
-\begin{itemize} 
-    \item \textbf{Goal-seeking} behavior (when a goal image is provided), and 
-    \item \textbf{Autonomous exploration} (when no goal is available). 
-\end{itemize}
 
 \section{Methodology: Ctd.}
 \label{app:method_ctd}
